@@ -373,7 +373,7 @@ function Hero({ onContact }: { onContact: () => void }) {
               boxShadow: "var(--shadow-elegant)",
             }}
           >
-            Book a discovery call <ArrowRight className="h-4 w-4" />
+            Book a complimentary 30-minute AI Strategy Session <ArrowRight className="h-4 w-4" />
           </button>
           <a
             href="/services"
