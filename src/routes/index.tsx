@@ -362,6 +362,7 @@ function Hero({ onContact }: { onContact: () => void }) {
         <p className="mt-6 max-w-2xl text-base sm:text-lg md:text-xl text-muted-foreground">
           We help ambitious organizations transform ideas into intelligent
           systems, scalable infrastructure and measurable business outcomes.
+          Strategy, delivery, and enablement -- end to end.
         </p>
         <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row flex-wrap items-center justify-center gap-3 sm:gap-4 w-full px-2">
           <button
