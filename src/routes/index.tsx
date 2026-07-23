@@ -136,7 +136,7 @@ const CATEGORIES: Category[] = [
   },
 ];
 
-function Index() {
+export function Index() {
   const [contact, setContact] = useState<{ open: boolean; feature: string }>({
     open: false,
     feature: "",
