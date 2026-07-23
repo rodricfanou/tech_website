@@ -351,18 +351,17 @@ function Hero({ onContact }: { onContact: () => void }) {
           AI · Infrastructure · Data at scale
         </div>
         <h1 className="mt-6 max-w-4xl text-3xl sm:text-5xl md:text-7xl font-bold leading-[1.05]">
-          Navigate AI and infrastructure{" "}
+          Build AI Systems{" "}
           <span
             className="bg-clip-text text-transparent"
             style={{ backgroundImage: "var(--gradient-hero)" }}
           >
-            at the speed of your ambition.
+            That Matter.
           </span>
         </h1>
         <p className="mt-6 max-w-2xl text-base sm:text-lg md:text-xl text-muted-foreground">
-          Novaris Nexus Tech is a consulting, advisory, and training firm for
-          organizations building with AI, modern data systems and the Internet
-          itself. Strategy, delivery, and enablement -- end to end.
+          We help ambitious organizations transform ideas into intelligent
+          systems, scalable infrastructure and measurable business outcomes.
         </p>
         <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row flex-wrap items-center justify-center gap-3 sm:gap-4 w-full px-2">
           <button
