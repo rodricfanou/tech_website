@@ -165,7 +165,7 @@ export function Index() {
       </a>
       <Nav onContact={() => openContact("General inquiry")} />
       <Hero onContact={() => openContact("General inquiry")} />
-      <Logos />
+      {/* <Logos /> */}
       <Services onSelect={openContact} />
       <Process />
       <CTA onContact={() => openContact("Let's work together")} />
@@ -205,9 +205,9 @@ function Nav({ onContact }: { onContact: () => void }) {
             alt="Novaris Nexus Tech"
             width={80}
             height={80}
-            className="h-10 w-10 sm:h-14 sm:w-14 lg:h-[144px] lg:w-[144px] object-contain"
+            className="h-20 w-20 sm:h-28 sm:w-28 lg:h-[144px] lg:w-[144px] object-contain"
           />
-          <span className="hidden sm:inline">
+          <span className="text-sm sm:text-base lg:text-lg">
             Novaris Nexus{" "}
             <span className="text-muted-foreground font-medium">Tech</span>
           </span>
@@ -403,7 +403,7 @@ function Hero({ onContact }: { onContact: () => void }) {
   );
 }
 
-function Logos() {
+/* function Logos() {
   const items = [
     "FINTECH",
     "TELCO",
@@ -422,7 +422,7 @@ function Logos() {
       </div>
     </section>
   );
-}
+} */
 
 function Services({ onSelect }: { onSelect: (feature: string) => void }) {
   return (
