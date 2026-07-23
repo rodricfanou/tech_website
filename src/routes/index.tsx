@@ -22,6 +22,11 @@ export const Route = createFileRoute("/")({
 
 const CONTACT_EMAIL = "roderick@roderickfanou.com";
 
+function scrollTo(path: string, id: string) {
+  history.pushState(null, "", path);
+  document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+}
+
 type Feature = { title: string; desc: string };
 type Category = {
   id: string;
@@ -140,10 +145,20 @@ function Index() {
   const openContact = (feature: string) => setContact({ open: true, feature });
   const closeContact = () => setContact((c) => ({ ...c, open: false }));
 
+  useEffect(() => {
+    const path = window.location.pathname.replace(/^\/|\/$/g, "");
+    const map: Record<string, string> = { services: "services", process: "process", contact: "contact" };
+    if (path && map[path]) {
+      requestAnimationFrame(() => {
+        document.getElementById(map[path])?.scrollIntoView({ behavior: "smooth" });
+      });
+    }
+  }, []);
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       <a
-        href="#services"
+        href="/services"
         className="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:m-2 focus:rounded-lg focus:bg-primary focus:px-4 focus:py-2 focus:text-primary-foreground"
       >
         Skip to content
@@ -181,7 +196,7 @@ function Nav({ onContact }: { onContact: () => void }) {
     <header className="sticky top-0 z-40 backdrop-blur-xl bg-background/70 border-b border-border">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 h-16 sm:h-20 flex items-center justify-between">
         <a
-          href="#top"
+          href="/"
           className="flex items-center gap-3 font-display font-bold text-lg"
           aria-label="Novaris Nexus Tech — Home"
         >
@@ -198,13 +213,13 @@ function Nav({ onContact }: { onContact: () => void }) {
           </span>
         </a>
         <nav className="hidden md:flex items-center gap-8 text-sm text-muted-foreground uppercase tracking-[0.12em]">
-          <a href="#services" className="hover:text-foreground transition">
+          <a href="/services" onClick={(e) => { e.preventDefault(); scrollTo("/services", "services"); }} className="hover:text-foreground transition">
             Services
           </a>
-          <a href="#process" className="hover:text-foreground transition">
+          <a href="/process" onClick={(e) => { e.preventDefault(); scrollTo("/process", "process"); }} className="hover:text-foreground transition">
             Process
           </a>
-          <a href="#contact" className="hover:text-foreground transition">
+          <a href="/contact" onClick={(e) => { e.preventDefault(); scrollTo("/contact", "contact"); }} className="hover:text-foreground transition">
             Contact
           </a>
         </nav>
@@ -248,22 +263,22 @@ function Nav({ onContact }: { onContact: () => void }) {
         <div className="md:hidden border-t border-border bg-background/95 backdrop-blur-xl">
           <nav className="mx-auto max-w-7xl px-6 py-6 flex flex-col gap-4 text-sm uppercase tracking-[0.12em]">
             <a
-              href="#services"
-              onClick={() => setOpen(false)}
+              href="/services"
+              onClick={(e) => { e.preventDefault(); setOpen(false); scrollTo("/services", "services"); }}
               className="text-muted-foreground hover:text-foreground transition py-2"
             >
               Services
             </a>
             <a
-              href="#process"
-              onClick={() => setOpen(false)}
+              href="/process"
+              onClick={(e) => { e.preventDefault(); setOpen(false); scrollTo("/process", "process"); }}
               className="text-muted-foreground hover:text-foreground transition py-2"
             >
               Process
             </a>
             <a
-              href="#contact"
-              onClick={() => setOpen(false)}
+              href="/contact"
+              onClick={(e) => { e.preventDefault(); setOpen(false); scrollTo("/contact", "contact"); }}
               className="text-muted-foreground hover:text-foreground transition py-2"
             >
               Contact
@@ -361,7 +376,8 @@ function Hero({ onContact }: { onContact: () => void }) {
             Book a discovery call <ArrowRight className="h-4 w-4" />
           </button>
           <a
-            href="#services"
+            href="/services"
+            onClick={(e) => { e.preventDefault(); scrollTo("/services", "services"); }}
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full border border-border px-5 py-3 sm:px-6 text-sm sm:text-base font-medium text-foreground hover:bg-card transition"
           >
             Explore services
