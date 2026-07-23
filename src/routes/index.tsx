@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import {
   Brain,
   Mic,
@@ -627,9 +627,17 @@ function ContactDialog({
 }) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [contact, setContact] = useState("");
   const [company, setCompany] = useState("");
+  const [topic, setTopic] = useState(feature);
   const [message, setMessage] = useState("");
   const [sent, setSent] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState("");
+
+  useEffect(() => {
+    setTopic(feature);
+  }, [feature]);
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => e.key === "Escape" && onClose();
@@ -642,25 +650,30 @@ function ContactDialog({
     };
   }, [onClose]);
 
-  const mailtoHref = useMemo(() => {
-    const subject = `[Novaris Nexus] ${feature}`;
-    const body = [
-      `Interested in: ${feature}`,
-      ``,
-      `Name: ${name}`,
-      `Email: ${email}`,
-      `Company: ${company}`,
-      ``,
-      `Message:`,
-      message,
-    ].join("\n");
-    return `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-  }, [feature, name, email, company, message]);
-
-  const submit = (e: React.FormEvent) => {
+  const submit = async (e: React.FormEvent) => {
     e.preventDefault();
-    window.location.href = mailtoHref;
-    setSent(true);
+    setSubmitting(true);
+    setError("");
+    try {
+      const res = await fetch("https://formspree.io/f/mkoyqdla", {
+        method: "POST",
+        headers: { Accept: "application/json" },
+        body: new URLSearchParams({
+          Name: name,
+          Email: email,
+          Contact: contact,
+          Company: company,
+          Topic: topic,
+          Message: message,
+        }),
+      });
+      if (!res.ok) throw new Error("Submission failed");
+      setSent(true);
+    } catch {
+      setError("Something went wrong. Please try again or email us directly.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -674,7 +687,7 @@ function ContactDialog({
         onClick={onClose}
       />
       <div
-        className="relative w-full max-w-lg rounded-3xl border border-border p-6 sm:p-8"
+        className="relative w-full max-w-lg rounded-3xl border border-border p-6 sm:p-8 max-h-[90vh] overflow-y-auto"
         style={{
           background: "var(--gradient-surface)",
           boxShadow: "var(--shadow-elegant)",
@@ -704,34 +717,32 @@ function ContactDialog({
             >
               <Check className="h-6 w-6 text-primary-foreground" />
             </div>
-            <p className="mt-4 font-semibold">
-              Your email client should have opened.
-            </p>
+            <p className="mt-4 font-semibold">Inquiry sent successfully.</p>
             <p className="mt-2 text-sm text-muted-foreground">
-              If nothing happened, write us directly at{" "}
-              <a
-                className="text-primary underline"
-                href={`mailto:${CONTACT_EMAIL}`}
-              >
-                {CONTACT_EMAIL}
-              </a>
-              .
+              We'll get back to you within one business day.
             </p>
           </div>
         ) : (
           <form onSubmit={submit} className="mt-6 space-y-4">
             <Field label="Name" value={name} onChange={setName} required />
             <Field
-              label="Work email"
+              label="Email"
               type="email"
               value={email}
               onChange={setEmail}
               required
             />
+            <Field
+              label="Contact (phone)"
+              value={contact}
+              onChange={setContact}
+              required
+            />
             <Field label="Company" value={company} onChange={setCompany} />
+            <Field label="Topic" value={topic} onChange={setTopic} required />
             <div>
               <label className="text-xs font-medium text-muted-foreground">
-                What are you trying to solve?
+                Message
               </label>
               <textarea
                 required
@@ -743,19 +754,20 @@ function ContactDialog({
                 placeholder="A quick description of the challenge, timeline, and any constraints…"
               />
             </div>
+            {error && (
+              <p className="text-sm text-red-500">{error}</p>
+            )}
             <button
               type="submit"
-              className="w-full inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-base font-semibold text-primary-foreground transition hover:opacity-90"
+              disabled={submitting}
+              className="w-full inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-base font-semibold text-primary-foreground transition hover:opacity-90 disabled:opacity-50"
               style={{
                 background: "var(--gradient-hero)",
                 boxShadow: "var(--shadow-glow)",
               }}
             >
-              Send inquiry <ArrowRight className="h-4 w-4" />
+              {submitting ? "Sending…" : "Send inquiry"} <ArrowRight className="h-4 w-4" />
             </button>
-            <p className="text-xs text-muted-foreground text-center">
-              This opens your email client with the details pre-filled.
-            </p>
           </form>
         )}
       </div>
