@@ -629,15 +629,11 @@ function ContactDialog({
   const [email, setEmail] = useState("");
   const [contact, setContact] = useState("");
   const [company, setCompany] = useState("");
-  const [topic, setTopic] = useState(feature);
+  const [topic, setTopic] = useState("");
   const [message, setMessage] = useState("");
   const [sent, setSent] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState("");
-
-  useEffect(() => {
-    setTopic(feature);
-  }, [feature]);
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => e.key === "Escape" && onClose();
@@ -739,7 +735,25 @@ function ContactDialog({
               required
             />
             <Field label="Company" value={company} onChange={setCompany} />
-            <Field label="Topic" value={topic} onChange={setTopic} required />
+            <div>
+              <label className="text-xs font-medium text-muted-foreground">
+                Topic
+              </label>
+              <select
+                required
+                value={topic}
+                onChange={(e) => setTopic(e.target.value)}
+                className="mt-1 w-full rounded-xl border border-border bg-background/60 px-4 py-3 text-sm text-foreground outline-none focus:border-primary transition"
+              >
+                <option value="" disabled>Select a topic</option>
+                <option value="General inquiry">General inquiry</option>
+                <option value="AI Consulting">AI Consulting</option>
+                <option value="Talks">Talks</option>
+                <option value="Technical Advisory">Technical Advisory</option>
+                <option value="Training">Training</option>
+                <option value="Others">Others</option>
+              </select>
+            </div>
             <div>
               <label className="text-xs font-medium text-muted-foreground">
                 Message
