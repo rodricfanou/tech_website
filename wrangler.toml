@@ -1,8 +1,0 @@
-name = "rodricfanou-tech-website"
-main = ".output/server/index.mjs"
-compatibility_date = "2026-07-19"
-compatibility_flags = ["nodejs_compat"]
-
-[assets]
-directory = ".output/public"
-binding = "ASSETS"
