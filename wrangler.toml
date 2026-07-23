@@ -2,6 +2,7 @@ name = "rodricfanou-tech-website"
 main = ".output/server/index.mjs"
 compatibility_date = "2026-07-19"
 compatibility_flags = ["nodejs_compat"]
+account_id = "8589e0ca9611fa52ae74f081bb3d1df6"
 
 [assets]
 directory = ".output/public"
