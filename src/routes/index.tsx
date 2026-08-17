@@ -530,6 +530,15 @@ function CategoryBlock({
           </p>
           <h3 className="mt-2 text-2xl md:text-3xl font-bold">{cat.title}</h3>
           <p className="mt-4 text-muted-foreground">{cat.blurb}</p>
+          {cat.id === "ai" && (
+            <a
+              href="#what-is-ai-consulting"
+              onClick={(e) => { e.preventDefault(); scrollTo("#what-is-ai-consulting", "what-is-ai-consulting"); }}
+              className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:underline"
+            >
+              Learn more <ArrowRight className="h-3.5 w-3.5" />
+            </a>
+          )}
         </div>
 
         <div className="lg:col-span-2 grid sm:grid-cols-2 gap-4">
