@@ -1001,7 +1001,7 @@ function WhyAIConsultants() {
             Why Us
           </p>
           <h2 className="mt-3 text-3xl sm:text-4xl md:text-5xl font-bold">
-            Why teams choose us.
+            Why teams choose Novaris Nexus Tech.
           </h2>
         </div>
 
