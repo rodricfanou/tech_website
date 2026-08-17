@@ -13,12 +13,10 @@ import {
   Target,
   TrendingUp,
   Users,
-  BarChart3,
   Lightbulb,
   Shield,
   Zap,
-  Globe,
-  BookOpen,
+  Award,
 } from "lucide-react";
 import heroImg from "@/assets/hero.jpg";
 import heroImgWebp from "@/assets/hero.webp";
@@ -237,10 +235,10 @@ function Nav({ onContact }: { onContact: () => void }) {
             Services
           </a>
           <a href="/what-is-ai-consulting" onClick={(e) => { e.preventDefault(); scrollTo("/what-is-ai-consulting", "what-is-ai-consulting"); }} className="hover:text-foreground transition">
-            AI Consulting?
+            AI Consulting
           </a>
           <a href="/why-ai-consulting" onClick={(e) => { e.preventDefault(); scrollTo("/why-ai-consulting", "why-ai-consulting"); }} className="hover:text-foreground transition">
-            Why Us?
+            Why Us
           </a>
           <a href="/process" onClick={(e) => { e.preventDefault(); scrollTo("/process", "process"); }} className="hover:text-foreground transition">
             Process
@@ -300,14 +298,14 @@ function Nav({ onContact }: { onContact: () => void }) {
               onClick={(e) => { e.preventDefault(); setOpen(false); scrollTo("/what-is-ai-consulting", "what-is-ai-consulting"); }}
               className="text-muted-foreground hover:text-foreground transition py-2"
             >
-              AI Consulting?
+              AI Consulting
             </a>
             <a
               href="/why-ai-consulting"
               onClick={(e) => { e.preventDefault(); setOpen(false); scrollTo("/why-ai-consulting", "why-ai-consulting"); }}
               className="text-muted-foreground hover:text-foreground transition py-2"
             >
-              Why Us?
+              Why Us
             </a>
             <a
               href="/process"
@@ -407,9 +405,7 @@ function Hero({ onContact }: { onContact: () => void }) {
           </span>
         </h1>
         <p className="mt-6 max-w-2xl text-base sm:text-lg md:text-xl text-muted-foreground">
-          We help ambitious organizations transform ideas into intelligent
-          systems, scalable infrastructure and measurable business outcomes.
-          Strategy, delivery, and enablement -- end to end.
+          Strategy, delivery, and enablement — from AI curiosity to measurable outcomes.
         </p>
         <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row flex-wrap items-center justify-center gap-3 sm:gap-4 w-full px-2">
           <button
@@ -990,7 +986,7 @@ function WhyAIConsultants() {
     { icon: Shield, title: "Battle-tested across industries" },
     { icon: Zap, title: "We build, not just advise" },
     { icon: Cog, title: "Ongoing support and maintenance" },
-    { icon: Shield, title: "Ethical, responsible AI" },
+    { icon: Award, title: "Ethical, responsible AI" },
   ];
 
   return (
