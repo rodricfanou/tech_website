@@ -403,7 +403,7 @@ function Hero({ onContact }: { onContact: () => void }) {
           >
             AI systems and networks
           </span>{" "}
-          that matter.
+          that matter and operate efficiently.
         </h1>
         <p className="mt-6 max-w-2xl text-base sm:text-lg md:text-xl text-muted-foreground">
           Strategy, delivery, and enablement — from AI curiosity to measurable outcomes.
