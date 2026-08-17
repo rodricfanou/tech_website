@@ -982,36 +982,12 @@ function AIConsultingExplainer() {
 
 function WhyAIConsultants() {
   const reasons = [
-    {
-      icon: Lightbulb,
-      title: "Understand the Benefits",
-      desc: "Most businesses know AI exists but don't know how it applies to them. An AI consultant maps AI's potential to your specific operations, showing concrete ways it can improve your bottom line.",
-    },
-    {
-      icon: Target,
-      title: "Identify Opportunities",
-      desc: "We audit your workflows, data, and processes to find where AI can have the biggest impact — then build a clear roadmap for implementation that prioritizes quick wins and long-term gains.",
-    },
-    {
-      icon: Shield,
-      title: "Choose the Right Solutions",
-      desc: "The AI landscape is overwhelming. Consultants cut through the noise, evaluate what's actually proven, and recommend solutions that fit your budget, timeline, and technical reality.",
-    },
-    {
-      icon: Zap,
-      title: "Execute Effectively",
-      desc: "Planning is easy. Execution is hard. We help you implement AI solutions with proper change management, testing, and iteration — so they actually work in production.",
-    },
-    {
-      icon: Cog,
-      title: "Manage & Maintain",
-      desc: "AI isn't a set-and-forget technology. We help you monitor performance, retrain models, manage costs, and keep systems running as your business evolves.",
-    },
-    {
-      icon: Shield,
-      title: "Mitigate Risk",
-      desc: "AI has real risks — bias, privacy, hallucination, regulatory compliance. We identify and address these proactively, ensuring your AI usage is ethical, compliant, and trustworthy.",
-    },
+    { icon: Lightbulb, title: "Understand the Benefits" },
+    { icon: Target, title: "Identify Opportunities" },
+    { icon: Shield, title: "Choose the Right Solutions" },
+    { icon: Zap, title: "Execute Effectively" },
+    { icon: Cog, title: "Manage & Maintain" },
+    { icon: Shield, title: "Mitigate Risk" },
   ];
 
   return (
@@ -1022,12 +998,8 @@ function WhyAIConsultants() {
             Why AI Consulting
           </p>
           <h2 className="mt-3 text-3xl sm:text-4xl md:text-5xl font-bold">
-            Why your business needs AI consulting.
+            Why AI consulting matters.
           </h2>
-          <p className="mt-4 text-base sm:text-lg text-muted-foreground">
-            AI isn't just a technology upgrade — it's a business transformation. 
-            Here's why expert guidance matters at every stage.
-          </p>
         </div>
 
         <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -1040,7 +1012,6 @@ function WhyAIConsultants() {
                 <r.icon className="h-6 w-6 text-primary-foreground" />
               </div>
               <h3 className="text-xl font-semibold">{r.title}</h3>
-              <p className="text-muted-foreground">{r.desc}</p>
             </div>
           ))}
         </div>
