@@ -1005,18 +1005,23 @@ function WhyAIConsultants() {
           </h2>
         </div>
 
-        <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {reasons.map((r) => (
-            <div key={r.title} className="space-y-4">
-              <div
-                className="inline-flex h-12 w-12 items-center justify-center rounded-xl"
-                style={{ background: "var(--gradient-hero)" }}
-              >
-                <r.icon className="h-6 w-6 text-primary-foreground" />
+        <div
+          className="mt-16 rounded-3xl border border-border p-8 sm:p-12"
+          style={{ background: "var(--gradient-surface)" }}
+        >
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {reasons.map((r) => (
+              <div key={r.title} className="flex items-center gap-4">
+                <div
+                  className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-xl"
+                  style={{ background: "var(--gradient-hero)" }}
+                >
+                  <r.icon className="h-6 w-6 text-primary-foreground" />
+                </div>
+                <h3 className="text-lg font-semibold">{r.title}</h3>
               </div>
-              <h3 className="text-xl font-semibold">{r.title}</h3>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>
