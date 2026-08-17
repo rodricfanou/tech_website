@@ -159,7 +159,7 @@ export function Index() {
 
   useEffect(() => {
     const path = window.location.pathname.replace(/^\/|\/$/g, "");
-    const map: Record<string, string> = { services: "services", process: "process", contact: "contact" };
+    const map: Record<string, string> = { services: "services", "what-is-ai-consulting": "what-is-ai-consulting", "why-ai-consulting": "why-ai-consulting", process: "process", contact: "contact" };
     if (path && map[path]) {
       requestAnimationFrame(() => {
         document.getElementById(map[path])?.scrollIntoView({ behavior: "smooth" });
@@ -233,6 +233,12 @@ function Nav({ onContact }: { onContact: () => void }) {
           <a href="/services" onClick={(e) => { e.preventDefault(); scrollTo("/services", "services"); }} className="hover:text-foreground transition">
             Services
           </a>
+          <a href="/what-is-ai-consulting" onClick={(e) => { e.preventDefault(); scrollTo("/what-is-ai-consulting", "what-is-ai-consulting"); }} className="hover:text-foreground transition">
+            What is AI
+          </a>
+          <a href="/why-ai-consulting" onClick={(e) => { e.preventDefault(); scrollTo("/why-ai-consulting", "why-ai-consulting"); }} className="hover:text-foreground transition">
+            Why AI
+          </a>
           <a href="/process" onClick={(e) => { e.preventDefault(); scrollTo("/process", "process"); }} className="hover:text-foreground transition">
             Process
           </a>
@@ -285,6 +291,20 @@ function Nav({ onContact }: { onContact: () => void }) {
               className="text-muted-foreground hover:text-foreground transition py-2"
             >
               Services
+            </a>
+            <a
+              href="/what-is-ai-consulting"
+              onClick={(e) => { e.preventDefault(); setOpen(false); scrollTo("/what-is-ai-consulting", "what-is-ai-consulting"); }}
+              className="text-muted-foreground hover:text-foreground transition py-2"
+            >
+              What is AI
+            </a>
+            <a
+              href="/why-ai-consulting"
+              onClick={(e) => { e.preventDefault(); setOpen(false); scrollTo("/why-ai-consulting", "why-ai-consulting"); }}
+              className="text-muted-foreground hover:text-foreground transition py-2"
+            >
+              Why AI
             </a>
             <a
               href="/process"
@@ -864,7 +884,7 @@ function Field({
 
 function AIConsultingExplainer() {
   return (
-    <section className="py-16 sm:py-24 md:py-32 border-t border-border">
+    <section id="what-is-ai-consulting" className="py-16 sm:py-24 md:py-32 border-t border-border">
       <div className="mx-auto max-w-7xl px-6">
         <div className="max-w-2xl">
           <p className="text-sm font-medium text-primary uppercase tracking-widest">
@@ -995,14 +1015,14 @@ function WhyAIConsultants() {
   ];
 
   return (
-    <section className="py-16 sm:py-24 md:py-32 border-t border-border">
+    <section id="why-ai-consulting" className="py-16 sm:py-24 md:py-32 border-t border-border">
       <div className="mx-auto max-w-7xl px-6">
         <div className="max-w-2xl">
           <p className="text-sm font-medium text-primary uppercase tracking-widest">
-            Why AI Consultants
+            Why AI Consulting
           </p>
           <h2 className="mt-3 text-3xl sm:text-4xl md:text-5xl font-bold">
-            Why businesses need AI consultants.
+            Why your business needs AI consulting.
           </h2>
           <p className="mt-4 text-base sm:text-lg text-muted-foreground">
             AI isn't just a technology upgrade — it's a business transformation. 
