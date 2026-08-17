@@ -237,7 +237,7 @@ function Nav({ onContact }: { onContact: () => void }) {
             AI Consulting?
           </a>
           <a href="/why-ai-consulting" onClick={(e) => { e.preventDefault(); scrollTo("/why-ai-consulting", "why-ai-consulting"); }} className="hover:text-foreground transition">
-            Why AI
+            Why Us?
           </a>
           <a href="/process" onClick={(e) => { e.preventDefault(); scrollTo("/process", "process"); }} className="hover:text-foreground transition">
             Process
@@ -304,7 +304,7 @@ function Nav({ onContact }: { onContact: () => void }) {
               onClick={(e) => { e.preventDefault(); setOpen(false); scrollTo("/why-ai-consulting", "why-ai-consulting"); }}
               className="text-muted-foreground hover:text-foreground transition py-2"
             >
-              Why AI
+              Why Us?
             </a>
             <a
               href="/process"
