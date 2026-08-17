@@ -886,21 +886,17 @@ function AIConsultingExplainer() {
               operations — not because the technology isn't ready, but because the knowledge gap is real.
             </p>
             <p className="text-lg text-muted-foreground">
-              Try the "neighbor test": ask someone outside your industry how they use AI day-to-day. 
-              Most will mention ChatGPT — and that's about it. The gap between what AI <em>can</em> do 
-              and what businesses <em>know</em> it can do is enormous.
+              The gap between what AI can do and what businesses know it can do is enormous.
             </p>
             <p className="text-lg text-muted-foreground">
               That's where an AI consultant comes in. Think of us as translators who speak both 
-              business and technology. We help organizations understand what AI is actually capable of, 
+              business and technology. We help organizations understand what AI is capable of, 
               identify where it can save time and streamline processes, and then build the systems 
               that make it happen.
             </p>
             <p className="text-lg text-muted-foreground">
-              The best AI consultants aren't just technologists — they're educators, problem-solvers, 
-              and (sometimes) superheroes who rescue businesses from missed opportunities and wasted budgets. 
-              We help you grow exponentially and increase profits by making AI work for your specific 
-              challenges, not the other way around.
+              We help you grow exponentially and increase profits by making AI work for your 
+              specific challenges, not the other way around.
             </p>
           </div>
 
@@ -912,9 +908,9 @@ function AIConsultingExplainer() {
               >
                 <Target className="h-6 w-6 text-primary-foreground" />
               </div>
-              <h3 className="mt-4 font-semibold text-lg">Educate First</h3>
+              <h3 className="mt-4 font-semibold text-lg">Understand AI</h3>
               <p className="mt-2 text-sm text-muted-foreground">
-                We start by closing the knowledge gap — helping your team understand what AI 
+                We close the knowledge gap — helping your team understand what AI 
                 is, what it isn't, and where it fits your business reality.
               </p>
             </div>
@@ -926,7 +922,7 @@ function AIConsultingExplainer() {
               >
                 <Zap className="h-6 w-6 text-primary-foreground" />
               </div>
-              <h3 className="mt-4 font-semibold text-lg">Save Time & Money</h3>
+              <h3 className="mt-4 font-semibold text-lg">Save Time & Streamline</h3>
               <p className="mt-2 text-sm text-muted-foreground">
                 AI eliminates repetitive tasks, streamlines workflows, and lets your team 
                 focus on what actually moves the business forward.
@@ -942,8 +938,8 @@ function AIConsultingExplainer() {
               </div>
               <h3 className="mt-4 font-semibold text-lg">Grow Exponentially</h3>
               <p className="mt-2 text-sm text-muted-foreground">
-                AI doesn't just optimize — it unlocks new capabilities, new products, 
-                and new revenue streams that weren't possible before.
+                We help you grow exponentially and increase profits by making 
+                AI work for your specific challenges.
               </p>
             </div>
 
@@ -954,10 +950,10 @@ function AIConsultingExplainer() {
               >
                 <Users className="h-6 w-6 text-primary-foreground" />
               </div>
-              <h3 className="mt-4 font-semibold text-lg">Integrate & Achieve</h3>
+              <h3 className="mt-4 font-semibold text-lg">Build the Systems</h3>
               <p className="mt-2 text-sm text-muted-foreground">
-                We don't just hand you a plan and walk away. We integrate AI into your 
-                workflows and stay until you're achieving the goals we set together.
+                We don't just advise — we build the AI systems that make 
+                the transformation happen in your organization.
               </p>
             </div>
           </div>
