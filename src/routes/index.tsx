@@ -10,11 +10,24 @@ import {
   Check,
   Mail,
   X,
+  Target,
+  TrendingUp,
+  Users,
+  BarChart3,
+  Lightbulb,
+  Shield,
+  Zap,
+  Globe,
+  BookOpen,
+  ChevronDown,
 } from "lucide-react";
 import heroImg from "@/assets/hero.jpg";
+import heroImgWebp from "@/assets/hero.webp";
 
-const LOGO_MARK = "/logos/novaris-mark.png";
-const LOGO_FULL = "/logos/novaris-full.png";
+const LOGO_MARK = "/logos/novaris-mark-optimized.png";
+const LOGO_MARK_WEBP = "/logos/novaris-mark.webp";
+const LOGO_FULL = "/logos/novaris-full-optimized.png";
+const LOGO_FULL_WEBP = "/logos/novaris-full.webp";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -167,6 +180,10 @@ export function Index() {
       <Hero onContact={() => openContact("General inquiry")} />
       {/* <Logos /> */}
       <Services onSelect={openContact} />
+      <AIConsultingExplainer />
+      <WhyAIConsultants />
+      <AIvsTraditionalConsulting />
+      <FAQ />
       <Process />
       <CTA onContact={() => openContact("Let's work together")} />
       <Footer />
@@ -200,13 +217,16 @@ function Nav({ onContact }: { onContact: () => void }) {
           className="flex items-center gap-3 font-display font-bold text-lg"
           aria-label="Novaris Nexus Tech — Home"
         >
-          <img
-            src={LOGO_MARK}
-            alt="Novaris Nexus Tech"
-            width={80}
-            height={80}
-            className="h-20 w-20 sm:h-28 sm:w-28 lg:h-[144px] lg:w-[144px] object-contain"
-          />
+          <picture>
+            <source srcSet={LOGO_MARK_WEBP} type="image/webp" />
+            <img
+              src={LOGO_MARK}
+              alt="Novaris Nexus Tech"
+              width={200}
+              height={133}
+              className="h-20 w-20 sm:h-28 sm:w-28 lg:h-[144px] lg:w-[144px] object-contain"
+            />
+          </picture>
           <span className="text-sm sm:text-base lg:text-lg">
             Novaris Nexus{" "}
             <span className="text-muted-foreground font-medium">Tech</span>
@@ -316,13 +336,17 @@ function Hero({ onContact }: { onContact: () => void }) {
 
   return (
     <section id="top" className="relative overflow-hidden">
-      <img
-        src={heroImg}
-        alt="Novaris Nexus Tech — neural network visualization"
-        width={1920}
-        height={1200}
-        className="absolute inset-0 h-full w-full object-cover opacity-40"
-      />
+      <picture>
+        <source srcSet={heroImgWebp} type="image/webp" />
+        <img
+          src={heroImg}
+          alt="Novaris Nexus Tech — neural network visualization"
+          width={1200}
+          height={750}
+          className="absolute inset-0 h-full w-full object-cover opacity-40"
+          decoding="async"
+        />
+      </picture>
       <div
         className="absolute inset-0"
         style={{
@@ -335,17 +359,20 @@ function Hero({ onContact }: { onContact: () => void }) {
           logoOnly ? "opacity-0" : "opacity-100"
         }`}
       >
-        <img
-          src={LOGO_FULL}
-          alt="Novaris Nexus Tech"
-          width={1200}
-          height={900}
-          className="mb-4 h-auto w-full max-w-[12rem] sm:max-w-[18rem] md:max-w-[28rem] lg:max-w-[42rem] xl:max-w-[54rem] object-contain drop-shadow-[0_0_30px_oklch(0.72_0.19_260/0.25)]"
-          style={{
-            animation:
-              "float 6s ease-in-out infinite, logo-blink 5s ease-in-out infinite",
-          }}
-        />
+        <picture>
+          <source srcSet={LOGO_FULL_WEBP} type="image/webp" />
+          <img
+            src={LOGO_FULL}
+            alt="Novaris Nexus Tech"
+            width={800}
+            height={533}
+            className="mb-4 h-auto w-full max-w-[12rem] sm:max-w-[18rem] md:max-w-[28rem] lg:max-w-[42rem] xl:max-w-[54rem] object-contain drop-shadow-[0_0_30px_oklch(0.72_0.19_260/0.25)]"
+            style={{
+              animation:
+                "float 6s ease-in-out infinite, logo-blink 5s ease-in-out infinite",
+            }}
+          />
+        </picture>
         <div className="inline-flex items-center gap-2 rounded-full border border-border bg-card/60 px-3 py-1 text-xs text-muted-foreground backdrop-blur">
           <Sparkles className="h-3.5 w-3.5 text-primary" />
           AI · Infrastructure · Data at scale
@@ -386,17 +413,20 @@ function Hero({ onContact }: { onContact: () => void }) {
       </div>
       {logoOnly && (
         <div className="absolute inset-0 flex items-center justify-center z-10">
-          <img
-            src={LOGO_FULL}
-            alt="Novaris Nexus Tech"
-            width={1200}
-            height={900}
-            className="h-auto w-full max-w-[12rem] sm:max-w-[18rem] md:max-w-[28rem] lg:max-w-[42rem] xl:max-w-[54rem] object-contain drop-shadow-[0_0_30px_oklch(0.72_0.19_260/0.25)]"
-            style={{
-              animation:
-                "float 6s ease-in-out infinite, logo-blink 5s ease-in-out infinite",
-            }}
-          />
+          <picture>
+            <source srcSet={LOGO_FULL_WEBP} type="image/webp" />
+            <img
+              src={LOGO_FULL}
+              alt="Novaris Nexus Tech"
+              width={800}
+              height={533}
+              className="h-auto w-full max-w-[12rem] sm:max-w-[18rem] md:max-w-[28rem] lg:max-w-[42rem] xl:max-w-[54rem] object-contain drop-shadow-[0_0_30px_oklch(0.72_0.19_260/0.25)]"
+              style={{
+                animation:
+                  "float 6s ease-in-out infinite, logo-blink 5s ease-in-out infinite",
+              }}
+            />
+          </picture>
         </div>
       )}
     </section>
@@ -832,5 +862,415 @@ function Field({
         className="mt-1 w-full rounded-xl border border-border bg-background/60 px-4 py-3 text-sm text-foreground outline-none focus:border-primary transition"
       />
     </div>
+  );
+}
+
+function AIConsultingExplainer() {
+  return (
+    <section className="py-16 sm:py-24 md:py-32 border-t border-border">
+      <div className="mx-auto max-w-7xl px-6">
+        <div className="max-w-2xl">
+          <p className="text-sm font-medium text-primary uppercase tracking-widest">
+            What is AI Consulting
+          </p>
+          <h2 className="mt-3 text-3xl sm:text-4xl md:text-5xl font-bold">
+            What's an AI consultant?
+          </h2>
+        </div>
+
+        <div className="mt-16 grid lg:grid-cols-2 gap-12 items-start">
+          <div className="space-y-6">
+            <p className="text-lg text-muted-foreground">
+              Ask most people outside the tech bubble about AI, and you'll get blank stares. 
+              The reality is that many businesses are unaware of how AI can transform their 
+              operations — not because the technology isn't ready, but because the knowledge gap is real.
+            </p>
+            <p className="text-lg text-muted-foreground">
+              Try the "neighbor test": ask someone outside your industry how they use AI day-to-day. 
+              Most will mention ChatGPT — and that's about it. The gap between what AI <em>can</em> do 
+              and what businesses <em>know</em> it can do is enormous.
+            </p>
+            <p className="text-lg text-muted-foreground">
+              That's where an AI consultant comes in. Think of us as translators who speak both 
+              business and technology. We help organizations understand what AI is actually capable of, 
+              identify where it can save time and streamline processes, and then build the systems 
+              that make it happen.
+            </p>
+            <p className="text-lg text-muted-foreground">
+              The best AI consultants aren't just technologists — they're educators, problem-solvers, 
+              and (sometimes) superheroes who rescue businesses from missed opportunities and wasted budgets. 
+              We help you grow exponentially and increase profits by making AI work for your specific 
+              challenges, not the other way around.
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 gap-6">
+            <div className="rounded-2xl border border-border bg-card/60 p-6">
+              <div
+                className="inline-flex h-12 w-12 items-center justify-center rounded-xl"
+                style={{ background: "var(--gradient-hero)" }}
+              >
+                <Target className="h-6 w-6 text-primary-foreground" />
+              </div>
+              <h3 className="mt-4 font-semibold text-lg">Educate First</h3>
+              <p className="mt-2 text-sm text-muted-foreground">
+                We start by closing the knowledge gap — helping your team understand what AI 
+                is, what it isn't, and where it fits your business reality.
+              </p>
+            </div>
+
+            <div className="rounded-2xl border border-border bg-card/60 p-6">
+              <div
+                className="inline-flex h-12 w-12 items-center justify-center rounded-xl"
+                style={{ background: "var(--gradient-hero)" }}
+              >
+                <Zap className="h-6 w-6 text-primary-foreground" />
+              </div>
+              <h3 className="mt-4 font-semibold text-lg">Save Time & Money</h3>
+              <p className="mt-2 text-sm text-muted-foreground">
+                AI eliminates repetitive tasks, streamlines workflows, and lets your team 
+                focus on what actually moves the business forward.
+              </p>
+            </div>
+
+            <div className="rounded-2xl border border-border bg-card/60 p-6">
+              <div
+                className="inline-flex h-12 w-12 items-center justify-center rounded-xl"
+                style={{ background: "var(--gradient-hero)" }}
+              >
+                <TrendingUp className="h-6 w-6 text-primary-foreground" />
+              </div>
+              <h3 className="mt-4 font-semibold text-lg">Grow Exponentially</h3>
+              <p className="mt-2 text-sm text-muted-foreground">
+                AI doesn't just optimize — it unlocks new capabilities, new products, 
+                and new revenue streams that weren't possible before.
+              </p>
+            </div>
+
+            <div className="rounded-2xl border border-border bg-card/60 p-6">
+              <div
+                className="inline-flex h-12 w-12 items-center justify-center rounded-xl"
+                style={{ background: "var(--gradient-hero)" }}
+              >
+                <Users className="h-6 w-6 text-primary-foreground" />
+              </div>
+              <h3 className="mt-4 font-semibold text-lg">Integrate & Achieve</h3>
+              <p className="mt-2 text-sm text-muted-foreground">
+                We don't just hand you a plan and walk away. We integrate AI into your 
+                workflows and stay until you're achieving the goals we set together.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function WhyAIConsultants() {
+  const reasons = [
+    {
+      icon: Lightbulb,
+      title: "Understand the Benefits",
+      desc: "Most businesses know AI exists but don't know how it applies to them. An AI consultant maps AI's potential to your specific operations, showing concrete ways it can improve your bottom line.",
+    },
+    {
+      icon: Target,
+      title: "Identify Opportunities",
+      desc: "We audit your workflows, data, and processes to find where AI can have the biggest impact — then build a clear roadmap for implementation that prioritizes quick wins and long-term gains.",
+    },
+    {
+      icon: Shield,
+      title: "Choose the Right Solutions",
+      desc: "The AI landscape is overwhelming. Consultants cut through the noise, evaluate what's actually proven, and recommend solutions that fit your budget, timeline, and technical reality.",
+    },
+    {
+      icon: Zap,
+      title: "Execute Effectively",
+      desc: "Planning is easy. Execution is hard. We help you implement AI solutions with proper change management, testing, and iteration — so they actually work in production.",
+    },
+    {
+      icon: Cog,
+      title: "Manage & Maintain",
+      desc: "AI isn't a set-and-forget technology. We help you monitor performance, retrain models, manage costs, and keep systems running as your business evolves.",
+    },
+    {
+      icon: Shield,
+      title: "Mitigate Risk",
+      desc: "AI has real risks — bias, privacy, hallucination, regulatory compliance. We identify and address these proactively, ensuring your AI usage is ethical, compliant, and trustworthy.",
+    },
+  ];
+
+  const capabilities = [
+    { icon: Zap, text: "Automate repetitive tasks and free up your team" },
+    { icon: BarChart3, text: "Improve decision-making with data-driven insights" },
+    { icon: Users, text: "Personalize customer experiences at scale" },
+    { icon: TrendingUp, text: "Reduce operational costs across departments" },
+    { icon: Globe, text: "Improve customer service with AI-powered support" },
+    { icon: Lightbulb, text: "Increase productivity with smart automation" },
+  ];
+
+  return (
+    <section className="py-16 sm:py-24 md:py-32 border-t border-border">
+      <div className="mx-auto max-w-7xl px-6">
+        <div className="max-w-2xl">
+          <p className="text-sm font-medium text-primary uppercase tracking-widest">
+            Why AI Consultants
+          </p>
+          <h2 className="mt-3 text-3xl sm:text-4xl md:text-5xl font-bold">
+            Why businesses need AI consultants.
+          </h2>
+          <p className="mt-4 text-base sm:text-lg text-muted-foreground">
+            AI isn't just a technology upgrade — it's a business transformation. 
+            Here's why expert guidance matters at every stage.
+          </p>
+        </div>
+
+        <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {reasons.map((r) => (
+            <div key={r.title} className="space-y-4">
+              <div
+                className="inline-flex h-12 w-12 items-center justify-center rounded-xl"
+                style={{ background: "var(--gradient-hero)" }}
+              >
+                <r.icon className="h-6 w-6 text-primary-foreground" />
+              </div>
+              <h3 className="text-xl font-semibold">{r.title}</h3>
+              <p className="text-muted-foreground">{r.desc}</p>
+            </div>
+          ))}
+        </div>
+
+        <div
+          className="mt-16 rounded-3xl border border-border p-8 sm:p-12"
+          style={{ background: "var(--gradient-surface)" }}
+        >
+          <h3 className="text-2xl sm:text-3xl font-bold text-center mb-8">
+            What AI can do for your business
+          </h3>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {capabilities.map((c) => (
+              <div key={c.text} className="flex items-start gap-3">
+                <Check className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+                <span className="text-muted-foreground">{c.text}</span>
+              </div>
+            ))}
+          </div>
+          <div className="mt-8 pt-8 border-t border-border text-center">
+            <p className="text-muted-foreground">
+              From using ChatGPT to answer team questions and generate content, to building 
+              custom AI systems that automate complex workflows — the possibilities are limitless 
+              when you have the right partner guiding the way.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function AIvsTraditionalConsulting() {
+  const comparisons = [
+    {
+      dimension: "Focus",
+      ai: "Business outcomes enabled by AI technology",
+      traditional: "Business process optimization and management",
+    },
+    {
+      dimension: "Deliverables",
+      ai: "Working systems, trained teams, production models",
+      traditional: "Slide decks, reports, recommendations",
+    },
+    {
+      dimension: "Expertise",
+      ai: "Deep technical + strategic — hands-on engineering",
+      traditional: "Broad strategic — rarely builds systems",
+    },
+    {
+      dimension: "Timeline",
+      ai: "Weeks to months — iterative delivery",
+      traditional: "Months to years — phased approach",
+    },
+    {
+      dimension: "Risk Model",
+      ai: "Shared accountability — consultant builds what they recommend",
+      traditional: "Advisory only — client implements independently",
+    },
+    {
+      dimension: "Success Metrics",
+      ai: "Measurable: accuracy, latency, cost reduction, revenue",
+      traditional: "Qualitative: satisfaction, alignment, readiness",
+    },
+    {
+      dimension: "Knowledge Transfer",
+      ai: "Embedded — team learns by building together",
+      traditional: "Documented — team reads reports and implements",
+    },
+  ];
+
+  return (
+    <section className="py-16 sm:py-24 md:py-32 border-t border-border">
+      <div className="mx-auto max-w-7xl px-6">
+        <div className="max-w-2xl">
+          <p className="text-sm font-medium text-primary uppercase tracking-widest">
+            Comparison
+          </p>
+          <h2 className="mt-3 text-3xl sm:text-4xl md:text-5xl font-bold">
+            AI consulting vs. traditional consulting.
+          </h2>
+          <p className="mt-4 text-base sm:text-lg text-muted-foreground">
+            Traditional consulting delivers strategy. AI consulting delivers strategy 
+            <em> and</em> execution — with the technical depth to make it real.
+          </p>
+        </div>
+
+        <div className="mt-16 overflow-x-auto">
+          <table className="w-full text-left border-collapse">
+            <thead>
+              <tr className="border-b border-border">
+                <th className="py-4 px-4 text-sm font-medium text-muted-foreground w-1/4">
+                  Dimension
+                </th>
+                <th className="py-4 px-4 text-sm font-medium text-primary w-[37.5%]">
+                  AI Consulting (Novaris Nexus Tech)
+                </th>
+                <th className="py-4 px-4 text-sm font-medium text-muted-foreground w-[37.5%]">
+                  Traditional Consulting
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {comparisons.map((c) => (
+                <tr key={c.dimension} className="border-b border-border">
+                  <td className="py-4 px-4 font-medium">{c.dimension}</td>
+                  <td className="py-4 px-4 text-muted-foreground">{c.ai}</td>
+                  <td className="py-4 px-4 text-muted-foreground">{c.traditional}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <div className="mt-12 grid md:grid-cols-2 gap-8">
+          <div className="rounded-2xl border border-border bg-card/60 p-8">
+            <h3 className="text-xl font-semibold">When Traditional Consulting Works</h3>
+            <ul className="mt-4 space-y-3 text-muted-foreground">
+              <li className="flex items-start gap-3">
+                <Check className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+                <span>Organizational strategy and restructuring</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <Check className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+                <span>Market entry and competitive analysis</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <Check className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+                <span>Change management and leadership</span>
+              </li>
+            </ul>
+          </div>
+          <div
+            className="rounded-2xl border border-primary/30 bg-card/60 p-8"
+            style={{ boxShadow: "var(--shadow-glow)" }}
+          >
+            <h3 className="text-xl font-semibold">When You Need AI Consulting</h3>
+            <ul className="mt-4 space-y-3 text-muted-foreground">
+              <li className="flex items-start gap-3">
+                <Check className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+                <span>Building or deploying ML/AI systems</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <Check className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+                <span>Data infrastructure and pipelines</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <Check className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+                <span>AI strategy tied to business outcomes</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <Check className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+                <span>Team upskilling and adoption</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function FAQ() {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  const faqs = [
+    {
+      q: "What types of businesses benefit from AI consulting?",
+      a: "Any organization looking to leverage AI for competitive advantage — from startups building their first ML models to enterprises scaling production systems. We work across fintech, telecommunications, government, research institutions, and scale-ups. The common thread: they have data, a business problem, and the ambition to solve it with AI.",
+    },
+    {
+      q: "How long does a typical AI consulting engagement last?",
+      a: "Engagements range from a 30-minute strategy session to multi-month projects. Most consulting engagements run 4-12 weeks, with advisory retainers on a monthly basis. We scope every engagement around your timeline and budget — no unnecessary drag.",
+    },
+    {
+      q: "Do you build the systems or just advise?",
+      a: "Both. We start with strategy, but our team ships production systems. Unlike traditional consultants who hand off slide decks, we architect, build, test, and deploy. Your team learns by building alongside us.",
+    },
+    {
+      q: "What industries do you specialize in?",
+      a: "We have deep expertise in fintech, telecommunications, internet infrastructure, and data-intensive systems. Our background spans network measurement, internet infrastructure, and AI systems at scale. We bring cross-industry patterns to every engagement.",
+    },
+    {
+      q: "How is this different from hiring an in-house AI team?",
+      a: "AI consultants provide specialized expertise on demand — without the overhead of full-time hires. We bring battle-tested patterns from dozens of implementations, accelerate your time to value, and build internal capability so your team can continue independently. Think of us as a force multiplier, not a replacement.",
+    },
+    {
+      q: "What's the ROI of AI consulting?",
+      a: "ROI varies by use case, but typical outcomes include: 30-60% reduction in model development time, 20-40% improvement in operational efficiency, and measurable revenue impact from AI-powered products. We tie our work to specific business metrics and track outcomes throughout the engagement.",
+    },
+    {
+      q: "Do you work with companies outside the tech industry?",
+      a: "Absolutely. While our technical depth is in technology and infrastructure, AI applications span every industry. We've advised financial institutions, telecommunications providers, government agencies, and research organizations. The key is having data and a business problem worth solving.",
+    },
+  ];
+
+  return (
+    <section className="py-16 sm:py-24 md:py-32 border-t border-border">
+      <div className="mx-auto max-w-3xl px-6">
+        <div className="max-w-2xl">
+          <p className="text-sm font-medium text-primary uppercase tracking-widest">
+            FAQ
+          </p>
+          <h2 className="mt-3 text-3xl sm:text-4xl md:text-5xl font-bold">
+            Common questions about AI consulting.
+          </h2>
+        </div>
+
+        <div className="mt-12 space-y-4">
+          {faqs.map((faq, i) => (
+            <div
+              key={i}
+              className="rounded-2xl border border-border bg-card/60 overflow-hidden"
+            >
+              <button
+                onClick={() => setOpenIndex(openIndex === i ? null : i)}
+                className="w-full flex items-center justify-between p-6 text-left"
+              >
+                <span className="font-medium text-lg pr-4">{faq.q}</span>
+                <ChevronDown
+                  className={`h-5 w-5 text-muted-foreground shrink-0 transition-transform duration-200 ${
+                    openIndex === i ? "rotate-180" : ""
+                  }`}
+                />
+              </button>
+              {openIndex === i && (
+                <div className="px-6 pb-6 text-muted-foreground">
+                  {faq.a}
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 }
