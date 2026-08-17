@@ -982,12 +982,12 @@ function AIConsultingExplainer() {
 
 function WhyAIConsultants() {
   const reasons = [
-    { icon: Lightbulb, title: "Understand the Benefits" },
-    { icon: Target, title: "Identify Opportunities" },
-    { icon: Shield, title: "Choose the Right Solutions" },
-    { icon: Zap, title: "Execute Effectively" },
-    { icon: Cog, title: "Manage & Maintain" },
-    { icon: Shield, title: "Mitigate Risk" },
+    { icon: Lightbulb, title: "We speak business and tech" },
+    { icon: Target, title: "Strategy tied to real outcomes" },
+    { icon: Shield, title: "Battle-tested across industries" },
+    { icon: Zap, title: "We build, not just advise" },
+    { icon: Cog, title: "Ongoing support and maintenance" },
+    { icon: Shield, title: "Ethical, responsible AI" },
   ];
 
   return (
@@ -995,10 +995,10 @@ function WhyAIConsultants() {
       <div className="mx-auto max-w-7xl px-6">
         <div className="max-w-2xl">
           <p className="text-sm font-medium text-primary uppercase tracking-widest">
-            Why AI Consulting
+            Why Us
           </p>
           <h2 className="mt-3 text-3xl sm:text-4xl md:text-5xl font-bold">
-            Why AI consulting matters.
+            Why choose AI consulting with Novaris Nexus Tech.
           </h2>
         </div>
 
