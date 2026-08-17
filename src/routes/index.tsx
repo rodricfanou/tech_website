@@ -34,9 +34,11 @@ export const Route = createFileRoute("/")({
 
 const CONTACT_EMAIL = "roderick@roderickfanou.com";
 
-function scrollTo(path: string, id: string) {
-  history.pushState(null, "", path);
-  document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+function scrollTo(_path: string, id: string) {
+  const el = document.getElementById(id);
+  if (el) {
+    el.scrollIntoView({ behavior: "smooth" });
+  }
 }
 
 type Feature = { title: string; desc: string };
@@ -161,9 +163,10 @@ export function Index() {
     const path = window.location.pathname.replace(/^\/|\/$/g, "");
     const map: Record<string, string> = { services: "services", "what-is-ai-consulting": "what-is-ai-consulting", "why-ai-consulting": "why-ai-consulting", process: "process", contact: "contact" };
     if (path && map[path]) {
-      requestAnimationFrame(() => {
-        document.getElementById(map[path])?.scrollIntoView({ behavior: "smooth" });
-      });
+      const el = document.getElementById(map[path]);
+      if (el) {
+        setTimeout(() => el.scrollIntoView({ behavior: "smooth" }), 100);
+      }
     }
   }, []);
 
