@@ -19,7 +19,6 @@ import {
   Zap,
   Globe,
   BookOpen,
-  ChevronDown,
 } from "lucide-react";
 import heroImg from "@/assets/hero.jpg";
 import heroImgWebp from "@/assets/hero.webp";
@@ -182,7 +181,6 @@ export function Index() {
       <Services onSelect={openContact} />
       <AIConsultingExplainer />
       <WhyAIConsultants />
-      <FAQ />
       <Process />
       <CTA onContact={() => openContact("Let's work together")} />
       <Footer />
@@ -996,15 +994,6 @@ function WhyAIConsultants() {
     },
   ];
 
-  const capabilities = [
-    { icon: Zap, text: "Automate repetitive tasks and free up your team" },
-    { icon: BarChart3, text: "Improve decision-making with data-driven insights" },
-    { icon: Users, text: "Personalize customer experiences at scale" },
-    { icon: TrendingUp, text: "Reduce operational costs across departments" },
-    { icon: Globe, text: "Improve customer service with AI-powered support" },
-    { icon: Lightbulb, text: "Increase productivity with smart automation" },
-  ];
-
   return (
     <section className="py-16 sm:py-24 md:py-32 border-t border-border">
       <div className="mx-auto max-w-7xl px-6">
@@ -1032,106 +1021,6 @@ function WhyAIConsultants() {
               </div>
               <h3 className="text-xl font-semibold">{r.title}</h3>
               <p className="text-muted-foreground">{r.desc}</p>
-            </div>
-          ))}
-        </div>
-
-        <div
-          className="mt-16 rounded-3xl border border-border p-8 sm:p-12"
-          style={{ background: "var(--gradient-surface)" }}
-        >
-          <h3 className="text-2xl sm:text-3xl font-bold text-center mb-8">
-            What AI can do for your business
-          </h3>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {capabilities.map((c) => (
-              <div key={c.text} className="flex items-start gap-3">
-                <Check className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                <span className="text-muted-foreground">{c.text}</span>
-              </div>
-            ))}
-          </div>
-          <div className="mt-8 pt-8 border-t border-border text-center">
-            <p className="text-muted-foreground">
-              From using ChatGPT to answer team questions and generate content, to building 
-              custom AI systems that automate complex workflows — the possibilities are limitless 
-              when you have the right partner guiding the way.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function FAQ() {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
-
-  const faqs = [
-    {
-      q: "What types of businesses benefit from AI consulting?",
-      a: "Any organization looking to leverage AI for competitive advantage — from startups building their first ML models to enterprises scaling production systems. We work across fintech, telecommunications, government, research institutions, and scale-ups. The common thread: they have data, a business problem, and the ambition to solve it with AI.",
-    },
-    {
-      q: "How long does a typical AI consulting engagement last?",
-      a: "Engagements range from a 30-minute strategy session to multi-month projects. Most consulting engagements run 4-12 weeks, with advisory retainers on a monthly basis. We scope every engagement around your timeline and budget — no unnecessary drag.",
-    },
-    {
-      q: "Do you build the systems or just advise?",
-      a: "Both. We start with strategy, but our team ships production systems. Unlike traditional consultants who hand off slide decks, we architect, build, test, and deploy. Your team learns by building alongside us.",
-    },
-    {
-      q: "What industries do you specialize in?",
-      a: "We have deep expertise in fintech, telecommunications, internet infrastructure, and data-intensive systems. Our background spans network measurement, internet infrastructure, and AI systems at scale. We bring cross-industry patterns to every engagement.",
-    },
-    {
-      q: "How is this different from hiring an in-house AI team?",
-      a: "AI consultants provide specialized expertise on demand — without the overhead of full-time hires. We bring battle-tested patterns from dozens of implementations, accelerate your time to value, and build internal capability so your team can continue independently. Think of us as a force multiplier, not a replacement.",
-    },
-    {
-      q: "What's the ROI of AI consulting?",
-      a: "ROI varies by use case, but typical outcomes include: 30-60% reduction in model development time, 20-40% improvement in operational efficiency, and measurable revenue impact from AI-powered products. We tie our work to specific business metrics and track outcomes throughout the engagement.",
-    },
-    {
-      q: "Do you work with companies outside the tech industry?",
-      a: "Absolutely. While our technical depth is in technology and infrastructure, AI applications span every industry. We've advised financial institutions, telecommunications providers, government agencies, and research organizations. The key is having data and a business problem worth solving.",
-    },
-  ];
-
-  return (
-    <section className="py-16 sm:py-24 md:py-32 border-t border-border">
-      <div className="mx-auto max-w-3xl px-6">
-        <div className="max-w-2xl">
-          <p className="text-sm font-medium text-primary uppercase tracking-widest">
-            FAQ
-          </p>
-          <h2 className="mt-3 text-3xl sm:text-4xl md:text-5xl font-bold">
-            Common questions about AI consulting.
-          </h2>
-        </div>
-
-        <div className="mt-12 space-y-4">
-          {faqs.map((faq, i) => (
-            <div
-              key={i}
-              className="rounded-2xl border border-border bg-card/60 overflow-hidden"
-            >
-              <button
-                onClick={() => setOpenIndex(openIndex === i ? null : i)}
-                className="w-full flex items-center justify-between p-6 text-left"
-              >
-                <span className="font-medium text-lg pr-4">{faq.q}</span>
-                <ChevronDown
-                  className={`h-5 w-5 text-muted-foreground shrink-0 transition-transform duration-200 ${
-                    openIndex === i ? "rotate-180" : ""
-                  }`}
-                />
-              </button>
-              {openIndex === i && (
-                <div className="px-6 pb-6 text-muted-foreground">
-                  {faq.a}
-                </div>
-              )}
             </div>
           ))}
         </div>
