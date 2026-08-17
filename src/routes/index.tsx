@@ -234,7 +234,7 @@ function Nav({ onContact }: { onContact: () => void }) {
             Services
           </a>
           <a href="/what-is-ai-consulting" onClick={(e) => { e.preventDefault(); scrollTo("/what-is-ai-consulting", "what-is-ai-consulting"); }} className="hover:text-foreground transition">
-            What is AI
+            AI Consulting?
           </a>
           <a href="/why-ai-consulting" onClick={(e) => { e.preventDefault(); scrollTo("/why-ai-consulting", "why-ai-consulting"); }} className="hover:text-foreground transition">
             Why AI
@@ -297,7 +297,7 @@ function Nav({ onContact }: { onContact: () => void }) {
               onClick={(e) => { e.preventDefault(); setOpen(false); scrollTo("/what-is-ai-consulting", "what-is-ai-consulting"); }}
               className="text-muted-foreground hover:text-foreground transition py-2"
             >
-              What is AI
+              AI Consulting?
             </a>
             <a
               href="/why-ai-consulting"
