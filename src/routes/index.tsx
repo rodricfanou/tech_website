@@ -192,6 +192,17 @@ export function Index() {
   );
 }
 
+function handleSectionClick(
+  e: React.MouseEvent<HTMLAnchorElement>,
+  path: string,
+  id: string,
+) {
+  if (window.location.pathname === "/") {
+    e.preventDefault();
+    scrollTo(path, id);
+  }
+}
+
 export function Nav({ onContact }: { onContact: () => void }) {
   const [open, setOpen] = useState(false);
 
@@ -231,22 +242,22 @@ export function Nav({ onContact }: { onContact: () => void }) {
           </span>
         </a>
         <nav className="hidden md:flex items-center gap-8 text-sm text-muted-foreground uppercase tracking-[0.12em]">
-          <a href="/services" onClick={(e) => { e.preventDefault(); scrollTo("/services", "services"); }} className="hover:text-foreground transition">
+          <a href="/services" onClick={(e) => handleSectionClick(e, "/services", "services")} className="hover:text-foreground transition">
             Services
           </a>
           <Link to="/products" className="hover:text-foreground transition">
             Products
           </Link>
-          <a href="/what-is-ai-consulting" onClick={(e) => { e.preventDefault(); scrollTo("/what-is-ai-consulting", "what-is-ai-consulting"); }} className="hover:text-foreground transition">
+          <a href="/what-is-ai-consulting" onClick={(e) => handleSectionClick(e, "/what-is-ai-consulting", "what-is-ai-consulting")} className="hover:text-foreground transition">
             AI Consulting
           </a>
-          <a href="/why-ai-consulting" onClick={(e) => { e.preventDefault(); scrollTo("/why-ai-consulting", "why-ai-consulting"); }} className="hover:text-foreground transition">
+          <a href="/why-ai-consulting" onClick={(e) => handleSectionClick(e, "/why-ai-consulting", "why-ai-consulting")} className="hover:text-foreground transition">
             Why Us
           </a>
-          <a href="/process" onClick={(e) => { e.preventDefault(); scrollTo("/process", "process"); }} className="hover:text-foreground transition">
+          <a href="/process" onClick={(e) => handleSectionClick(e, "/process", "process")} className="hover:text-foreground transition">
             Process
           </a>
-          <a href="/contact" onClick={(e) => { e.preventDefault(); scrollTo("/contact", "contact"); }} className="hover:text-foreground transition">
+          <a href="/contact" onClick={(e) => handleSectionClick(e, "/contact", "contact")} className="hover:text-foreground transition">
             Contact
           </a>
         </nav>
@@ -291,7 +302,7 @@ export function Nav({ onContact }: { onContact: () => void }) {
           <nav className="mx-auto max-w-7xl px-6 py-6 flex flex-col gap-4 text-sm uppercase tracking-[0.12em]">
             <a
               href="/services"
-              onClick={(e) => { e.preventDefault(); setOpen(false); scrollTo("/services", "services"); }}
+              onClick={(e) => { setOpen(false); handleSectionClick(e, "/services", "services"); }}
               className="text-muted-foreground hover:text-foreground transition py-2"
             >
               Services
@@ -305,28 +316,28 @@ export function Nav({ onContact }: { onContact: () => void }) {
             </Link>
             <a
               href="/what-is-ai-consulting"
-              onClick={(e) => { e.preventDefault(); setOpen(false); scrollTo("/what-is-ai-consulting", "what-is-ai-consulting"); }}
+              onClick={(e) => { setOpen(false); handleSectionClick(e, "/what-is-ai-consulting", "what-is-ai-consulting"); }}
               className="text-muted-foreground hover:text-foreground transition py-2"
             >
               AI Consulting
             </a>
             <a
               href="/why-ai-consulting"
-              onClick={(e) => { e.preventDefault(); setOpen(false); scrollTo("/why-ai-consulting", "why-ai-consulting"); }}
+              onClick={(e) => { setOpen(false); handleSectionClick(e, "/why-ai-consulting", "why-ai-consulting"); }}
               className="text-muted-foreground hover:text-foreground transition py-2"
             >
               Why Us
             </a>
             <a
               href="/process"
-              onClick={(e) => { e.preventDefault(); setOpen(false); scrollTo("/process", "process"); }}
+              onClick={(e) => { setOpen(false); handleSectionClick(e, "/process", "process"); }}
               className="text-muted-foreground hover:text-foreground transition py-2"
             >
               Process
             </a>
             <a
               href="/contact"
-              onClick={(e) => { e.preventDefault(); setOpen(false); scrollTo("/contact", "contact"); }}
+              onClick={(e) => { setOpen(false); handleSectionClick(e, "/contact", "contact"); }}
               className="text-muted-foreground hover:text-foreground transition py-2"
             >
               Contact
