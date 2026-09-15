@@ -43,9 +43,9 @@ function ProductsPage() {
       {/* Products */}
       <section className="py-16 sm:py-24 border-t border-border">
         <div className="mx-auto max-w-7xl px-6">
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 gap-8">
             <div
-              className="rounded-2xl border border-border bg-card/60 p-8 flex flex-col items-center justify-center min-h-[280px] text-center"
+              className="rounded-2xl border border-border bg-card/60 p-8 flex flex-col items-center justify-center min-h-[420px] text-center"
               style={{ background: "var(--gradient-surface)" }}
             >
               <h3 className="w-full font-semibold text-lg mb-4">
@@ -61,21 +61,18 @@ function ProductsPage() {
                 Your browser does not support the video tag.
               </video>
             </div>
-            {Array.from({ length: 5 }).map((_, i) => (
+            <div
+              className="rounded-2xl border border-border bg-card/60 p-8 flex flex-col items-center justify-center min-h-[420px] text-center"
+              style={{ background: "var(--gradient-surface)" }}
+            >
               <div
-                key={i}
-                className="rounded-2xl border border-border bg-card/60 p-8 flex flex-col items-center justify-center min-h-[280px] text-center"
-                style={{ background: "var(--gradient-surface)" }}
-              >
-                <div
-                  className="inline-flex h-14 w-14 items-center justify-center rounded-2xl mb-4"
-                  style={{ background: "var(--gradient-hero)" }}
-                />
-                <div className="h-5 w-32 rounded bg-muted/40 mb-3" />
-                <div className="h-3 w-48 rounded bg-muted/30 mb-2" />
-                <div className="h-3 w-40 rounded bg-muted/30" />
-              </div>
-            ))}
+                className="inline-flex h-14 w-14 items-center justify-center rounded-2xl mb-4"
+                style={{ background: "var(--gradient-hero)" }}
+              />
+              <div className="h-5 w-32 rounded bg-muted/40 mb-3" />
+              <div className="h-3 w-48 rounded bg-muted/30 mb-2" />
+              <div className="h-3 w-40 rounded bg-muted/30" />
+            </div>
           </div>
         </div>
       </section>
