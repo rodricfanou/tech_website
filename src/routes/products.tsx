@@ -45,7 +45,7 @@ function ProductsPage() {
         <div className="mx-auto max-w-7xl px-6">
           <div className="grid md:grid-cols-2 gap-8">
             <div
-              className="rounded-2xl border border-border bg-card/60 p-8 flex-col flex items-center justify-center min-h-[420px] text-center"
+              className="rounded-2xl border border-border bg-card/60 p-8 flex flex-col items-start justify-center min-h-[420px] text-left"
               style={{ background: "var(--gradient-surface)" }}
             >
               <h3 className="w-full font-semibold text-lg mb-2">
@@ -55,7 +55,8 @@ function ProductsPage() {
                 One secure dashboard that merges Gmail, Calendar, Drive, and
                 Notion — with an AI morning briefing, unified daily view,
                 gamified smart task tank, and instant privacy mode. Built for
-                founders and busy professionals who want one source of truth.
+                employees, professionals, executives, or anyone who wants to be
+                productive and effective.
               </p>
               <video
                 className="w-full rounded-xl border border-border"
