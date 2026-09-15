@@ -45,12 +45,18 @@ function ProductsPage() {
         <div className="mx-auto max-w-7xl px-6">
           <div className="grid md:grid-cols-2 gap-8">
             <div
-              className="rounded-2xl border border-border bg-card/60 p-8 flex flex-col items-center justify-center min-h-[420px] text-center"
+              className="rounded-2xl border border-border bg-card/60 p-8 flex-col flex items-center justify-center min-h-[420px] text-center"
               style={{ background: "var(--gradient-surface)" }}
             >
-              <h3 className="w-full font-semibold text-lg mb-4">
-                Mission control dashboard for daily tasks management
+              <h3 className="w-full font-semibold text-lg mb-2">
+                Mission Control — Your Personal Executive AI Command Center
               </h3>
+              <p className="w-full text-sm text-muted-foreground mb-5 max-w-xl">
+                One secure dashboard that merges Gmail, Calendar, Drive, and
+                Notion — with an AI morning briefing, unified daily view,
+                gamified smart task tank, and instant privacy mode. Built for
+                founders and busy professionals who want one source of truth.
+              </p>
               <video
                 className="w-full rounded-xl border border-border"
                 src="/videos/Mission_control.mp4"
@@ -69,9 +75,9 @@ function ProductsPage() {
                 className="inline-flex h-14 w-14 items-center justify-center rounded-2xl mb-4"
                 style={{ background: "var(--gradient-hero)" }}
               />
-              <div className="h-5 w-32 rounded bg-muted/40 mb-3" />
-              <div className="h-3 w-48 rounded bg-muted/30 mb-2" />
-              <div className="h-3 w-40 rounded bg-muted/30" />
+              <h3 className="text-lg font-semibold text-muted-foreground">
+                Coming Soon
+              </h3>
             </div>
           </div>
         </div>
