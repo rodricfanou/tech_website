@@ -40,36 +40,27 @@ function ProductsPage() {
         </div>
       </section>
 
-      {/* Products placeholder */}
+      {/* Products */}
       <section className="py-16 sm:py-24 border-t border-border">
         <div className="mx-auto max-w-7xl px-6">
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <a
-              href="https://www.loom.com/share/0c3a416f24b944bd9875cc60f43177f7"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-2xl border border-border bg-card/60 p-8 flex flex-col items-center justify-center min-h-[280px] text-center transition hover:border-primary hover:bg-card"
+            <div
+              className="rounded-2xl border border-border bg-card/60 p-8 flex flex-col items-center justify-center min-h-[280px] text-center"
               style={{ background: "var(--gradient-surface)" }}
             >
-              <div
-                className="inline-flex h-14 w-14 items-center justify-center rounded-2xl mb-4"
-                style={{ background: "var(--gradient-hero)" }}
-              >
-                <svg
-                  className="h-7 w-7 text-primary-foreground"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M8 5v14l11-7z" />
-                </svg>
-              </div>
-              <h3 className="font-semibold text-lg">
+              <h3 className="w-full font-semibold text-lg mb-4">
                 Mission control dashboard for daily tasks management
               </h3>
-              <p className="mt-2 text-sm text-muted-foreground">
-                Watch the product demo.
-              </p>
-            </a>
+              <video
+                className="w-full rounded-xl border border-border"
+                src="/videos/Mission_control.mp4"
+                controls
+                preload="metadata"
+                playsInline
+              >
+                Your browser does not support the video tag.
+              </video>
+            </div>
             {Array.from({ length: 5 }).map((_, i) => (
               <div
                 key={i}
