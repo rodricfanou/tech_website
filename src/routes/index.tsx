@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import {
   Brain,
@@ -192,7 +192,7 @@ export function Index() {
   );
 }
 
-function Nav({ onContact }: { onContact: () => void }) {
+export function Nav({ onContact }: { onContact: () => void }) {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
@@ -234,6 +234,9 @@ function Nav({ onContact }: { onContact: () => void }) {
           <a href="/services" onClick={(e) => { e.preventDefault(); scrollTo("/services", "services"); }} className="hover:text-foreground transition">
             Services
           </a>
+          <Link to="/products" className="hover:text-foreground transition">
+            Products
+          </Link>
           <a href="/what-is-ai-consulting" onClick={(e) => { e.preventDefault(); scrollTo("/what-is-ai-consulting", "what-is-ai-consulting"); }} className="hover:text-foreground transition">
             AI Consulting
           </a>
@@ -293,6 +296,13 @@ function Nav({ onContact }: { onContact: () => void }) {
             >
               Services
             </a>
+            <Link
+              to="/products"
+              onClick={() => setOpen(false)}
+              className="text-muted-foreground hover:text-foreground transition py-2"
+            >
+              Products
+            </Link>
             <a
               href="/what-is-ai-consulting"
               onClick={(e) => { e.preventDefault(); setOpen(false); scrollTo("/what-is-ai-consulting", "what-is-ai-consulting"); }}
@@ -677,7 +687,7 @@ function CTA({ onContact }: { onContact: () => void }) {
   );
 }
 
-function Footer() {
+export function Footer() {
   return (
     <footer className="border-t border-border py-8 sm:py-10">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 flex flex-col sm:flex-row flex-wrap items-center justify-between gap-3 sm:gap-4 text-xs sm:text-sm text-muted-foreground text-center sm:text-left">
@@ -690,7 +700,7 @@ function Footer() {
   );
 }
 
-function ContactDialog({
+export function ContactDialog({
   feature,
   onClose,
 }: {
