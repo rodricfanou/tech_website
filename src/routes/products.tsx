@@ -51,6 +51,14 @@ function ProductsPage() {
               <h3 className="w-full font-semibold text-lg mb-2">
                 Mission Control — Your Personal Executive AI Command Center
               </h3>
+              <p className="w-full font-medium text-base mb-2">
+                <span
+                  className="bg-clip-text text-transparent"
+                  style={{ backgroundImage: "var(--gradient-hero)" }}
+                >
+                  One dashboard to rule them all.
+                </span>
+              </p>
               <p className="w-full text-sm text-muted-foreground mb-5 max-w-xl">
                 One secure dashboard that merges Gmail, Calendar, Drive, and
                 Notion — with an AI morning briefing, unified daily view,
