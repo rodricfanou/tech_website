@@ -60,11 +60,14 @@ function ProductsPage() {
                 </span>
               </p>
               <p className="w-full text-sm text-muted-foreground mb-5 max-w-xl">
-                One secure dashboard that merges Gmail, Calendar, Drive, and
-                Notion — with an AI morning briefing, unified daily view,
-                gamified smart task tank, and instant privacy mode. Built for
-                employees, professionals, executives, or anyone who wants to be
-                productive and effective.
+                Mission Control is an executive command center that connects
+                your email, calendar, documents, and tasks in one intelligent
+                workspace. It analyzes real business data to surface what needs
+                your attention, prepare daily briefings, prioritize actions,
+                and eliminate the need to jump between apps. It demonstrates
+                how we build practical AI systems around real business
+                workflows—turning scattered information into clarity,
+                automation, and action. One platform to rule them all.
               </p>
               <video
                 className="w-full rounded-xl border border-border"
