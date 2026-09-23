@@ -69,7 +69,7 @@ function ProductsPage() {
                 workflows—turning scattered information into clarity,
                 automation, and action. One platform to rule them all.
               </p>
-              <div className="relative aspect-video overflow-hidden rounded-xl border border-border">
+              <div className="relative w-full aspect-video overflow-hidden rounded-xl border border-border">
                 <video
                   className="absolute inset-0 h-full w-full object-cover"
                   style={{
