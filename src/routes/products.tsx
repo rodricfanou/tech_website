@@ -73,7 +73,7 @@ function ProductsPage() {
                 <video
                   className="absolute inset-0 h-full w-full object-cover"
                   style={{
-                    transform: "scale(1.1632)",
+                    transform: "scale(1.0753)",
                     transformOrigin: "center bottom",
                   }}
                   src="/videos/Novaris_Mission_Control.mp4"
