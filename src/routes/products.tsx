@@ -69,21 +69,20 @@ function ProductsPage() {
                 workflows—turning scattered information into clarity,
                 automation, and action. One platform to rule them all.
               </p>
-              <div className="relative w-full aspect-video overflow-hidden rounded-xl border border-border">
-                <video
-                  className="absolute inset-0 h-full w-full object-cover"
-                  style={{
-                    transform: "scale(1.0753)",
-                    transformOrigin: "center bottom",
-                  }}
-                  src="/videos/Novaris_Mission_Control.mp4"
-                  controls
-                  preload="metadata"
-                  playsInline
+              <div
+                  className="relative w-full overflow-hidden rounded-xl border border-border"
+                  style={{ aspectRatio: "16 / 8.37" }}
                 >
-                  Your browser does not support the video tag.
-                </video>
-              </div>
+                  <video
+                    className="absolute inset-0 h-full w-full object-cover object-bottom"
+                    src="/videos/Novaris_Mission_Control.mp4"
+                    controls
+                    preload="metadata"
+                    playsInline
+                  >
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
             </div>
             <div
               className="rounded-2xl border border-border bg-card/60 p-8 flex flex-col items-center justify-center min-h-[420px] text-center"
