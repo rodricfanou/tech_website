@@ -363,16 +363,6 @@ export function Nav({ onContact }: { onContact: () => void }) {
 }
 
 function Hero({ onContact }: { onContact: () => void }) {
-  const [logoOnly, setLogoOnly] = useState(false);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setLogoOnly(true);
-      setTimeout(() => setLogoOnly(false), 2000);
-    }, 60000);
-    return () => clearInterval(interval);
-  }, []);
-
   return (
     <section id="top" className="relative overflow-hidden">
       <picture>
@@ -393,11 +383,7 @@ function Hero({ onContact }: { onContact: () => void }) {
             "linear-gradient(180deg, oklch(0.14 0.03 265 / 0.6) 0%, oklch(0.14 0.03 265) 90%)",
         }}
       />
-      <div
-        className={`relative mx-auto max-w-5xl px-6 pt-14 pb-16 sm:pt-20 sm:pb-28 md:pt-28 md:pb-36 flex flex-col items-center text-center transition-opacity duration-500 ${
-          logoOnly ? "opacity-0" : "opacity-100"
-        }`}
-      >
+      <div className="relative mx-auto max-w-5xl px-6 pt-14 pb-16 sm:pt-20 sm:pb-28 md:pt-28 md:pb-36 flex flex-col items-center text-center">
         <picture>
           <source srcSet={LOGO_FULL_WEBP} type="image/webp" />
           <img
@@ -406,10 +392,6 @@ function Hero({ onContact }: { onContact: () => void }) {
             width={800}
             height={533}
             className="mb-4 h-auto w-full max-w-[12rem] sm:max-w-[18rem] md:max-w-[28rem] lg:max-w-[42rem] xl:max-w-[54rem] object-contain drop-shadow-[0_0_30px_oklch(0.72_0.19_260/0.25)]"
-            style={{
-              animation:
-                "float 6s ease-in-out infinite, logo-blink 5s ease-in-out infinite",
-            }}
           />
         </picture>
         <div className="inline-flex items-center gap-2 rounded-full border border-border bg-card/60 px-3 py-1 text-xs text-muted-foreground backdrop-blur">
@@ -449,24 +431,6 @@ function Hero({ onContact }: { onContact: () => void }) {
           </a>
         </div>
       </div>
-      {logoOnly && (
-        <div className="absolute inset-0 flex items-center justify-center z-10">
-          <picture>
-            <source srcSet={LOGO_FULL_WEBP} type="image/webp" />
-            <img
-              src={LOGO_FULL}
-              alt="Novaris Nexus Tech"
-              width={800}
-              height={533}
-              className="h-auto w-full max-w-[12rem] sm:max-w-[18rem] md:max-w-[28rem] lg:max-w-[42rem] xl:max-w-[54rem] object-contain drop-shadow-[0_0_30px_oklch(0.72_0.19_260/0.25)]"
-              style={{
-                animation:
-                  "float 6s ease-in-out infinite, logo-blink 5s ease-in-out infinite",
-              }}
-            />
-          </picture>
-        </div>
-      )}
     </section>
   );
 }

@@ -174,13 +174,3 @@
   --font-display: var(--font-display);
   --font-body: var(--font-body);
 }
-
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
-}
-
-@keyframes logo-blink {
-  0%, 42%, 58%, 100% { opacity: 1; }
-  50% { opacity: 0; }
-}
