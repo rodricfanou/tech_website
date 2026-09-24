@@ -37,6 +37,11 @@ function ProductsPage() {
               real business workflows.
             </span>
           </h1>
+          <p className="mt-4 mx-auto max-w-2xl text-sm sm:text-base text-muted-foreground">
+            Explore examples of how we use AI to automate repetitive work,
+            connect information, and turn everyday business processes into
+            intelligent workflows.
+          </p>
         </div>
       </section>
 
