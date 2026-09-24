@@ -29,12 +29,12 @@ function ProductsPage() {
             Products
           </p>
           <h1 className="mt-4 text-4xl sm:text-5xl md:text-6xl font-bold font-display max-w-3xl mx-auto">
-            Awesome products we{" "}
+            AI systems built around{" "}
             <span
               className="bg-clip-text text-transparent"
               style={{ backgroundImage: "var(--gradient-hero)" }}
             >
-              commercialize.
+              real business workflows.
             </span>
           </h1>
         </div>
