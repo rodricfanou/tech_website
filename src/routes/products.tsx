@@ -137,14 +137,17 @@ function ProductsPage() {
             What could we automate in your business?
           </p>
           <button
-            onClick={() => openContact("Book a complimentary AI Workflow Session")}
+            onClick={() =>
+              openContact("Book a complimentary AI Workflow Session")
+            }
             className="mt-8 inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm sm:text-base font-semibold text-primary-foreground transition hover:opacity-90"
             style={{
               background: "var(--gradient-hero)",
               boxShadow: "var(--shadow-glow)",
             }}
           >
-            Book a complimentary AI Workflow Session <ArrowRight className="h-4 w-4" />
+            Book a complimentary AI Workflow Session{" "}
+            <ArrowRight className="h-4 w-4" />
           </button>
         </div>
       </section>
