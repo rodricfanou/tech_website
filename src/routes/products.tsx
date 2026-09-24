@@ -93,10 +93,7 @@ function ProductsPage() {
                 Novaris AI Maintenance Coordinator
               </h3>
               <p className="w-full text-sm text-muted-foreground mb-5 max-w-xl">
-                An AI teammate that watches your maintenance pipeline, flags
-                what needs attention, and coordinates the work so nothing slips
-                through the cracks — turning scattered upkeep into a clear,
-                prioritized plan.
+                An AI teammate that triages every resident request the moment it's submitted — classifying the issue, flagging safety risks, recommending the right vendor, and drafting the paperwork — so your team steps in only for the decisions that actually need a human.
               </p>
               <div
                   className="relative w-full overflow-hidden rounded-xl border border-border"
