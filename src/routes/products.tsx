@@ -77,6 +77,7 @@ function ProductsPage() {
                     className="absolute inset-0 h-full w-full object-cover object-bottom"
                     src="/videos/Novaris_Mission_Control.mp4"
                     controls
+                    muted
                     preload="metadata"
                     playsInline
                   >
@@ -105,6 +106,7 @@ function ProductsPage() {
                     className="absolute inset-0 h-full w-full object-cover object-bottom"
                     src="/videos/Novaris-Maintenance-app.mp4"
                     controls
+                    muted
                     preload="metadata"
                     playsInline
                   >
