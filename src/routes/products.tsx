@@ -71,7 +71,7 @@ function ProductsPage() {
               </p>
               <div
                   className="relative w-full overflow-hidden rounded-xl border border-border"
-                  style={{ aspectRatio: "16 / 8.37" }}
+                  style={{ aspectRatio: "16 / 8.28" }}
                 >
                   <video
                     className="absolute inset-0 h-full w-full object-cover object-bottom"
