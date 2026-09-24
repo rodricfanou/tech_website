@@ -1094,7 +1094,7 @@ function WhyAIConsultants() {
           </div>
           <div className="w-full shrink-0 lg:w-96">
             <img
-              src="/logos/certified_agent_builder.png"
+              src="/logos/certifications/certified_agent_builder.png"
               alt="Certified Agent Builder"
               width={1536}
               height={1536}
