@@ -85,16 +85,32 @@ function ProductsPage() {
                 </div>
             </div>
             <div
-              className="rounded-2xl border border-border bg-card/60 p-8 flex flex-col items-center justify-center min-h-[420px] text-center"
+              className="rounded-2xl border border-border bg-card/60 p-8 flex flex-col items-start justify-center min-h-[420px] text-left"
               style={{ background: "var(--gradient-surface)" }}
             >
-              <div
-                className="inline-flex h-14 w-14 items-center justify-center rounded-2xl mb-4"
-                style={{ background: "var(--gradient-hero)" }}
-              />
-              <h3 className="text-lg font-semibold text-muted-foreground">
-                Coming Soon
+              <h3 className="w-full font-semibold text-lg mb-2">
+                Novaris AI Maintenance Coordinator
               </h3>
+              <p className="w-full text-sm text-muted-foreground mb-5 max-w-xl">
+                An AI teammate that watches your maintenance pipeline, flags
+                what needs attention, and coordinates the work so nothing slips
+                through the cracks — turning scattered upkeep into a clear,
+                prioritized plan.
+              </p>
+              <div
+                  className="relative w-full overflow-hidden rounded-xl border border-border"
+                  style={{ aspectRatio: "16 / 8.28" }}
+                >
+                  <video
+                    className="absolute inset-0 h-full w-full object-cover object-bottom"
+                    src="/videos/Novaris-Maintenance-app.mp4"
+                    controls
+                    preload="metadata"
+                    playsInline
+                  >
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
             </div>
           </div>
         </div>
