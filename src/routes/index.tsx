@@ -159,7 +159,13 @@ export function Index() {
 
   useEffect(() => {
     const path = window.location.pathname.replace(/^\/|\/$/g, "");
-    const map: Record<string, string> = { services: "services", "what-is-ai-consulting": "what-is-ai-consulting", "why-ai-consulting": "why-ai-consulting", process: "process", contact: "contact" };
+    const map: Record<string, string> = {
+      services: "services",
+      "what-is-ai-consulting": "what-is-ai-consulting",
+      "why-ai-consulting": "why-ai-consulting",
+      process: "process",
+      contact: "contact",
+    };
     if (path && map[path]) {
       const el = document.getElementById(map[path]);
       if (el) {
@@ -242,22 +248,50 @@ export function Nav({ onContact }: { onContact: () => void }) {
           </span>
         </a>
         <nav className="hidden md:flex items-center gap-8 text-sm text-muted-foreground uppercase tracking-[0.12em]">
-          <a href="/services" onClick={(e) => handleSectionClick(e, "/services", "services")} className="hover:text-foreground transition">
+          <a
+            href="/services"
+            onClick={(e) => handleSectionClick(e, "/services", "services")}
+            className="hover:text-foreground transition"
+          >
             Services
           </a>
           <Link to="/products" className="hover:text-foreground transition">
             Products
           </Link>
-          <a href="/what-is-ai-consulting" onClick={(e) => handleSectionClick(e, "/what-is-ai-consulting", "what-is-ai-consulting")} className="hover:text-foreground transition">
+          <a
+            href="/what-is-ai-consulting"
+            onClick={(e) =>
+              handleSectionClick(
+                e,
+                "/what-is-ai-consulting",
+                "what-is-ai-consulting",
+              )
+            }
+            className="hover:text-foreground transition"
+          >
             AI Consulting
           </a>
-          <a href="/why-ai-consulting" onClick={(e) => handleSectionClick(e, "/why-ai-consulting", "why-ai-consulting")} className="hover:text-foreground transition">
+          <a
+            href="/why-ai-consulting"
+            onClick={(e) =>
+              handleSectionClick(e, "/why-ai-consulting", "why-ai-consulting")
+            }
+            className="hover:text-foreground transition"
+          >
             Why Us
           </a>
-          <a href="/process" onClick={(e) => handleSectionClick(e, "/process", "process")} className="hover:text-foreground transition">
+          <a
+            href="/process"
+            onClick={(e) => handleSectionClick(e, "/process", "process")}
+            className="hover:text-foreground transition"
+          >
             Process
           </a>
-          <a href="/contact" onClick={(e) => handleSectionClick(e, "/contact", "contact")} className="hover:text-foreground transition">
+          <a
+            href="/contact"
+            onClick={(e) => handleSectionClick(e, "/contact", "contact")}
+            className="hover:text-foreground transition"
+          >
             Contact
           </a>
         </nav>
@@ -302,7 +336,10 @@ export function Nav({ onContact }: { onContact: () => void }) {
           <nav className="mx-auto max-w-7xl px-6 py-6 flex flex-col gap-4 text-sm uppercase tracking-[0.12em]">
             <a
               href="/services"
-              onClick={(e) => { setOpen(false); handleSectionClick(e, "/services", "services"); }}
+              onClick={(e) => {
+                setOpen(false);
+                handleSectionClick(e, "/services", "services");
+              }}
               className="text-muted-foreground hover:text-foreground transition py-2"
             >
               Services
@@ -316,28 +353,48 @@ export function Nav({ onContact }: { onContact: () => void }) {
             </Link>
             <a
               href="/what-is-ai-consulting"
-              onClick={(e) => { setOpen(false); handleSectionClick(e, "/what-is-ai-consulting", "what-is-ai-consulting"); }}
+              onClick={(e) => {
+                setOpen(false);
+                handleSectionClick(
+                  e,
+                  "/what-is-ai-consulting",
+                  "what-is-ai-consulting",
+                );
+              }}
               className="text-muted-foreground hover:text-foreground transition py-2"
             >
               AI Consulting
             </a>
             <a
               href="/why-ai-consulting"
-              onClick={(e) => { setOpen(false); handleSectionClick(e, "/why-ai-consulting", "why-ai-consulting"); }}
+              onClick={(e) => {
+                setOpen(false);
+                handleSectionClick(
+                  e,
+                  "/why-ai-consulting",
+                  "why-ai-consulting",
+                );
+              }}
               className="text-muted-foreground hover:text-foreground transition py-2"
             >
               Why Us
             </a>
             <a
               href="/process"
-              onClick={(e) => { setOpen(false); handleSectionClick(e, "/process", "process"); }}
+              onClick={(e) => {
+                setOpen(false);
+                handleSectionClick(e, "/process", "process");
+              }}
               className="text-muted-foreground hover:text-foreground transition py-2"
             >
               Process
             </a>
             <a
               href="/contact"
-              onClick={(e) => { setOpen(false); handleSectionClick(e, "/contact", "contact"); }}
+              onClick={(e) => {
+                setOpen(false);
+                handleSectionClick(e, "/contact", "contact");
+              }}
               className="text-muted-foreground hover:text-foreground transition py-2"
             >
               Contact
@@ -409,7 +466,8 @@ function Hero({ onContact }: { onContact: () => void }) {
           that matter and operate efficiently.
         </h1>
         <p className="mt-6 max-w-2xl text-base sm:text-lg md:text-xl text-muted-foreground">
-          Strategy, delivery, and enablement — from AI curiosity to measurable outcomes.
+          Strategy, delivery, and enablement — from AI curiosity to measurable
+          outcomes.
         </p>
         <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row flex-wrap items-center justify-center gap-3 sm:gap-4 w-full px-2">
           <button
@@ -420,11 +478,15 @@ function Hero({ onContact }: { onContact: () => void }) {
               boxShadow: "var(--shadow-elegant)",
             }}
           >
-            Book a complimentary 30-minute AI Strategy Session <ArrowRight className="h-4 w-4" />
+            Book a complimentary 30-minute AI Strategy Session{" "}
+            <ArrowRight className="h-4 w-4" />
           </button>
           <a
             href="/services"
-            onClick={(e) => { e.preventDefault(); scrollTo("/services", "services"); }}
+            onClick={(e) => {
+              e.preventDefault();
+              scrollTo("/services", "services");
+            }}
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full border border-border px-5 py-3 sm:px-6 text-sm sm:text-base font-medium text-foreground hover:bg-card transition"
           >
             Explore services
@@ -519,7 +581,10 @@ function CategoryBlock({
           {cat.id === "ai" && (
             <a
               href="#what-is-ai-consulting"
-              onClick={(e) => { e.preventDefault(); scrollTo("#what-is-ai-consulting", "what-is-ai-consulting"); }}
+              onClick={(e) => {
+                e.preventDefault();
+                scrollTo("#what-is-ai-consulting", "what-is-ai-consulting");
+              }}
               className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:underline"
             >
               Learn more <ArrowRight className="h-3.5 w-3.5" />
@@ -802,7 +867,9 @@ export function ContactDialog({
                 onChange={(e) => setTopic(e.target.value)}
                 className="mt-1 w-full rounded-xl border border-border bg-background/60 px-4 py-3 text-sm text-foreground outline-none focus:border-primary transition"
               >
-                <option value="" disabled>Select a topic</option>
+                <option value="" disabled>
+                  Select a topic
+                </option>
                 <option value="General inquiry">General inquiry</option>
                 <option value="AI Consulting">AI Consulting</option>
                 <option value="Talks">Talks</option>
@@ -825,9 +892,7 @@ export function ContactDialog({
                 placeholder="A quick description of the challenge, timeline, and any constraints…"
               />
             </div>
-            {error && (
-              <p className="text-sm text-red-500">{error}</p>
-            )}
+            {error && <p className="text-sm text-red-500">{error}</p>}
             <button
               type="submit"
               disabled={submitting}
@@ -837,7 +902,8 @@ export function ContactDialog({
                 boxShadow: "var(--shadow-glow)",
               }}
             >
-              {submitting ? "Sending…" : "Send inquiry"} <ArrowRight className="h-4 w-4" />
+              {submitting ? "Sending…" : "Send inquiry"}{" "}
+              <ArrowRight className="h-4 w-4" />
             </button>
           </form>
         )}
@@ -878,7 +944,10 @@ function Field({
 
 function AIConsultingExplainer() {
   return (
-    <section id="what-is-ai-consulting" className="py-16 sm:py-24 md:py-32 border-t border-border">
+    <section
+      id="what-is-ai-consulting"
+      className="py-16 sm:py-24 md:py-32 border-t border-border"
+    >
       <div className="mx-auto max-w-7xl px-6">
         <div className="max-w-2xl">
           <p className="text-sm font-medium text-primary uppercase tracking-widest">
@@ -892,22 +961,25 @@ function AIConsultingExplainer() {
         <div className="mt-16 grid lg:grid-cols-2 gap-12 items-start">
           <div className="space-y-6">
             <p className="text-lg text-muted-foreground">
-              Ask most people outside the tech bubble about AI, and you'll get blank stares. 
-              The reality is that many businesses are unaware of how AI can transform their 
-              operations — not because the technology isn't ready, but because the knowledge gap is real.
+              Ask most people outside the tech bubble about AI, and you'll get
+              blank stares. The reality is that many businesses are unaware of
+              how AI can transform their operations — not because the technology
+              isn't ready, but because the knowledge gap is real.
             </p>
             <p className="text-lg text-muted-foreground">
-              The gap between what AI can do and what businesses know it can do is enormous.
+              The gap between what AI can do and what businesses know it can do
+              is enormous.
             </p>
             <p className="text-lg text-muted-foreground">
-              That's where an AI consultant comes in. Think of us as translators who speak both 
-              business and technology. We help organizations understand what AI is capable of, 
-              identify where it can save time and streamline processes, and then build the systems 
-              that make it happen.
+              That's where an AI consultant comes in. Think of us as translators
+              who speak both business and technology. We help organizations
+              understand what AI is capable of, identify where it can save time
+              and streamline processes, and then build the systems that make it
+              happen.
             </p>
             <p className="text-lg text-muted-foreground">
-              We help you grow exponentially and increase profits by making AI work for your 
-              specific challenges, not the other way around.
+              We help you grow exponentially and increase profits by making AI
+              work for your specific challenges, not the other way around.
             </p>
           </div>
 
@@ -921,8 +993,8 @@ function AIConsultingExplainer() {
               </div>
               <h3 className="mt-4 font-semibold text-lg">Understand AI</h3>
               <p className="mt-2 text-sm text-muted-foreground">
-                We close the knowledge gap — helping your team understand what AI 
-                is, what it isn't, and where it fits your business reality.
+                We close the knowledge gap — helping your team understand what
+                AI is, what it isn't, and where it fits your business reality.
               </p>
             </div>
 
@@ -933,10 +1005,12 @@ function AIConsultingExplainer() {
               >
                 <Zap className="h-6 w-6 text-primary-foreground" />
               </div>
-              <h3 className="mt-4 font-semibold text-lg">Save Time & Streamline</h3>
+              <h3 className="mt-4 font-semibold text-lg">
+                Save Time & Streamline
+              </h3>
               <p className="mt-2 text-sm text-muted-foreground">
-                AI eliminates repetitive tasks, streamlines workflows, and lets your team 
-                focus on what actually moves the business forward.
+                AI eliminates repetitive tasks, streamlines workflows, and lets
+                your team focus on what actually moves the business forward.
               </p>
             </div>
 
@@ -949,8 +1023,8 @@ function AIConsultingExplainer() {
               </div>
               <h3 className="mt-4 font-semibold text-lg">Grow Exponentially</h3>
               <p className="mt-2 text-sm text-muted-foreground">
-                We help you grow exponentially and increase profits by making 
-                AI work for your specific challenges.
+                We help you grow exponentially and increase profits by making AI
+                work for your specific challenges.
               </p>
             </div>
 
@@ -963,8 +1037,8 @@ function AIConsultingExplainer() {
               </div>
               <h3 className="mt-4 font-semibold text-lg">Build the Systems</h3>
               <p className="mt-2 text-sm text-muted-foreground">
-                We don't just advise — we build the AI systems that make 
-                the transformation happen in your organization.
+                We don't just advise — we build the AI systems that make the
+                transformation happen in your organization.
               </p>
             </div>
           </div>
@@ -985,7 +1059,10 @@ function WhyAIConsultants() {
   ];
 
   return (
-    <section id="why-ai-consulting" className="py-16 sm:py-24 md:py-32 border-t border-border">
+    <section
+      id="why-ai-consulting"
+      className="py-16 sm:py-24 md:py-32 border-t border-border"
+    >
       <div className="mx-auto max-w-7xl px-6">
         <div className="max-w-2xl">
           <p className="text-sm font-medium text-primary uppercase tracking-widest">
@@ -996,22 +1073,33 @@ function WhyAIConsultants() {
           </h2>
         </div>
 
-        <div
-          className="mt-16 rounded-3xl border border-border p-8 sm:p-12"
-          style={{ background: "var(--gradient-surface)" }}
-        >
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {reasons.map((r) => (
-              <div key={r.title} className="flex items-center gap-4">
-                <div
-                  className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-xl"
-                  style={{ background: "var(--gradient-hero)" }}
-                >
-                  <r.icon className="h-6 w-6 text-primary-foreground" />
+        <div className="mt-16 grid lg:grid-cols-[minmax(0,1fr)_auto] items-center gap-8">
+          <div
+            className="rounded-3xl border border-border p-8 sm:p-12"
+            style={{ background: "var(--gradient-surface)" }}
+          >
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {reasons.map((r) => (
+                <div key={r.title} className="flex items-center gap-4">
+                  <div
+                    className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-xl"
+                    style={{ background: "var(--gradient-hero)" }}
+                  >
+                    <r.icon className="h-6 w-6 text-primary-foreground" />
+                  </div>
+                  <h3 className="text-lg font-semibold">{r.title}</h3>
                 </div>
-                <h3 className="text-lg font-semibold">{r.title}</h3>
-              </div>
-            ))}
+              ))}
+            </div>
+          </div>
+          <div className="w-full shrink-0 lg:w-96">
+            <img
+              src="/logos/certified_agent_builder.png"
+              alt="Certified Agent Builder"
+              width={1536}
+              height={1536}
+              className="w-full rounded-3xl border border-border object-cover"
+            />
           </div>
         </div>
       </div>
