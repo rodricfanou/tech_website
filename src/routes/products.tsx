@@ -124,6 +124,31 @@ function ProductsPage() {
         </div>
       </section>
 
+      <section className="py-16 sm:py-24 text-center">
+        <div className="mx-auto max-w-3xl px-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold">
+            These are examples of what we can build around your business.
+          </h2>
+          <p className="mt-6 text-base sm:text-lg text-muted-foreground">
+            Every organization works differently. We design AI systems around
+            your workflows, data, tools, and teams—not the other way around.
+          </p>
+          <p className="mt-8 text-xl sm:text-2xl font-semibold">
+            What could we automate in your business?
+          </p>
+          <button
+            onClick={() => openContact("Book a complimentary AI Workflow Session")}
+            className="mt-8 inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm sm:text-base font-semibold text-primary-foreground transition hover:opacity-90"
+            style={{
+              background: "var(--gradient-hero)",
+              boxShadow: "var(--shadow-glow)",
+            }}
+          >
+            Book a complimentary AI Workflow Session <ArrowRight className="h-4 w-4" />
+          </button>
+        </div>
+      </section>
+
       <section className="py-16 sm:py-24">
         <div className="mx-auto max-w-5xl px-6">
           <div
