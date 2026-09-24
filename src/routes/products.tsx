@@ -63,27 +63,27 @@ function ProductsPage() {
                 Mission Control is an executive command center that connects
                 your email, calendar, documents, and tasks in one intelligent
                 workspace. It analyzes real business data to surface what needs
-                your attention, prepare daily briefings, prioritize actions,
-                and eliminate the need to jump between apps. It demonstrates
-                how we build practical AI systems around real business
+                your attention, prepare daily briefings, prioritize actions, and
+                eliminate the need to jump between apps. It demonstrates how we
+                build practical AI systems around real business
                 workflows—turning scattered information into clarity,
                 automation, and action. One platform to rule them all.
               </p>
               <div
-                  className="relative mt-auto w-full overflow-hidden rounded-xl border border-border"
-                  style={{ aspectRatio: "16 / 8.28" }}
+                className="relative mt-auto w-full overflow-hidden rounded-xl border border-border"
+                style={{ aspectRatio: "16 / 8.28" }}
+              >
+                <video
+                  className="absolute inset-0 h-full w-full object-cover object-bottom"
+                  src="/videos/Novaris_Mission_Control.mp4"
+                  controls
+                  muted
+                  preload="metadata"
+                  playsInline
                 >
-                  <video
-                    className="absolute inset-0 h-full w-full object-cover object-bottom"
-                    src="/videos/Novaris_Mission_Control.mp4"
-                    controls
-                    muted
-                    preload="metadata"
-                    playsInline
-                  >
-                    Your browser does not support the video tag.
-                  </video>
-                </div>
+                  Your browser does not support the video tag.
+                </video>
+              </div>
             </div>
             <div
               className="rounded-2xl border border-border bg-card/60 p-8 flex flex-col items-start justify-center min-h-[420px] text-left"
@@ -93,36 +93,27 @@ function ProductsPage() {
                 Novaris AI Maintenance Coordinator
               </h3>
               <p className="w-full text-sm text-muted-foreground mb-5 max-w-xl">
-                An AI teammate that triages every resident request the moment it's submitted — classifying the issue, flagging safety risks, recommending the right vendor, and drafting the paperwork — so your team steps in only for the decisions that actually need a human.
+                An AI teammate that triages every resident request the moment
+                it's submitted — classifying the issue, flagging safety risks,
+                recommending the right vendor, and drafting the paperwork — so
+                your team steps in only for the decisions that actually need a
+                human.
               </p>
               <div
-                  className="relative mt-auto w-full overflow-hidden rounded-xl border border-border"
-                  style={{ aspectRatio: "16 / 8.28" }}
+                className="relative mt-auto w-full overflow-hidden rounded-xl border border-border"
+                style={{ aspectRatio: "16 / 8.28" }}
+              >
+                <video
+                  className="absolute inset-0 h-full w-full object-cover object-bottom"
+                  src="/videos/Novaris-Maintenance-app.mp4"
+                  controls
+                  muted
+                  preload="metadata"
+                  playsInline
                 >
-                  <video
-                    className="absolute inset-0 h-full w-full object-cover object-bottom"
-                    src="/videos/Novaris-Maintenance-app.mp4"
-                    controls
-                    muted
-                    preload="metadata"
-                    playsInline
-                  >
-                    Your browser does not support the video tag.
-                  </video>
-                </div>
-            </div>
-            <div
-              className="rounded-2xl border border-border bg-card/60 p-8 flex flex-col items-start justify-center min-h-[420px] text-left"
-              style={{ background: "var(--gradient-surface)" }}
-            >
-              <h3 className="w-full font-semibold text-lg mb-2">
-                Novaris AI Service Desk
-              </h3>
-              <p className="w-full text-sm text-muted-foreground max-w-xl">
-                An AI service desk that answers, routes, and resolves requests
-                in real time — handling the routine questions and follow-ups so
-                your team can focus on the work that actually needs people.
-              </p>
+                  Your browser does not support the video tag.
+                </video>
+              </div>
             </div>
           </div>
         </div>
