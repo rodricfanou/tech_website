@@ -43,7 +43,7 @@ function ProductsPage() {
       {/* Products */}
       <section className="py-16 sm:py-24 border-t border-border">
         <div className="mx-auto max-w-7xl px-6">
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div
               className="rounded-2xl border border-border bg-card/60 p-8 flex flex-col items-start justify-center min-h-[420px] text-left"
               style={{ background: "var(--gradient-surface)" }}
@@ -70,7 +70,7 @@ function ProductsPage() {
                 automation, and action. One platform to rule them all.
               </p>
               <div
-                  className="relative w-full overflow-hidden rounded-xl border border-border"
+                  className="relative mt-auto w-full overflow-hidden rounded-xl border border-border"
                   style={{ aspectRatio: "16 / 8.28" }}
                 >
                   <video
@@ -96,7 +96,7 @@ function ProductsPage() {
                 An AI teammate that triages every resident request the moment it's submitted — classifying the issue, flagging safety risks, recommending the right vendor, and drafting the paperwork — so your team steps in only for the decisions that actually need a human.
               </p>
               <div
-                  className="relative w-full overflow-hidden rounded-xl border border-border"
+                  className="relative mt-auto w-full overflow-hidden rounded-xl border border-border"
                   style={{ aspectRatio: "16 / 8.28" }}
                 >
                   <video
@@ -110,6 +110,19 @@ function ProductsPage() {
                     Your browser does not support the video tag.
                   </video>
                 </div>
+            </div>
+            <div
+              className="rounded-2xl border border-border bg-card/60 p-8 flex flex-col items-start justify-center min-h-[420px] text-left"
+              style={{ background: "var(--gradient-surface)" }}
+            >
+              <h3 className="w-full font-semibold text-lg mb-2">
+                Novaris AI Service Desk
+              </h3>
+              <p className="w-full text-sm text-muted-foreground max-w-xl">
+                An AI service desk that answers, routes, and resolves requests
+                in real time — handling the routine questions and follow-ups so
+                your team can focus on the work that actually needs people.
+              </p>
             </div>
           </div>
         </div>
