@@ -26,7 +26,7 @@ const PROMISES = [
   {
     icon: MessageSquare,
     title: "A real conversation first",
-    body: "We start with a complimentary 30-minute session to understand the problem before quoting anything.",
+    body: "We start with a complimentary 20-minute session to understand the problem before quoting anything.",
   },
 ];
 

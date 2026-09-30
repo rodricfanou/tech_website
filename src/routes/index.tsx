@@ -513,7 +513,7 @@ function Hero() {
               boxShadow: "var(--shadow-elegant)",
             }}
           >
-            Book a complimentary 30-minute AI Strategy Session{" "}
+            Book a complimentary 20-minute AI Strategy Session{" "}
             <ArrowRight className="h-4 w-4" />
           </Link>
           <a
@@ -659,7 +659,7 @@ function Process() {
     {
       n: "01",
       t: "Discover",
-      d: "A 30-minute call to map the problem, constraints and success criteria.",
+      d: "A 20-minute call to map the problem, constraints and success criteria.",
     },
     {
       n: "02",
