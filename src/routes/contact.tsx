@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, Mail, MessageSquare, Clock, Check } from "lucide-react";
+import { ArrowRight, Mail, MessageSquare, Clock } from "lucide-react";
 import { Nav, Footer } from "./index";
 import { CONTACT_EMAIL, ContactForm } from "@/components/contact-form";
 
@@ -27,11 +27,6 @@ const PROMISES = [
     icon: MessageSquare,
     title: "A real conversation first",
     body: "We start with a complimentary 30-minute session to understand the problem before quoting anything.",
-  },
-  {
-    icon: Check,
-    title: "No obligation",
-    body: "No retainers, no lock-in. If we are not the right fit, we will tell you who is.",
   },
 ];
 
