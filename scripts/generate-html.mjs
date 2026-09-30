@@ -6,7 +6,9 @@ const assetsDir = join(publicDir, "assets");
 
 const files = readdirSync(assetsDir);
 const jsFile = files.find((f) => f.startsWith("index-") && f.endsWith(".js"));
-const cssFile = files.find((f) => f.startsWith("styles-") && f.endsWith(".css"));
+const cssFile = files.find(
+  (f) => f.startsWith("styles-") && f.endsWith(".css"),
+);
 
 if (!jsFile || !cssFile) {
   console.error("Could not find index JS or styles CSS in build output");
