@@ -9,18 +9,42 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as WhyAiConsultingRouteImport } from './routes/why-ai-consulting'
+import { Route as WhatIsAiConsultingRouteImport } from './routes/what-is-ai-consulting'
+import { Route as ServicesRouteImport } from './routes/services'
 import { Route as ProductsRouteImport } from './routes/products'
-import { Route as SplatRouteImport } from './routes/$'
+import { Route as ProcessRouteImport } from './routes/process'
+import { Route as ContactRouteImport } from './routes/contact'
 import { Route as IndexRouteImport } from './routes/index'
 
+const WhyAiConsultingRoute = WhyAiConsultingRouteImport.update({
+  id: '/why-ai-consulting',
+  path: '/why-ai-consulting',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WhatIsAiConsultingRoute = WhatIsAiConsultingRouteImport.update({
+  id: '/what-is-ai-consulting',
+  path: '/what-is-ai-consulting',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesRoute = ServicesRouteImport.update({
+  id: '/services',
+  path: '/services',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ProductsRoute = ProductsRouteImport.update({
   id: '/products',
   path: '/products',
   getParentRoute: () => rootRouteImport,
 } as any)
-const SplatRoute = SplatRouteImport.update({
-  id: '/$',
-  path: '/$',
+const ProcessRoute = ProcessRouteImport.update({
+  id: '/process',
+  path: '/process',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -31,36 +55,95 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/$': typeof SplatRoute
+  '/contact': typeof ContactRoute
+  '/process': typeof ProcessRoute
   '/products': typeof ProductsRoute
+  '/services': typeof ServicesRoute
+  '/what-is-ai-consulting': typeof WhatIsAiConsultingRoute
+  '/why-ai-consulting': typeof WhyAiConsultingRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/$': typeof SplatRoute
+  '/contact': typeof ContactRoute
+  '/process': typeof ProcessRoute
   '/products': typeof ProductsRoute
+  '/services': typeof ServicesRoute
+  '/what-is-ai-consulting': typeof WhatIsAiConsultingRoute
+  '/why-ai-consulting': typeof WhyAiConsultingRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/$': typeof SplatRoute
+  '/contact': typeof ContactRoute
+  '/process': typeof ProcessRoute
   '/products': typeof ProductsRoute
+  '/services': typeof ServicesRoute
+  '/what-is-ai-consulting': typeof WhatIsAiConsultingRoute
+  '/why-ai-consulting': typeof WhyAiConsultingRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/$' | '/products'
+  fullPaths:
+    | '/'
+    | '/contact'
+    | '/process'
+    | '/products'
+    | '/services'
+    | '/what-is-ai-consulting'
+    | '/why-ai-consulting'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/$' | '/products'
-  id: '__root__' | '/' | '/$' | '/products'
+  to:
+    | '/'
+    | '/contact'
+    | '/process'
+    | '/products'
+    | '/services'
+    | '/what-is-ai-consulting'
+    | '/why-ai-consulting'
+  id:
+    | '__root__'
+    | '/'
+    | '/contact'
+    | '/process'
+    | '/products'
+    | '/services'
+    | '/what-is-ai-consulting'
+    | '/why-ai-consulting'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  SplatRoute: typeof SplatRoute
+  ContactRoute: typeof ContactRoute
+  ProcessRoute: typeof ProcessRoute
   ProductsRoute: typeof ProductsRoute
+  ServicesRoute: typeof ServicesRoute
+  WhatIsAiConsultingRoute: typeof WhatIsAiConsultingRoute
+  WhyAiConsultingRoute: typeof WhyAiConsultingRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/why-ai-consulting': {
+      id: '/why-ai-consulting'
+      path: '/why-ai-consulting'
+      fullPath: '/why-ai-consulting'
+      preLoaderRoute: typeof WhyAiConsultingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/what-is-ai-consulting': {
+      id: '/what-is-ai-consulting'
+      path: '/what-is-ai-consulting'
+      fullPath: '/what-is-ai-consulting'
+      preLoaderRoute: typeof WhatIsAiConsultingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services': {
+      id: '/services'
+      path: '/services'
+      fullPath: '/services'
+      preLoaderRoute: typeof ServicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/products': {
       id: '/products'
       path: '/products'
@@ -68,11 +151,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProductsRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/$': {
-      id: '/$'
-      path: '/$'
-      fullPath: '/$'
-      preLoaderRoute: typeof SplatRouteImport
+    '/process': {
+      id: '/process'
+      path: '/process'
+      fullPath: '/process'
+      preLoaderRoute: typeof ProcessRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -87,8 +177,12 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  SplatRoute: SplatRoute,
+  ContactRoute: ContactRoute,
+  ProcessRoute: ProcessRoute,
   ProductsRoute: ProductsRoute,
+  ServicesRoute: ServicesRoute,
+  WhatIsAiConsultingRoute: WhatIsAiConsultingRoute,
+  WhyAiConsultingRoute: WhyAiConsultingRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
