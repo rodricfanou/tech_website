@@ -84,9 +84,21 @@
   --border: oklch(1 0 0 / 10%);
   --input: oklch(1 0 0 / 12%);
   --ring: oklch(0.78 0.16 210);
-  --gradient-hero: linear-gradient(135deg, oklch(0.78 0.16 210), oklch(0.72 0.19 285));
-  --gradient-surface: linear-gradient(180deg, oklch(0.19 0.035 265), oklch(0.15 0.03 265));
-  --gradient-glow: radial-gradient(circle at 50% 0%, oklch(0.72 0.19 285 / 0.35), transparent 60%);
+  --gradient-hero: linear-gradient(
+    135deg,
+    oklch(0.78 0.16 210),
+    oklch(0.72 0.19 285)
+  );
+  --gradient-surface: linear-gradient(
+    180deg,
+    oklch(0.19 0.035 265),
+    oklch(0.15 0.03 265)
+  );
+  --gradient-glow: radial-gradient(
+    circle at 50% 0%,
+    oklch(0.72 0.19 285 / 0.35),
+    transparent 60%
+  );
   --shadow-elegant: 0 20px 60px -20px oklch(0.72 0.19 285 / 0.45);
   --shadow-glow: 0 0 40px oklch(0.78 0.16 210 / 0.35);
   --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
@@ -158,7 +170,10 @@
     scroll-padding-top: 5rem;
   }
 
-  h1, h2, h3, h4 {
+  h1,
+  h2,
+  h3,
+  h4 {
     font-family: var(--font-display);
     letter-spacing: -0.02em;
   }
@@ -167,6 +182,27 @@
     outline: 2px solid var(--color-primary);
     outline-offset: 2px;
     border-radius: 4px;
+  }
+}
+
+/*
+ * Marquee banner — two identical tracks side by side; translating the track by
+ * -50% lands exactly on the start of the second copy, so the loop is seamless.
+ * The animation is only applied when the visitor has not asked for reduced
+ * motion, in which case the first copy simply stays put.
+ */
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .marquee-track {
+    animation: marquee-scroll 38s linear infinite;
   }
 }
 

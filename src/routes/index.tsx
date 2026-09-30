@@ -32,6 +32,47 @@ export const Route = createFileRoute("/")({
 
 const CONTACT_EMAIL = "roderick@roderickfanou.com";
 
+const MARQUEE_ITEMS = [
+  "Website Creation",
+  "Building AI Systems & Networks",
+  "AI Consulting",
+  "Training",
+  "Technical Advisory",
+  "Talks",
+];
+
+function MarqueeBanner() {
+  return (
+    <div
+      className="overflow-hidden border-t border-border bg-card/40"
+      aria-label="Our services"
+    >
+      <div className="marquee-track flex w-max items-center">
+        {[0, 1].map((copy) => (
+          <ul
+            key={copy}
+            aria-hidden={copy === 1}
+            className="flex shrink-0 items-center gap-6 pr-6 sm:gap-8 sm:pr-8"
+          >
+            {MARQUEE_ITEMS.map((item) => (
+              <li
+                key={item}
+                className="flex shrink-0 items-center gap-6 whitespace-nowrap text-[11px] uppercase tracking-[0.18em] text-muted-foreground sm:gap-8 sm:text-xs sm:tracking-[0.22em]"
+              >
+                {item}
+                <span
+                  aria-hidden
+                  className="h-1 w-1 shrink-0 rounded-full bg-primary/70"
+                />
+              </li>
+            ))}
+          </ul>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 function scrollTo(_path: string, id: string) {
   const el = document.getElementById(id);
   if (el) {
@@ -331,6 +372,7 @@ export function Nav({ onContact }: { onContact: () => void }) {
           </button>
         </div>
       </div>
+      <MarqueeBanner />
       {open && (
         <div className="md:hidden border-t border-border bg-background/95 backdrop-blur-xl">
           <nav className="mx-auto max-w-7xl px-6 py-6 flex flex-col gap-4 text-sm uppercase tracking-[0.12em]">
