@@ -1,7 +1,7 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Mail } from "lucide-react";
-import { Nav, Footer, ContactDialog } from "./index";
+import { Nav, Footer } from "./index";
+import { CONTACT_EMAIL } from "@/components/contact-form";
 
 export const Route = createFileRoute("/products")({
   component: ProductsPage,
@@ -20,20 +20,10 @@ export const Route = createFileRoute("/products")({
   }),
 });
 
-const CONTACT_EMAIL = "roderick@roderickfanou.com";
-
 function ProductsPage() {
-  const [contact, setContact] = useState<{ open: boolean; feature: string }>({
-    open: false,
-    feature: "",
-  });
-
-  const openContact = (feature: string) => setContact({ open: true, feature });
-  const closeContact = () => setContact((c) => ({ ...c, open: false }));
-
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <Nav onContact={() => openContact("General inquiry")} />
+      <Nav />
 
       {/* Hero */}
       <section className="pt-32 sm:pt-40 pb-16 sm:pb-24">
@@ -149,10 +139,8 @@ function ProductsPage() {
           <p className="mt-8 text-xl sm:text-2xl font-semibold">
             What could we automate in your business?
           </p>
-          <button
-            onClick={() =>
-              openContact("Book a complimentary AI Workflow Session")
-            }
+          <Link
+            to="/contact"
             className="mt-8 inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm sm:text-base font-semibold text-primary-foreground transition hover:opacity-90"
             style={{
               background: "var(--gradient-hero)",
@@ -161,7 +149,7 @@ function ProductsPage() {
           >
             Book a complimentary AI Workflow Session{" "}
             <ArrowRight className="h-4 w-4" />
-          </button>
+          </Link>
         </div>
       </section>
 
@@ -187,8 +175,8 @@ function ProductsPage() {
                 walkthrough, and we'll get back to you within one business day.
               </p>
               <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
-                <button
-                  onClick={() => openContact("Product inquiry")}
+                <Link
+                  to="/contact"
                   className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm sm:text-base font-semibold text-primary-foreground transition hover:opacity-90"
                   style={{
                     background: "var(--gradient-hero)",
@@ -196,7 +184,7 @@ function ProductsPage() {
                   }}
                 >
                   Request a demo <ArrowRight className="h-4 w-4" />
-                </button>
+                </Link>
                 <a
                   href={`mailto:${CONTACT_EMAIL}`}
                   className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full border border-border px-6 py-3 text-sm sm:text-base font-medium hover:bg-card transition break-all sm:break-normal"
@@ -210,9 +198,6 @@ function ProductsPage() {
       </section>
 
       <Footer />
-      {contact.open && (
-        <ContactDialog feature={contact.feature} onClose={closeContact} />
-      )}
     </div>
   );
 }

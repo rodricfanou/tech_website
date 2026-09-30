@@ -7,7 +7,6 @@ import {
   GraduationCap,
   ArrowRight,
   Sparkles,
-  Check,
   Mail,
   X,
   Target,
@@ -18,6 +17,11 @@ import {
   Zap,
   Award,
 } from "lucide-react";
+import {
+  CONTACT_EMAIL,
+  ContactForm,
+  topicFromFeature,
+} from "@/components/contact-form";
 import heroImg from "@/assets/hero.jpg";
 import heroImgWebp from "@/assets/hero.webp";
 
@@ -29,8 +33,6 @@ const LOGO_FULL_WEBP = "/logos/novaris-full.webp";
 export const Route = createFileRoute("/")({
   component: Index,
 });
-
-const CONTACT_EMAIL = "roderick@roderickfanou.com";
 
 const MARQUEE_ITEMS = [
   "Website Creation",
@@ -52,12 +54,12 @@ function MarqueeBanner() {
           <ul
             key={copy}
             aria-hidden={copy === 1}
-            className="flex shrink-0 items-center gap-6 pr-6 sm:gap-8 sm:pr-8"
+            className="flex shrink-0 items-center gap-10 pr-10 sm:gap-16 sm:pr-16"
           >
             {MARQUEE_ITEMS.map((item) => (
               <li
                 key={item}
-                className="flex shrink-0 items-center gap-6 whitespace-nowrap text-[11px] uppercase tracking-[0.18em] text-muted-foreground sm:gap-8 sm:text-xs sm:tracking-[0.22em]"
+                className="flex shrink-0 items-center gap-10 whitespace-nowrap text-[11px] uppercase tracking-[0.18em] text-muted-foreground sm:gap-16 sm:text-xs sm:tracking-[0.22em]"
               >
                 {item}
                 <span
@@ -223,14 +225,14 @@ export function Index() {
       >
         Skip to content
       </a>
-      <Nav onContact={() => openContact("General inquiry")} />
-      <Hero onContact={() => openContact("General inquiry")} />
+      <Nav />
+      <Hero />
       {/* <Logos /> */}
       <Services onSelect={openContact} />
       <AIConsultingExplainer />
       <WhyAIConsultants />
       <Process />
-      <CTA onContact={() => openContact("Let's work together")} />
+      <CTA />
       <Footer />
       {contact.open && (
         <ContactDialog feature={contact.feature} onClose={closeContact} />
@@ -250,7 +252,7 @@ function handleSectionClick(
   }
 }
 
-export function Nav({ onContact }: { onContact: () => void }) {
+export function Nav() {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
@@ -328,17 +330,13 @@ export function Nav({ onContact }: { onContact: () => void }) {
           >
             Process
           </a>
-          <a
-            href="/contact"
-            onClick={(e) => handleSectionClick(e, "/contact", "contact")}
-            className="hover:text-foreground transition"
-          >
+          <Link to="/contact" className="hover:text-foreground transition">
             Contact
-          </a>
+          </Link>
         </nav>
         <div className="flex items-center gap-3">
-          <button
-            onClick={onContact}
+          <Link
+            to="/contact"
             className="hidden sm:inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium text-primary-foreground transition hover:opacity-90"
             style={{
               background: "var(--gradient-hero)",
@@ -346,7 +344,7 @@ export function Nav({ onContact }: { onContact: () => void }) {
             }}
           >
             Start a project <ArrowRight className="h-4 w-4" />
-          </button>
+          </Link>
           <button
             onClick={() => setOpen(!open)}
             className="md:hidden inline-flex items-center justify-center rounded-md p-2 text-muted-foreground hover:text-foreground hover:bg-card transition"
@@ -431,21 +429,16 @@ export function Nav({ onContact }: { onContact: () => void }) {
             >
               Process
             </a>
-            <a
-              href="/contact"
-              onClick={(e) => {
-                setOpen(false);
-                handleSectionClick(e, "/contact", "contact");
-              }}
+            <Link
+              to="/contact"
+              onClick={() => setOpen(false)}
               className="text-muted-foreground hover:text-foreground transition py-2"
             >
               Contact
-            </a>
-            <button
-              onClick={() => {
-                setOpen(false);
-                onContact();
-              }}
+            </Link>
+            <Link
+              to="/contact"
+              onClick={() => setOpen(false)}
               className="mt-2 inline-flex items-center justify-center gap-2 rounded-full px-4 py-2 text-sm font-medium text-primary-foreground transition hover:opacity-90"
               style={{
                 background: "var(--gradient-hero)",
@@ -453,7 +446,7 @@ export function Nav({ onContact }: { onContact: () => void }) {
               }}
             >
               Start a project <ArrowRight className="h-4 w-4" />
-            </button>
+            </Link>
           </nav>
         </div>
       )}
@@ -461,7 +454,7 @@ export function Nav({ onContact }: { onContact: () => void }) {
   );
 }
 
-function Hero({ onContact }: { onContact: () => void }) {
+function Hero() {
   return (
     <section id="top" className="relative overflow-hidden">
       <picture>
@@ -512,8 +505,8 @@ function Hero({ onContact }: { onContact: () => void }) {
           outcomes.
         </p>
         <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row flex-wrap items-center justify-center gap-3 sm:gap-4 w-full px-2">
-          <button
-            onClick={onContact}
+          <Link
+            to="/contact"
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 sm:px-6 text-sm sm:text-base font-semibold text-primary-foreground transition hover:opacity-90"
             style={{
               background: "var(--gradient-hero)",
@@ -522,7 +515,7 @@ function Hero({ onContact }: { onContact: () => void }) {
           >
             Book a complimentary 30-minute AI Strategy Session{" "}
             <ArrowRight className="h-4 w-4" />
-          </button>
+          </Link>
           <a
             href="/services"
             onClick={(e) => {
@@ -715,7 +708,7 @@ function Process() {
   );
 }
 
-function CTA({ onContact }: { onContact: () => void }) {
+function CTA() {
   return (
     <section id="contact" className="py-16 sm:py-24 md:py-32">
       <div className="mx-auto max-w-5xl px-6">
@@ -745,8 +738,8 @@ function CTA({ onContact }: { onContact: () => void }) {
               Tell us where it hurts and we'll be back within one business day.
             </p>
             <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row flex-wrap items-center justify-center gap-3 sm:gap-4">
-              <button
-                onClick={onContact}
+              <Link
+                to="/contact"
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 sm:px-6 text-sm sm:text-base font-semibold text-primary-foreground transition hover:opacity-90"
                 style={{
                   background: "var(--gradient-hero)",
@@ -754,7 +747,7 @@ function CTA({ onContact }: { onContact: () => void }) {
                 }}
               >
                 Reach out <ArrowRight className="h-4 w-4" />
-              </button>
+              </Link>
               <a
                 href={`mailto:${CONTACT_EMAIL}`}
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full border border-border px-5 py-3 sm:px-6 text-sm sm:text-base font-medium hover:bg-card transition break-all sm:break-normal"
@@ -776,7 +769,23 @@ export function Footer() {
         <p>
           © {new Date().getFullYear()} Novaris Nexus Tech. All rights reserved.
         </p>
-        <p>Consulting · Technical Advisory · Technical Talks · Training</p>
+        <nav className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2">
+          <Link to="/services" className="hover:text-foreground transition">
+            Services
+          </Link>
+          <Link to="/products" className="hover:text-foreground transition">
+            Products
+          </Link>
+          <Link to="/contact" className="hover:text-foreground transition">
+            Contact
+          </Link>
+          <a
+            href={`mailto:${CONTACT_EMAIL}`}
+            className="hover:text-foreground transition break-all sm:break-normal"
+          >
+            {CONTACT_EMAIL}
+          </a>
+        </nav>
       </div>
     </footer>
   );
@@ -789,15 +798,7 @@ export function ContactDialog({
   feature: string;
   onClose: () => void;
 }) {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [contact, setContact] = useState("");
-  const [company, setCompany] = useState("");
-  const [topic, setTopic] = useState("");
-  const [message, setMessage] = useState("");
-  const [sent, setSent] = useState(false);
-  const [submitting, setSubmitting] = useState(false);
-  const [error, setError] = useState("");
+  const topic = topicFromFeature(feature);
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => e.key === "Escape" && onClose();
@@ -809,32 +810,6 @@ export function ContactDialog({
       document.body.style.overflow = prev;
     };
   }, [onClose]);
-
-  const submit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setSubmitting(true);
-    setError("");
-    try {
-      const res = await fetch("https://formspree.io/f/mkoyqdla", {
-        method: "POST",
-        headers: { Accept: "application/json" },
-        body: new URLSearchParams({
-          Name: name,
-          Email: email,
-          Contact: contact,
-          Company: company,
-          Topic: topic,
-          Message: message,
-        }),
-      });
-      if (!res.ok) throw new Error("Submission failed");
-      setSent(true);
-    } catch {
-      setError("Something went wrong. Please try again or email us directly.");
-    } finally {
-      setSubmitting(false);
-    }
-  };
 
   return (
     <div
@@ -869,117 +844,14 @@ export function ContactDialog({
           day.
         </p>
 
-        {sent ? (
-          <div className="mt-6 rounded-2xl border border-border bg-card/60 p-6 text-center">
-            <div
-              className="mx-auto inline-flex h-12 w-12 items-center justify-center rounded-full"
-              style={{ background: "var(--gradient-hero)" }}
-            >
-              <Check className="h-6 w-6 text-primary-foreground" />
-            </div>
-            <p className="mt-4 font-semibold">Inquiry sent successfully.</p>
-            <p className="mt-2 text-sm text-muted-foreground">
-              We'll get back to you within one business day.
-            </p>
-          </div>
-        ) : (
-          <form onSubmit={submit} className="mt-6 space-y-4">
-            <Field label="Name" value={name} onChange={setName} required />
-            <Field
-              label="Email"
-              type="email"
-              value={email}
-              onChange={setEmail}
-              required
-            />
-            <Field
-              label="Contact (phone)"
-              value={contact}
-              onChange={setContact}
-              required
-            />
-            <Field label="Company" value={company} onChange={setCompany} />
-            <div>
-              <label className="text-xs font-medium text-muted-foreground">
-                Topic
-              </label>
-              <select
-                required
-                value={topic}
-                onChange={(e) => setTopic(e.target.value)}
-                className="mt-1 w-full rounded-xl border border-border bg-background/60 px-4 py-3 text-sm text-foreground outline-none focus:border-primary transition"
-              >
-                <option value="" disabled>
-                  Select a topic
-                </option>
-                <option value="General inquiry">General inquiry</option>
-                <option value="AI Consulting">AI Consulting</option>
-                <option value="Talks">Talks</option>
-                <option value="Technical Advisory">Technical Advisory</option>
-                <option value="Training">Training</option>
-                <option value="Others">Others</option>
-              </select>
-            </div>
-            <div>
-              <label className="text-xs font-medium text-muted-foreground">
-                Message
-              </label>
-              <textarea
-                required
-                value={message}
-                onChange={(e) => setMessage(e.target.value)}
-                rows={4}
-                maxLength={2000}
-                className="mt-1 w-full rounded-xl border border-border bg-background/60 px-4 py-3 text-sm text-foreground outline-none focus:border-primary transition"
-                placeholder="A quick description of the challenge, timeline, and any constraints…"
-              />
-            </div>
-            {error && <p className="text-sm text-red-500">{error}</p>}
-            <button
-              type="submit"
-              disabled={submitting}
-              className="w-full inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-base font-semibold text-primary-foreground transition hover:opacity-90 disabled:opacity-50"
-              style={{
-                background: "var(--gradient-hero)",
-                boxShadow: "var(--shadow-glow)",
-              }}
-            >
-              {submitting ? "Sending…" : "Send inquiry"}{" "}
-              <ArrowRight className="h-4 w-4" />
-            </button>
-          </form>
-        )}
+        <div className="mt-6">
+          <ContactForm
+            defaultTopic={topic}
+            showTopicSelect={false}
+            submitLabel="Send inquiry"
+          />
+        </div>
       </div>
-    </div>
-  );
-}
-
-function Field({
-  label,
-  value,
-  onChange,
-  type = "text",
-  required,
-}: {
-  label: string;
-  value: string;
-  onChange: (v: string) => void;
-  type?: string;
-  required?: boolean;
-}) {
-  return (
-    <div>
-      <label className="text-xs font-medium text-muted-foreground">
-        {label}
-      </label>
-      <input
-        type={type}
-        required={required}
-        value={value}
-        onChange={(e) => onChange(e.target.value)}
-        maxLength={200}
-        className="mt-1 w-full rounded-xl border border-border bg-background/60 px-4 py-3 text-sm text-foreground outline-none focus:border-primary transition"
-      />
     </div>
   );
 }
