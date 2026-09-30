@@ -25,8 +25,6 @@ import {
 import heroImg from "@/assets/hero.jpg";
 import heroImgWebp from "@/assets/hero.webp";
 
-const LOGO_MARK = "/logos/novaris-mark-optimized.png";
-const LOGO_MARK_WEBP = "/logos/novaris-mark.webp";
 const LOGO_FULL = "/logos/novaris-full-optimized.png";
 const LOGO_FULL_WEBP = "/logos/novaris-full.webp";
 
@@ -35,7 +33,7 @@ export const Route = createFileRoute("/")({
 });
 
 const MARQUEE_ITEMS = [
-  "Website Creation",
+  "Website Creation or Makeover",
   "Building AI Systems & Networks",
   "AI Consulting",
   "Training",
@@ -270,25 +268,14 @@ export function Nav() {
   return (
     <header className="sticky top-0 z-40 backdrop-blur-xl bg-background/70 border-b border-border">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 h-16 sm:h-20 flex items-center justify-between">
-        <a
-          href="/"
-          className="flex items-center gap-3 font-display font-bold text-lg"
-          aria-label="Novaris Nexus Tech — Home"
-        >
-          <picture>
-            <source srcSet={LOGO_MARK_WEBP} type="image/webp" />
-            <img
-              src={LOGO_MARK}
-              alt="Novaris Nexus Tech"
-              width={200}
-              height={133}
-              className="h-20 w-20 sm:h-28 sm:w-28 lg:h-[144px] lg:w-[144px] object-contain"
-            />
-          </picture>
-          <span className="text-sm sm:text-base lg:text-lg">
-            Novaris Nexus{" "}
-            <span className="text-muted-foreground font-medium">Tech</span>
-          </span>
+        <a href="/" aria-label="Novaris Nexus Tech — Home">
+          <img
+            src="/logos/novaris-nav.png"
+            alt=""
+            width={128}
+            height={96}
+            className="h-8 w-auto sm:h-10 lg:h-12"
+          />
         </a>
         <nav className="hidden md:flex items-center gap-8 text-sm text-muted-foreground uppercase tracking-[0.12em]">
           <a

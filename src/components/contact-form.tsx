@@ -11,7 +11,7 @@ export const CONTACT_TOPICS = [
   "Talks",
   "Technical Advisory",
   "Training",
-  "Website Creation",
+  "Website Creation or Makeover",
   "Products",
   "Others",
 ] as const;
@@ -22,7 +22,7 @@ export const CONTACT_TOPICS = [
  * taps a specific service does not have to pick the topic again.
  */
 export function topicFromFeature(feature: string): string {
-  if (/website/i.test(feature)) return "Website Creation";
+  if (/website/i.test(feature)) return "Website Creation or Makeover";
   if (/product|demo/i.test(feature)) return "Products";
   const hit = ["AI Consulting", "Talks", "Technical Advisory", "Training"].find(
     (t) => feature.toLowerCase().startsWith(t.toLowerCase()),
