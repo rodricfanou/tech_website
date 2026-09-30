@@ -5,6 +5,19 @@ import { Nav, Footer, ContactDialog } from "./index";
 
 export const Route = createFileRoute("/products")({
   component: ProductsPage,
+  head: () => ({
+    meta: [
+      {
+        title:
+          "Products — Mission Control & AI Maintenance Coordinator | Novaris Nexus Tech",
+      },
+      {
+        name: "description",
+        content:
+          "See how Novaris Nexus Tech builds AI systems around real business workflows — from an executive command center to an AI maintenance coordinator.",
+      },
+    ],
+  }),
 });
 
 const CONTACT_EMAIL = "roderick@roderickfanou.com";

@@ -114,7 +114,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           rel: "stylesheet",
           href: appCss,
         },
-        { rel: "icon", href: "/favicon.png", type: "image/png", sizes: "192x192" },
+        {
+          rel: "icon",
+          href: "/favicon.png",
+          type: "image/png",
+          sizes: "192x192",
+        },
         {
           rel: "apple-touch-icon",
           href: "/favicon.png",
@@ -144,7 +149,8 @@ function RootShell({ children }: { children: ReactNode }) {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: "Novaris Nexus Tech",
-    url: "https://novarisnexus.tech",
+    url: "https://novarisnexustech.com",
+    logo: "https://novarisnexustech.com/logos/novaris-full-optimized.png",
     description:
       "AI consulting, advisory, speaking and training for organizations building with AI, modern data systems and the internet.",
     sameAs: [],
