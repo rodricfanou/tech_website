@@ -9,7 +9,7 @@ export const CONTACT_TOPICS = [
   "General inquiry",
   "AI Consulting",
   "Talks",
-  "Technical Advisory",
+  "Digital & Infrastructure Advisory",
   "Training",
   "Website Creation or Makeover",
   "Products",
@@ -24,9 +24,12 @@ export const CONTACT_TOPICS = [
 export function topicFromFeature(feature: string): string {
   if (/website/i.test(feature)) return "Website Creation or Makeover";
   if (/product|demo/i.test(feature)) return "Products";
-  const hit = ["AI Consulting", "Talks", "Technical Advisory", "Training"].find(
-    (t) => feature.toLowerCase().startsWith(t.toLowerCase()),
-  );
+  const hit = [
+    "AI Consulting",
+    "Talks",
+    "Digital & Infrastructure Advisory",
+    "Training",
+  ].find((t) => feature.toLowerCase().startsWith(t.toLowerCase()));
   return hit ?? "General inquiry";
 }
 

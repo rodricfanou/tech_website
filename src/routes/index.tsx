@@ -37,7 +37,7 @@ const MARQUEE_ITEMS = [
   "Building AI Systems & Networks",
   "AI Consulting",
   "Training",
-  "Technical Advisory",
+  "Digital & Infrastructure Advisory",
   "Talks",
 ];
 
@@ -142,7 +142,7 @@ const CATEGORIES: Category[] = [
   {
     id: "advisory",
     icon: Cog,
-    tag: "Technical Advisory",
+    tag: "Digital & Infrastructure Advisory",
     title: "Battle-tested advice for data-intensive systems.",
     blurb:
       "Architecture reviews, observability strategy and measurement studies for teams operating at scale.",
@@ -462,7 +462,7 @@ function Hero() {
             "linear-gradient(180deg, oklch(0.14 0.03 265 / 0.6) 0%, oklch(0.14 0.03 265) 90%)",
         }}
       />
-      <div className="relative mx-auto max-w-5xl px-6 pt-14 pb-16 sm:pt-20 sm:pb-28 md:pt-28 md:pb-36 flex flex-col items-center text-center">
+      <div className="relative mx-auto max-w-5xl px-6 pt-10 pb-16 sm:pt-14 sm:pb-28 md:pt-20 md:pb-36 flex flex-col items-center text-center">
         <picture>
           <source srcSet={LOGO_FULL_WEBP} type="image/webp" />
           <img
@@ -483,7 +483,9 @@ function Hero() {
             className="bg-clip-text text-transparent"
             style={{ backgroundImage: "var(--gradient-hero)" }}
           >
-            AI systems and networks
+            AI systems
+            <br />
+            and networks
           </span>{" "}
           that matter and operate efficiently.
         </h1>
