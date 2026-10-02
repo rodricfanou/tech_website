@@ -187,61 +187,14 @@
 
 /*
  * Marquee banner — two identical copies of the keyword list sit side by side,
- * so translating the track by -50% lands exactly on the start of the second
- * copy and the loop is seamless.
+ * so travelling one copy width lands on the start of the second copy and the
+ * loop is seamless.
  *
- * The ribbon advances one keyword at a time rather than sliding continuously:
- * each slot slides during its first 25% and then holds, which is what makes the
- * keywords read individually with clear space between them.
- *
- * The track is two copies wide (W = 2C, one copy being C), so the animation
- * travels exactly one copy width -- W/2, i.e. -50% -- which lands on the start
- * of the second copy and is therefore visually identical to 0%. That travels
- * all 6 keywords once across 6 slots of 16.6667%, stepping W/12 = C/6 = one
- * keyword each.
- *
- * NOTE: the percentages below encode that count. If MARQUEE_ITEMS in
- * src/routes/index.tsx changes length, these keyframes must be regenerated.
+ * The @keyframes are generated at runtime by buildMarqueeKeyframes() in
+ * src/routes/index.tsx, because the keywords are different widths and a
+ * keyframe set written as fixed percentages comes to rest between them
+ * instead of on them. The steps are re-measured on resize and on font load.
  */
-@keyframes marquee-scroll {
-  0% {
-    transform: translateX(0);
-  }
-  4.1667% {
-    transform: translateX(-8.3333%);
-  }
-  16.6667% {
-    transform: translateX(-8.3333%);
-  }
-  20.8333% {
-    transform: translateX(-16.6667%);
-  }
-  33.3333% {
-    transform: translateX(-16.6667%);
-  }
-  37.5% {
-    transform: translateX(-25%);
-  }
-  50% {
-    transform: translateX(-25%);
-  }
-  54.1667% {
-    transform: translateX(-33.3333%);
-  }
-  66.6667% {
-    transform: translateX(-33.3333%);
-  }
-  70.8333% {
-    transform: translateX(-41.6667%);
-  }
-  83.3333% {
-    transform: translateX(-41.6667%);
-  }
-  87.5%,
-  100% {
-    transform: translateX(-50%);
-  }
-}
 
 @media (prefers-reduced-motion: no-preference) {
   .marquee-track {

@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   Brain,
   Mic,
@@ -41,16 +41,96 @@ const MARQUEE_ITEMS = [
   "Talks",
 ];
 
+const MARQUEE_SLIDE_FRACTION = 0.25;
+
+// Pause at the loop point, as a fraction of the whole cycle. Half a dwell, so
+// the ribbon does not sit still for a full beat every time it wraps.
+const MARQUEE_TAIL_HOLD = 0.0625;
+
+/*
+ * Builds the stepping keyframes from measured pixel offsets.
+ *
+ * Each keyword gets its own slot, but the slots are NOT equal width: "Talks"
+ * is a fraction of the size of "Digital & Infrastructure Advisory". Stepping by
+ * a fixed fraction of the track therefore comes to rest between keywords
+ * instead of on one, so the offsets have to be measured rather than assumed.
+ *
+ * Slot i slides during the first MARQUEE_SLIDE_FRACTION of its slot and then
+ * holds, which is what makes the keywords read individually. The last slot is
+ * the exception: it slides until MARQUEE_TAIL_HOLD from the end so the wrap is
+ * quick rather than a full-length pause.
+ *
+ * The final stop is one full copy width, which lands on the start of the
+ * identical second copy and so loops seamlessly.
+ */
+function buildMarqueeKeyframes(offsets: number[], copyWidth: number) {
+  const stops = [...offsets, copyWidth];
+  const count = offsets.length;
+  const last = count - 1;
+  const pct = (v: number) => `${+(v * 100).toFixed(4)}%`;
+  const px = (v: number) => `${-Math.round(v * 100) / 100}px`;
+  const rules = [`0%{transform:translateX(${px(stops[0])})}`];
+
+  for (let i = 0; i < count; i++) {
+    const to = px(stops[i + 1]);
+    const slideEnd =
+      i === last ? 1 - MARQUEE_TAIL_HOLD : (i + MARQUEE_SLIDE_FRACTION) / count;
+    rules.push(`${pct(slideEnd)}{transform:translateX(${to})}`);
+    rules.push(`${pct((i + 1) / count)}{transform:translateX(${to})}`);
+  }
+
+  return `@keyframes marquee-scroll{${rules.join("")}}`;
+}
+
 function MarqueeBanner() {
+  const styleRef = useRef<HTMLStyleElement>(null);
+  const trackRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const track = trackRef.current;
+    const style = styleRef.current;
+    if (!track || !style) return;
+
+    let frame = 0;
+
+    const measure = () => {
+      const copy = track.querySelector<HTMLElement>('[data-marquee-copy="0"]');
+      if (!copy) return;
+      const offsets = Array.from(copy.children).map(
+        (child) => Math.round((child as HTMLElement).offsetLeft * 100) / 100,
+      );
+      if (offsets.length === 0) return;
+      style.textContent = buildMarqueeKeyframes(offsets, copy.offsetWidth);
+    };
+
+    const schedule = () => {
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(measure);
+    };
+
+    schedule();
+
+    const observer = new ResizeObserver(schedule);
+    observer.observe(track);
+    document.fonts.ready.then(schedule);
+
+    return () => {
+      cancelAnimationFrame(frame);
+      observer.disconnect();
+    };
+  }, []);
+
   return (
     <div
       className="overflow-hidden border-t border-border bg-card/40"
       aria-label="Our services"
     >
-      <div className="marquee-track flex w-max items-center">
+      <style ref={styleRef} />
+      <div ref={trackRef} className="marquee-track flex w-max items-center">
         {[0, 1].map((copy) => (
           <ul
             key={copy}
+            data-marquee-copy={copy}
             aria-hidden={copy === 1}
             className="flex shrink-0 items-center gap-10 pr-10 sm:gap-16 sm:pr-16"
           >
