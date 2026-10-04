@@ -16,6 +16,7 @@ import {
   Shield,
   Zap,
   Award,
+  Gauge,
 } from "lucide-react";
 import {
   CONTACT_EMAIL,
@@ -585,6 +586,13 @@ function Hero() {
             Book a complimentary 20-minute AI Strategy Session{" "}
             <ArrowRight className="h-4 w-4" />
           </Link>
+          <Link
+            to="/ai-audit"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full border border-border px-5 py-3 sm:px-6 text-sm sm:text-base font-medium text-foreground hover:bg-card transition"
+          >
+            <Gauge className="h-4 w-4 text-primary" />
+            Take the free 5-minute AI audit
+          </Link>
           <a
             href="/services"
             onClick={(e) => {
@@ -845,8 +853,14 @@ export function Footer() {
           <Link to="/products" className="hover:text-foreground transition">
             Products
           </Link>
+          <Link to="/ai-audit" className="hover:text-foreground transition">
+            Free AI Audit
+          </Link>
           <Link to="/contact" className="hover:text-foreground transition">
             Contact
+          </Link>
+          <Link to="/privacy" className="hover:text-foreground transition">
+            Privacy
           </Link>
           <a
             href={`mailto:${CONTACT_EMAIL}`}

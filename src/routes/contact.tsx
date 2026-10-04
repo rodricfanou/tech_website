@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, Mail, MessageSquare, Clock } from "lucide-react";
+import { ArrowRight, Mail, MessageSquare, Clock, Gauge } from "lucide-react";
 import { Nav, Footer } from "./index";
 import { CONTACT_EMAIL, ContactForm } from "@/components/contact-form";
 
@@ -62,24 +62,49 @@ function ContactPage() {
         {/* Form + assurances */}
         <section className="py-16 sm:py-24">
           <div className="mx-auto max-w-6xl px-6 grid lg:grid-cols-[minmax(0,1fr)_20rem] gap-10 lg:gap-14 items-start">
-            <div
-              className="rounded-3xl border border-border p-6 sm:p-10"
-              style={{
-                background: "var(--gradient-surface)",
-                boxShadow: "var(--shadow-elegant)",
-              }}
-            >
-              <h2 className="text-2xl font-bold">Send us a message</h2>
-              <p className="mt-2 text-sm text-muted-foreground">
-                Fields marked required help us route your inquiry to the right
-                person first time.
-              </p>
-              <div className="mt-8">
-                <ContactForm
-                  defaultTopic="General inquiry"
-                  submitLabel="Send inquiry"
-                />
+            <div className="space-y-6">
+              <div
+                className="rounded-3xl border border-border p-6 sm:p-10"
+                style={{
+                  background: "var(--gradient-surface)",
+                  boxShadow: "var(--shadow-elegant)",
+                }}
+              >
+                <h2 className="text-2xl font-bold">Send us a message</h2>
+                <p className="mt-2 text-sm text-muted-foreground">
+                  Fields marked required help us route your inquiry to the right
+                  person first time.
+                </p>
+                <div className="mt-8">
+                  <ContactForm
+                    defaultTopic="General inquiry"
+                    submitLabel="Send inquiry"
+                  />
+                </div>
               </div>
+
+              <Link
+                to="/ai-audit"
+                className="group block rounded-3xl border border-border bg-card/60 p-6 transition hover:border-primary sm:p-8"
+              >
+                <div
+                  className="inline-flex h-11 w-11 items-center justify-center rounded-xl"
+                  style={{ background: "var(--gradient-hero)" }}
+                >
+                  <Gauge className="h-5 w-5 text-primary-foreground" />
+                </div>
+                <h3 className="mt-4 text-lg font-semibold">
+                  Not ready to write all that out?
+                </h3>
+                <p className="mt-2 text-sm text-muted-foreground">
+                  Take the free 5-minute AI audit instead. Answer a few quick
+                  questions about missed calls and get a short summary of where
+                  automation could help — no call needed.
+                </p>
+                <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-primary group-hover:underline">
+                  Start the AI audit <ArrowRight className="h-3.5 w-3.5" />
+                </span>
+              </Link>
             </div>
 
             <aside className="space-y-6">

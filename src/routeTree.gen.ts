@@ -14,8 +14,11 @@ import { Route as WhatIsAiConsultingRouteImport } from './routes/what-is-ai-cons
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as ProductsRouteImport } from './routes/products'
 import { Route as ProcessRouteImport } from './routes/process'
+import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as AiAuditRouteImport } from './routes/ai-audit'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ApiAiAuditRouteImport } from './routes/api/ai-audit'
 
 const WhyAiConsultingRoute = WhyAiConsultingRouteImport.update({
   id: '/why-ai-consulting',
@@ -42,9 +45,19 @@ const ProcessRoute = ProcessRouteImport.update({
   path: '/process',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AiAuditRoute = AiAuditRouteImport.update({
+  id: '/ai-audit',
+  path: '/ai-audit',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -52,73 +65,99 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiAiAuditRoute = ApiAiAuditRouteImport.update({
+  id: '/api/ai-audit',
+  path: '/api/ai-audit',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/ai-audit': typeof AiAuditRoute
   '/contact': typeof ContactRoute
+  '/privacy': typeof PrivacyRoute
   '/process': typeof ProcessRoute
   '/products': typeof ProductsRoute
   '/services': typeof ServicesRoute
   '/what-is-ai-consulting': typeof WhatIsAiConsultingRoute
   '/why-ai-consulting': typeof WhyAiConsultingRoute
+  '/api/ai-audit': typeof ApiAiAuditRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/ai-audit': typeof AiAuditRoute
   '/contact': typeof ContactRoute
+  '/privacy': typeof PrivacyRoute
   '/process': typeof ProcessRoute
   '/products': typeof ProductsRoute
   '/services': typeof ServicesRoute
   '/what-is-ai-consulting': typeof WhatIsAiConsultingRoute
   '/why-ai-consulting': typeof WhyAiConsultingRoute
+  '/api/ai-audit': typeof ApiAiAuditRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/ai-audit': typeof AiAuditRoute
   '/contact': typeof ContactRoute
+  '/privacy': typeof PrivacyRoute
   '/process': typeof ProcessRoute
   '/products': typeof ProductsRoute
   '/services': typeof ServicesRoute
   '/what-is-ai-consulting': typeof WhatIsAiConsultingRoute
   '/why-ai-consulting': typeof WhyAiConsultingRoute
+  '/api/ai-audit': typeof ApiAiAuditRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/ai-audit'
     | '/contact'
+    | '/privacy'
     | '/process'
     | '/products'
     | '/services'
     | '/what-is-ai-consulting'
     | '/why-ai-consulting'
+    | '/api/ai-audit'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/ai-audit'
     | '/contact'
+    | '/privacy'
     | '/process'
     | '/products'
     | '/services'
     | '/what-is-ai-consulting'
     | '/why-ai-consulting'
+    | '/api/ai-audit'
   id:
     | '__root__'
     | '/'
+    | '/ai-audit'
     | '/contact'
+    | '/privacy'
     | '/process'
     | '/products'
     | '/services'
     | '/what-is-ai-consulting'
     | '/why-ai-consulting'
+    | '/api/ai-audit'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AiAuditRoute: typeof AiAuditRoute
   ContactRoute: typeof ContactRoute
+  PrivacyRoute: typeof PrivacyRoute
   ProcessRoute: typeof ProcessRoute
   ProductsRoute: typeof ProductsRoute
   ServicesRoute: typeof ServicesRoute
   WhatIsAiConsultingRoute: typeof WhatIsAiConsultingRoute
   WhyAiConsultingRoute: typeof WhyAiConsultingRoute
+  ApiAiAuditRoute: typeof ApiAiAuditRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -158,11 +197,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProcessRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/contact': {
       id: '/contact'
       path: '/contact'
       fullPath: '/contact'
       preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ai-audit': {
+      id: '/ai-audit'
+      path: '/ai-audit'
+      fullPath: '/ai-audit'
+      preLoaderRoute: typeof AiAuditRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -172,17 +225,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/ai-audit': {
+      id: '/api/ai-audit'
+      path: '/api/ai-audit'
+      fullPath: '/api/ai-audit'
+      preLoaderRoute: typeof ApiAiAuditRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AiAuditRoute: AiAuditRoute,
   ContactRoute: ContactRoute,
+  PrivacyRoute: PrivacyRoute,
   ProcessRoute: ProcessRoute,
   ProductsRoute: ProductsRoute,
   ServicesRoute: ServicesRoute,
   WhatIsAiConsultingRoute: WhatIsAiConsultingRoute,
   WhyAiConsultingRoute: WhyAiConsultingRoute,
+  ApiAiAuditRoute: ApiAiAuditRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
