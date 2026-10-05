@@ -151,7 +151,7 @@ function AiAuditPage() {
                 A person, not a funnel.
               </h2>
             </div>
-            <div className="mt-16 grid lg:grid-cols-[minmax(0,1fr)_auto] items-center gap-8">
+            <div className="mt-8 grid items-start gap-6 lg:grid-cols-[minmax(0,1fr)_auto]">
               <div className="max-w-xl">
                 {CREDIBILITY.map((item) => (
                   <div
@@ -173,13 +173,13 @@ function AiAuditPage() {
                   </div>
                 ))}
               </div>
-              <div className="w-full shrink-0 lg:w-96">
+              <div className="w-56 max-w-full shrink-0">
                 <img
                   src="/logos/certifications/certified_agent_builder.png"
                   alt="Certified Agent Builder"
                   width={1536}
                   height={1536}
-                  className="w-full rounded-3xl border border-border object-cover"
+                  className="w-full rounded-2xl border border-border object-cover"
                 />
               </div>
             </div>
