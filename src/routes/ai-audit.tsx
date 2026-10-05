@@ -151,26 +151,37 @@ function AiAuditPage() {
                 A person, not a funnel.
               </h2>
             </div>
-            <div className="mt-10 max-w-xl">
-              {CREDIBILITY.map((item) => (
-                <div
-                  key={item.title}
-                  className="flex gap-4 rounded-2xl border border-border bg-card/60 p-6"
-                >
+            <div className="mt-16 grid lg:grid-cols-[minmax(0,1fr)_auto] items-center gap-8">
+              <div className="max-w-xl">
+                {CREDIBILITY.map((item) => (
                   <div
-                    className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-xl"
-                    style={{ background: "var(--gradient-hero)" }}
+                    key={item.title}
+                    className="flex gap-4 rounded-2xl border border-border bg-card/60 p-6"
                   >
-                    <item.icon className="h-5 w-5 text-primary-foreground" />
+                    <div
+                      className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-xl"
+                      style={{ background: "var(--gradient-hero)" }}
+                    >
+                      <item.icon className="h-5 w-5 text-primary-foreground" />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold">{item.title}</h3>
+                      <p className="mt-2 text-sm text-muted-foreground">
+                        {item.body}
+                      </p>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="font-semibold">{item.title}</h3>
-                    <p className="mt-2 text-sm text-muted-foreground">
-                      {item.body}
-                    </p>
-                  </div>
-                </div>
-              ))}
+                ))}
+              </div>
+              <div className="w-full shrink-0 lg:w-96">
+                <img
+                  src="/logos/certifications/certified_agent_builder.png"
+                  alt="Certified Agent Builder"
+                  width={1536}
+                  height={1536}
+                  className="w-full rounded-3xl border border-border object-cover"
+                />
+              </div>
             </div>
           </div>
         </section>
