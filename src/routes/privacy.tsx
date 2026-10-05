@@ -23,7 +23,7 @@ const SECTIONS = [
     heading: "What we collect",
     body: [
       "When you send us the contact form, we receive the name, email address, business name, role, type of business, and the project details you type in.",
-      "When you complete the free AI audit, we also receive your answers to the audit questions: how you handle missed calls, roughly how many calls or messages you miss in a week, the average value of a job, how soon you would want to start, and anything you choose to add in the optional fields.",
+      "When you complete the free AI audit, we also receive your answers to the audit questions: where your team spends the most time on repetitive work, what happens to an inbound request nobody can respond to, how often that occurs, the average value of a customer, project, booking, or job, how soon you would want to start, and anything you choose to add in the optional fields.",
       "Our hosting and delivery providers process this traffic in order to serve the site, and may keep technical logs such as IP address, browser type and requested pages for security and reliability.",
     ],
   },
@@ -31,7 +31,9 @@ const SECTIONS = [
     heading: "Why we collect it",
     body: [
       "We use your details to answer your inquiry, or in the case of the AI audit, to prepare and send you the summary you asked for.",
-      "We use your answers to judge which follow-up, if any, is worth both your time and ours. We do not sell your information, rent your contact details to anyone, or share them with advertisers.",
+      "We use your answers to judge which follow-up, if any, is worth both your time and ours.",
+      "We do not sell your information, rent your contact details to anyone, or share them with advertisers.",
+      "Submitting the audit asks us for one thing: the summary you requested. Any further contact has to be something you tick separately, and every follow-up email carries an unsubscribe link.",
     ],
   },
   {

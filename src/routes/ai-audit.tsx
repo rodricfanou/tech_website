@@ -9,12 +9,12 @@ export const Route = createFileRoute("/ai-audit")({
   head: () => ({
     meta: [
       {
-        title: "Free 5-Minute AI Audit — Missed Calls | Novaris Nexus Tech",
+        title: "Free 5-Minute AI Audit — AI Opportunity Summary | Novaris",
       },
       {
         name: "description",
         content:
-          "Answer a few quick questions and get a short summary of where AI automation could save your service business time or win back missed leads. Free, no call needed.",
+          "Answer a few quick questions and get a personalized AI Opportunity Summary: where AI could save time, automate work, or reduce missed opportunities, and which are worth exploring first. Free, no call needed.",
       },
     ],
   }),
@@ -29,12 +29,12 @@ const STEPS = [
   {
     n: "02",
     title: "We review your answers personally",
-    body: "Not an automated report. We read them ourselves and think about your specific trade and call flow.",
+    body: "Not an automated report. We read them ourselves and think about your specific business and workflow.",
   },
   {
     n: "03",
-    title: "You receive a short summary",
-    body: "Within 3 business days: where the time goes, and where AI could realistically help.",
+    title: "You receive your AI Opportunity Summary",
+    body: "Within 3 business days: where AI could realistically save time, automate work, or reduce missed opportunities — and which ones are worth exploring first.",
   },
 ];
 
@@ -63,9 +63,12 @@ function AiAuditPage() {
               work, and recover missed opportunities.
             </h1>
             <p className="mt-6 mx-auto max-w-2xl text-sm sm:text-base text-muted-foreground">
-              Answer a few quick questions and get a short summary of where AI
-              automation could save you time or win back missed leads. Free. No
-              call needed.
+              Answer a few quick questions and get a personalized{" "}
+              <strong className="font-semibold text-foreground">
+                AI Opportunity Summary
+              </strong>
+              : where AI could realistically save time, automate work, or reduce
+              missed opportunities. Free. No call needed.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
               <a

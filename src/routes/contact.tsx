@@ -98,8 +98,8 @@ function ContactPage() {
                 </h3>
                 <p className="mt-2 text-sm text-muted-foreground">
                   Take the free 5-minute AI audit instead. Answer a few quick
-                  questions about missed calls and get a short summary of where
-                  automation could help — no call needed.
+                  questions and get a personalized AI Opportunity Summary of
+                  where automation could help — no call needed.
                 </p>
                 <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-primary group-hover:underline">
                   Start the AI audit <ArrowRight className="h-3.5 w-3.5" />

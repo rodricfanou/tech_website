@@ -3,15 +3,16 @@ import { Link } from "@tanstack/react-router";
 import { ArrowRight, Check } from "lucide-react";
 
 import {
-  AUDIT_AVERAGE_JOB_VALUE,
+  AUDIT_AVERAGE_VALUE,
   AUDIT_BUSINESS_TYPES,
   AUDIT_EMPTY_VALUES,
   AUDIT_HONEYPOT_FIELD,
-  AUDIT_MISSED_CALL_HANDLING,
-  AUDIT_MISSED_CALLS_PER_WEEK,
   AUDIT_OTHER_BUSINESS_TYPE,
+  AUDIT_PROBLEM_FREQUENCY,
+  AUDIT_REPETITIVE_WORK,
   AUDIT_ROLES,
   AUDIT_START_TIMING,
+  AUDIT_UNANSWERED_REQUEST,
   AUDIT_WALKTHROUGH,
   auditSchema,
   toFieldErrors,
@@ -91,7 +92,10 @@ export function AiAuditForm() {
         </div>
         <p className="mt-4 font-semibold">Thanks — your answers are in.</p>
         <p className="mt-2 text-sm text-muted-foreground">
-          We read every one of these ourselves. You&apos;ll get a short summary
+          We read every one of these ourselves. You&apos;ll get your{" "}
+          <strong className="font-semibold text-foreground">
+            AI Opportunity Summary
+          </strong>{" "}
           within 3 business days, and there&apos;s no obligation on either side.
         </p>
         <div className="mt-8 border-t border-border pt-6">
@@ -99,8 +103,8 @@ export function AiAuditForm() {
             Want to talk it through now instead of waiting?
           </p>
           <p className="mt-1.5 text-sm text-muted-foreground">
-            If the audit flagged something urgent, you can book a complimentary
-            20-minute session and we&apos;ll dig into it live.
+            If the audit flagged something worth a conversation, you can book a
+            complimentary 20-minute session and we&apos;ll dig into it live.
           </p>
           <Link
             to="/contact"
@@ -186,35 +190,46 @@ export function AiAuditForm() {
         />
       )}
 
+      <SelectField
+        id="audit-repetitive-work"
+        label="Where does your team spend the most time on repetitive work?"
+        required
+        options={AUDIT_REPETITIVE_WORK}
+        value={values.repetitiveWork}
+        error={errors.repetitiveWork}
+        onChange={(v) => set("repetitiveWork", v)}
+        placeholder="Select the biggest time sink"
+      />
+
       <RadioField
-        name="audit-missed-call-handling"
-        legend="When a customer calls and you can't pick up, what usually happens?"
+        name="audit-unanswered-request"
+        legend="When an inbound request comes in and no one can respond, what usually happens?"
         required
-        options={AUDIT_MISSED_CALL_HANDLING}
-        value={values.missedCallHandling}
-        error={errors.missedCallHandling}
-        onChange={(v) => set("missedCallHandling", v)}
+        options={AUDIT_UNANSWERED_REQUEST}
+        value={values.unansweredRequest}
+        error={errors.unansweredRequest}
+        onChange={(v) => set("unansweredRequest", v)}
       />
 
       <SelectField
-        id="audit-missed-calls"
-        label="Roughly how many calls or messages do you miss in a typical week?"
+        id="audit-problem-frequency"
+        label="Roughly how often does that happen?"
         required
-        options={AUDIT_MISSED_CALLS_PER_WEEK}
-        value={values.missedCallsPerWeek}
-        error={errors.missedCallsPerWeek}
-        onChange={(v) => set("missedCallsPerWeek", v)}
-        placeholder="Select a range"
+        options={AUDIT_PROBLEM_FREQUENCY}
+        value={values.problemFrequency}
+        error={errors.problemFrequency}
+        onChange={(v) => set("problemFrequency", v)}
+        placeholder="Select a frequency"
       />
 
       <SelectField
-        id="audit-job-value"
-        label="What's the average value of a job?"
+        id="audit-average-value"
+        label="What's the average value of a customer, project, booking, or job?"
         required
-        options={AUDIT_AVERAGE_JOB_VALUE}
-        value={values.averageJobValue}
-        error={errors.averageJobValue}
-        onChange={(v) => set("averageJobValue", v)}
+        options={AUDIT_AVERAGE_VALUE}
+        value={values.averageValue}
+        error={errors.averageValue}
+        onChange={(v) => set("averageValue", v)}
         placeholder="Select a range"
       />
 
@@ -251,7 +266,7 @@ export function AiAuditForm() {
 
       <TextField
         id="audit-software"
-        label="What software do you use to manage jobs and calls?"
+        label="What software do you use to run the business?"
         optional
         value={values.software ?? ""}
         error={errors.software}
@@ -267,6 +282,22 @@ export function AiAuditForm() {
         error={errors.walkthrough}
         onChange={(v) => set("walkthrough", v)}
       />
+
+      {/* Kept separate from the audit consent: the summary is what they asked
+          for, this is us asking to keep going after that. */}
+      <label className="flex cursor-pointer items-start gap-3 text-sm text-muted-foreground">
+        <input
+          type="checkbox"
+          name="audit-follow-up-opt-in"
+          checked={values.followUpOptIn ?? false}
+          onChange={(e) => set("followUpOptIn", e.target.checked)}
+          className="mt-0.5 h-4 w-4 shrink-0 accent-[var(--primary)]"
+        />
+        <span>
+          It&apos;s also fine to send me occasional follow-up about AI and
+          automation. <span className="text-muted-foreground/70">Optional</span>
+        </span>
+      </label>
 
       {/* Honeypot: hidden from people, tempting to bots. */}
       <div aria-hidden className="hidden">
@@ -301,9 +332,10 @@ export function AiAuditForm() {
       </button>
 
       <p className="text-xs leading-relaxed text-muted-foreground">
-        By submitting, you agree to receive your audit summary and occasional
-        follow-up from Novaris Nexus Tech. Your answers are used only to prepare
-        your audit. See our{" "}
+        By submitting, you agree to receive the AI Opportunity Summary you asked
+        for from Novaris Nexus Tech. Your answers are used only to prepare it
+        and to decide whether follow-up is worth both our time. Anything further
+        is opt-in above. See our{" "}
         <Link to="/privacy" className="text-primary hover:underline">
           privacy policy
         </Link>

@@ -18,23 +18,32 @@ export const AUDIT_BUSINESS_TYPES = [
   "Other",
 ] as const;
 
-export const AUDIT_MISSED_CALL_HANDLING = [
-  "Goes to voicemail",
-  "Handled by staff later",
-  "Answering service",
-  "The call is usually lost",
+export const AUDIT_UNANSWERED_REQUEST = [
+  "Nothing happens until someone gets to it",
+  "Someone follows up later",
+  "An assistant or service picks it up",
+  "The request is usually lost",
   "Not sure",
 ] as const;
 
-export const AUDIT_MISSED_CALLS_PER_WEEK = [
-  "0 to 5",
-  "6 to 15",
-  "16 to 30",
-  "30+",
+export const AUDIT_REPETITIVE_WORK = [
+  "Scheduling and booking",
+  "Responding to inquiries",
+  "Data entry and paperwork",
+  "Reporting and follow-ups",
+  "Quoting and proposals",
   "Not sure",
 ] as const;
 
-export const AUDIT_AVERAGE_JOB_VALUE = [
+export const AUDIT_PROBLEM_FREQUENCY = [
+  "Rarely",
+  "A few times a month",
+  "A few times a week",
+  "Daily",
+  "Several times a day",
+] as const;
+
+export const AUDIT_AVERAGE_VALUE = [
   "Under $200",
   "$200 to $1,000",
   "$1,000 to $5,000",
@@ -106,20 +115,19 @@ export const auditSchema = z
       "Please choose your business type",
     ),
     businessTypeOther: optionalText(120),
-    missedCallHandling: oneOf(
-      AUDIT_MISSED_CALL_HANDLING,
+    unansweredRequest: oneOf(
+      AUDIT_UNANSWERED_REQUEST,
       "Please choose an option",
     ),
-    missedCallsPerWeek: oneOf(
-      AUDIT_MISSED_CALLS_PER_WEEK,
-      "Please choose a range",
-    ),
-    averageJobValue: oneOf(AUDIT_AVERAGE_JOB_VALUE, "Please choose a range"),
+    repetitiveWork: oneOf(AUDIT_REPETITIVE_WORK, "Please choose an option"),
+    problemFrequency: oneOf(AUDIT_PROBLEM_FREQUENCY, "Please choose an option"),
+    averageValue: oneOf(AUDIT_AVERAGE_VALUE, "Please choose a range"),
     startTiming: oneOf(AUDIT_START_TIMING, "Please choose an option"),
     website: optionalText(200),
     automationTask: optionalText(2000),
     software: optionalText(200),
     walkthrough: optionalOneOf(AUDIT_WALKTHROUGH, "Please choose Yes or No"),
+    followUpOptIn: z.boolean().optional(),
   })
   .superRefine((values, ctx) => {
     if (
@@ -143,14 +151,16 @@ export const AUDIT_EMPTY_VALUES: AuditValues = {
   role: "",
   businessType: "",
   businessTypeOther: "",
-  missedCallHandling: "",
-  missedCallsPerWeek: "",
-  averageJobValue: "",
+  unansweredRequest: "",
+  repetitiveWork: "",
+  problemFrequency: "",
+  averageValue: "",
   startTiming: "",
   website: "",
   automationTask: "",
   software: "",
   walkthrough: "",
+  followUpOptIn: false,
 };
 
 export type AuditErrors = Partial<Record<keyof AuditValues, string>>;
