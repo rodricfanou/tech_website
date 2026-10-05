@@ -16,7 +16,6 @@ import {
   Shield,
   Zap,
   Award,
-  Gauge,
 } from "lucide-react";
 import {
   CONTACT_EMAIL,
@@ -358,7 +357,7 @@ export function Nav() {
             className="h-8 w-auto sm:h-10 lg:h-12"
           />
         </a>
-        <nav className="hidden md:flex items-center gap-8 text-sm text-muted-foreground uppercase tracking-[0.12em]">
+        <nav className="hidden lg:flex items-center gap-8 text-sm text-muted-foreground uppercase tracking-[0.12em]">
           <a
             href="/services"
             onClick={(e) => handleSectionClick(e, "/services", "services")}
@@ -415,7 +414,7 @@ export function Nav() {
           </Link>
           <button
             onClick={() => setOpen(!open)}
-            className="md:hidden inline-flex items-center justify-center rounded-md p-2 text-muted-foreground hover:text-foreground hover:bg-card transition"
+            className="lg:hidden inline-flex items-center justify-center rounded-md p-2 text-muted-foreground hover:text-foreground hover:bg-card transition"
             aria-label={open ? "Close menu" : "Open menu"}
           >
             {open ? (
@@ -440,7 +439,7 @@ export function Nav() {
       </div>
       <MarqueeBanner />
       {open && (
-        <div className="md:hidden border-t border-border bg-background/95 backdrop-blur-xl">
+        <div className="lg:hidden border-t border-border bg-background/95 backdrop-blur-xl">
           <nav className="mx-auto max-w-7xl px-6 py-6 flex flex-col gap-4 text-sm uppercase tracking-[0.12em]">
             <a
               href="/services"
@@ -576,22 +575,14 @@ function Hero() {
         </p>
         <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row flex-wrap items-center justify-center gap-3 sm:gap-4 w-full px-2">
           <Link
-            to="/contact"
+            to="/ai-audit"
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 sm:px-6 text-sm sm:text-base font-semibold text-primary-foreground transition hover:opacity-90"
             style={{
               background: "var(--gradient-hero)",
               boxShadow: "var(--shadow-elegant)",
             }}
           >
-            Book a complimentary 20-minute AI Strategy Session{" "}
-            <ArrowRight className="h-4 w-4" />
-          </Link>
-          <Link
-            to="/ai-audit"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full border border-border px-5 py-3 sm:px-6 text-sm sm:text-base font-medium text-foreground hover:bg-card transition"
-          >
-            <Gauge className="h-4 w-4 text-primary" />
-            Take the free 5-minute AI audit
+            Take the free 5-minute AI audit <ArrowRight className="h-4 w-4" />
           </Link>
           <a
             href="/services"
@@ -604,6 +595,11 @@ function Hero() {
             Explore services
           </a>
         </div>
+        <p className="mt-5 text-center text-xs text-muted-foreground">
+          The audit is the first step. Answer three minutes of questions and we
+          review them ourselves, then reply with a summary and an invitation to
+          a 20-minute session.
+        </p>
       </div>
     </section>
   );

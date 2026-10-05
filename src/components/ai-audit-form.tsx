@@ -94,6 +94,25 @@ export function AiAuditForm() {
           We read every one of these ourselves. You&apos;ll get a short summary
           within 3 business days, and there&apos;s no obligation on either side.
         </p>
+        <div className="mt-8 border-t border-border pt-6">
+          <p className="text-sm font-semibold">
+            Want to talk it through now instead of waiting?
+          </p>
+          <p className="mt-1.5 text-sm text-muted-foreground">
+            If the audit flagged something urgent, you can book a complimentary
+            20-minute session and we&apos;ll dig into it live.
+          </p>
+          <Link
+            to="/contact"
+            className="mt-4 inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm sm:text-base font-semibold text-primary-foreground transition hover:opacity-90"
+            style={{
+              background: "var(--gradient-hero)",
+              boxShadow: "var(--shadow-glow)",
+            }}
+          >
+            Book a 20-minute session <ArrowRight className="h-4 w-4" />
+          </Link>
+        </div>
       </div>
     );
   }

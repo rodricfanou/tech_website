@@ -59,7 +59,8 @@ function AiAuditPage() {
               Free AI audit
             </p>
             <h1 className="mt-4 text-4xl sm:text-5xl md:text-6xl font-bold max-w-3xl mx-auto">
-              Find out how many jobs missed calls are costing your business.
+              Find out where AI could save your business time, reduce repetitive
+              work, and recover missed opportunities.
             </h1>
             <p className="mt-6 mx-auto max-w-2xl text-sm sm:text-base text-muted-foreground">
               Answer a few quick questions and get a short summary of where AI

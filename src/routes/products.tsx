@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, Gauge, Mail } from "lucide-react";
+import { ArrowRight, Mail } from "lucide-react";
 import { Nav, Footer } from "./index";
 import { CONTACT_EMAIL } from "@/components/contact-form";
 
@@ -141,23 +141,19 @@ function ProductsPage() {
           </p>
           <div className="mt-8 flex flex-col sm:flex-row flex-wrap items-center gap-3 sm:gap-4">
             <Link
-              to="/contact"
+              to="/ai-audit"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm sm:text-base font-semibold text-primary-foreground transition hover:opacity-90"
               style={{
                 background: "var(--gradient-hero)",
                 boxShadow: "var(--shadow-glow)",
               }}
             >
-              Book a complimentary AI Workflow Session{" "}
-              <ArrowRight className="h-4 w-4" />
+              Take the free 5-minute AI audit <ArrowRight className="h-4 w-4" />
             </Link>
-            <Link
-              to="/ai-audit"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full border border-border px-6 py-3 text-sm sm:text-base font-medium text-foreground hover:bg-card transition"
-            >
-              <Gauge className="h-4 w-4 text-primary" />
-              Take the free 5-minute AI audit
-            </Link>
+            <p className="w-full text-xs sm:text-sm text-muted-foreground sm:max-w-sm">
+              We review your answers ourselves, then reply with a summary and an
+              invitation to a complimentary session.
+            </p>
           </div>
         </div>
       </section>
