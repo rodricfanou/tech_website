@@ -36,17 +36,17 @@ const STEPS = [
   {
     n: "01",
     title: "Answer a few quick questions",
-    body: "About 3 minutes. No account, no card, no email verification.",
+    body: "About 3 minutes. No account, no card.",
   },
   {
     n: "02",
-    title: "We review your answers personally",
-    body: "Not an automated report. We read them ourselves and think about your specific business and workflow.",
+    title: "We read every answer personally",
+    body: "Reviewed by us — not an automated report.",
   },
   {
     n: "03",
-    title: "You receive your AI Opportunity Summary",
-    body: "Within 3 business days: where AI could realistically save time, automate work, or reduce missed opportunities — and which ones are worth exploring first.",
+    title: "Your AI Opportunity Summary",
+    body: "Within 3 business days: where AI saves the most, and what to start with.",
   },
 ];
 
@@ -103,7 +103,7 @@ function AiAuditPage() {
         </section>
 
         {/* How it works */}
-        <section className="py-16 sm:py-20 border-b border-border">
+        <section className="py-12 sm:py-20 border-b border-border">
           <div className="mx-auto max-w-6xl px-6">
             <div className="max-w-2xl">
               <p className="text-sm font-medium text-primary uppercase tracking-widest">
@@ -113,11 +113,11 @@ function AiAuditPage() {
                 Three steps, about five minutes.
               </h2>
             </div>
-            <div className="mt-10 grid gap-6 md:grid-cols-3">
+            <div className="mt-8 sm:mt-10 grid gap-4 sm:gap-6 md:grid-cols-3">
               {STEPS.map((step) => (
                 <div
                   key={step.n}
-                  className="rounded-2xl border border-border bg-card/60 p-6"
+                  className="rounded-2xl border border-border bg-card/60 p-5 sm:p-6"
                 >
                   <div className="text-sm font-mono text-primary">{step.n}</div>
                   <h3 className="mt-3 text-lg font-semibold">{step.title}</h3>
