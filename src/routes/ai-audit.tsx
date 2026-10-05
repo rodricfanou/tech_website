@@ -163,10 +163,6 @@ function AiAuditPage() {
                 </div>
               ))}
             </div>
-            <p className="mt-8 max-w-2xl text-sm text-muted-foreground">
-              Novaris Nexus Tech is a published AI researcher and senior systems
-              engineer.
-            </p>
           </div>
         </section>
       </main>
