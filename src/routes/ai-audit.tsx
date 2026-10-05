@@ -59,8 +59,13 @@ function AiAuditPage() {
               Free AI audit
             </p>
             <h1 className="mt-4 text-4xl sm:text-5xl xl:text-[3.25rem] leading-[1.1] font-bold max-w-5xl mx-auto text-balance">
-              Find out where AI could save your business time, reduce repetitive
-              work, and recover missed opportunities.
+              <span
+                className="bg-clip-text text-transparent"
+                style={{ backgroundImage: "var(--gradient-hero)" }}
+              >
+                Find out where AI could save your business time, reduce
+                repetitive work, and recover missed opportunities.
+              </span>
             </h1>
             <p className="mt-6 mx-auto max-w-2xl text-sm sm:text-base text-muted-foreground">
               Answer a few quick questions and get a personalized{" "}
