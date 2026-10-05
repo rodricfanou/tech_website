@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowRight, MapPin, Terminal } from "lucide-react";
+import { ArrowRight, Terminal } from "lucide-react";
 
 import { Nav, Footer } from "./index";
 import { AiAuditForm } from "@/components/ai-audit-form";
@@ -28,7 +28,7 @@ const STEPS = [
   },
   {
     n: "02",
-    title: "I review your answers personally",
+    title: "We review your answers personally",
     body: "Not an automated report. I read them myself and think about your specific trade and call flow.",
   },
   {
@@ -43,11 +43,6 @@ const CREDIBILITY = [
     icon: Terminal,
     title: "Senior Systems Engineer",
     body: "Years spent building and running production infrastructure, not just advising on it.",
-  },
-  {
-    icon: MapPin,
-    title: "Based in Austin, Texas",
-    body: "Working with service businesses across the US on the phone and AI problems they actually have.",
   },
 ];
 
@@ -147,7 +142,7 @@ function AiAuditPage() {
                 A person, not a funnel.
               </h2>
             </div>
-            <div className="mt-10 grid gap-6 sm:grid-cols-2">
+            <div className="mt-10 max-w-xl">
               {CREDIBILITY.map((item) => (
                 <div
                   key={item.title}
