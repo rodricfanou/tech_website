@@ -141,7 +141,16 @@ const SHELL = `
   .badge { font-size: 21px; font-weight: 700; color: oklch(0.78 0.16 210); letter-spacing: 0.04em; }
 `;
 
-function page({ eyebrow, headline, gradient, subhead, url, badge }) {
+function page({
+  eyebrow,
+  headline,
+  headlineSize,
+  gradient,
+  subhead,
+  url,
+  badge,
+}) {
+  const size = headlineSize ?? 74;
   return `<!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8"><style>${SHELL}</style></head>
 <body>
@@ -153,7 +162,7 @@ function page({ eyebrow, headline, gradient, subhead, url, badge }) {
     </div>
     <div>
       ${eyebrow ? `<p class="eyebrow">${eyebrow}</p>` : ""}
-      <h1${gradient === false ? ' class="plain"' : ""}>${headline}</h1>
+      <h1${gradient === false ? ' class="plain"' : ""} style="font-size: ${size}px">${headline}</h1>
     </div>
     <p class="subhead">${subhead}</p>
     <div class="footer"><span class="url">${url}</span>${badge ? `<span class="badge">${badge}</span>` : ""}</div>
@@ -167,9 +176,11 @@ const IMAGES = [
     html: () =>
       page({
         eyebrow: "Free 5-minute AI audit",
-        headline: "How many jobs are missed calls costing you?",
+        headline:
+          "Find out how many jobs missed calls are costing your business, and where AI can cut repetitive work.",
+        headlineSize: 56,
         subhead:
-          "Answer a few questions and see where AI can cut repetitive work and recover lost opportunities in your business.",
+          "Answer a few quick questions and get a ranked AI Opportunity Summary. Free, no call needed.",
         url: "novarisnexustech.com/ai-audit",
         badge: "AI Opportunity Summary",
       }),
@@ -190,6 +201,14 @@ const IMAGES = [
 
 mkdirSync(OUT_DIR, { recursive: true });
 const tmp = mkdtempSync(join(tmpdir(), "og-"));
+
+if (process.argv.includes("--dump-html")) {
+  for (const { file, html } of IMAGES) {
+    writeFileSync(join(tmp, file.replace(".png", ".html")), html());
+  }
+  console.log(tmp);
+  process.exit(0);
+}
 
 try {
   for (const { file, html } of IMAGES) {
