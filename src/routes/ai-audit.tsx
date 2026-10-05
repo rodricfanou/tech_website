@@ -45,10 +45,6 @@ const FAQ = [
     a: "Yes. The audit and the AI Opportunity Summary cost nothing, and there is nothing to buy afterwards. If we find something worth building, we will tell you what we would do and what it would roughly involve — the decision stays entirely yours.",
   },
   {
-    q: "Who sees my answers?",
-    a: "One person: the engineer who built the form. Your answers go straight to our inbox and are used to write your summary and to decide whether a follow-up is worth both our time. They are never sold, shared, or handed to an ad platform. Optional follow-up is a separate opt-in box, not a pre-ticked default.",
-  },
-  {
     q: "Will you pitch me afterward?",
     a: "You get the summary either way. If it turns out there is a clear opportunity and you want help with it, we will suggest a short walkthrough. If the honest answer is that nothing here is worth automating yet, that is what we will tell you.",
   },
