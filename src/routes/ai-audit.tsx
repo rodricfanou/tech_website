@@ -25,7 +25,7 @@ export const Route = createFileRoute("/ai-audit")({
         path: "/ai-audit",
         image: {
           path: "/og/ai-audit.png",
-          alt: "Find out how many jobs missed calls are costing your business, and where AI can cut repetitive work. Free 5-minute AI audit from Novaris Nexus Tech",
+          alt: "Free 5-Minute AI Audit from Novaris Nexus Tech",
         },
       }),
     ],
