@@ -1,6 +1,6 @@
 import { useState, type FormEvent } from "react";
 import { Link } from "@tanstack/react-router";
-import { ArrowRight, Check, Mail } from "lucide-react";
+import { ArrowRight, Check } from "lucide-react";
 
 import {
   AUDIT_AVERAGE_JOB_VALUE,
@@ -18,13 +18,6 @@ import {
   type AuditErrors,
   type AuditValues,
 } from "@/lib/ai-audit";
-
-/**
- * Email delivery is the only channel this form has, and a misconfigured
- * form provider fails silently. Give the visitor a way to reach us directly
- * if the summary never arrives.
- */
-const AUDIT_FALLBACK_EMAIL = "rfexplorer@proton.me";
 
 const CONTROL =
   "mt-1 w-full rounded-xl border border-border bg-background/60 px-4 py-3 text-sm text-foreground outline-none focus:border-primary transition";
@@ -100,17 +93,6 @@ export function AiAuditForm() {
         <p className="mt-2 text-sm text-muted-foreground">
           We read every one of these ourselves. You&apos;ll get a short summary
           within 3 business days, and there&apos;s no obligation on either side.
-        </p>
-        <p className="mt-6 rounded-xl border border-border bg-background/60 px-4 py-3 text-sm text-muted-foreground">
-          <Mail className="mr-1.5 inline h-4 w-4 -translate-y-0.5 text-primary" />
-          Nothing after a few days? Email{" "}
-          <a
-            href={`mailto:${AUDIT_FALLBACK_EMAIL}`}
-            className="font-medium text-primary hover:underline break-all"
-          >
-            {AUDIT_FALLBACK_EMAIL}
-          </a>{" "}
-          and we&apos;ll pick it up from there.
         </p>
       </div>
     );
