@@ -16,6 +16,7 @@ import {
   Shield,
   Zap,
   Award,
+  BadgeCheck,
 } from "lucide-react";
 import {
   CONTACT_EMAIL,
@@ -566,9 +567,15 @@ function Hero() {
             className="mb-4 h-auto w-full max-w-[12rem] sm:max-w-[18rem] md:max-w-[28rem] lg:max-w-[42rem] xl:max-w-[54rem] object-contain drop-shadow-[0_0_30px_oklch(0.72_0.19_260/0.25)]"
           />
         </picture>
-        <div className="inline-flex items-center gap-2 rounded-full border border-border bg-card/60 px-3 py-1 text-xs text-muted-foreground backdrop-blur">
-          <Sparkles className="h-3.5 w-3.5 text-primary" />
-          AI · Infrastructure · Data at scale
+        <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3">
+          <div className="inline-flex items-center gap-2 rounded-full border border-border bg-card/60 px-3 py-1 text-xs text-muted-foreground backdrop-blur">
+            <Sparkles className="h-3.5 w-3.5 text-primary" />
+            AI · Infrastructure · Data at scale
+          </div>
+          <div className="inline-flex items-center gap-1.5 rounded-full border border-primary/40 bg-primary/10 px-3 py-1 text-xs font-semibold text-primary backdrop-blur">
+            <BadgeCheck className="h-3.5 w-3.5" />
+            CPD Certified AI Agents Builder
+          </div>
         </div>
         <h1 className="mt-6 max-w-4xl text-3xl sm:text-5xl md:text-7xl font-bold leading-[1.05]">
           We build{" "}

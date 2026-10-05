@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowRight, BadgeCheck, Terminal } from "lucide-react";
+import { ArrowRight, Terminal } from "lucide-react";
 
 import { Nav, Footer } from "./index";
 import { AiAuditForm } from "@/components/ai-audit-form";
@@ -41,9 +41,8 @@ const STEPS = [
 const CREDIBILITY = [
   {
     icon: Terminal,
-    badge: "CPD Certified AI Agents Builder",
     title: "Senior Systems Engineer",
-    body: "15+ years spent building and running production infrastructure, not just advising on it.",
+    body: "15+ years spent building and running production infrastructure, not just advising on it. CPD (Continuing Professional Development) certified AI Agents builder.",
   },
 ];
 
@@ -160,11 +159,7 @@ function AiAuditPage() {
                     <item.icon className="h-5 w-5 text-primary-foreground" />
                   </div>
                   <div>
-                    <span className="inline-flex items-center gap-1.5 rounded-full border border-primary/40 bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
-                      <BadgeCheck className="h-3.5 w-3.5" />
-                      {item.badge}
-                    </span>
-                    <h3 className="mt-4 font-semibold">{item.title}</h3>
+                    <h3 className="font-semibold">{item.title}</h3>
                     <p className="mt-2 text-sm text-muted-foreground">
                       {item.body}
                     </p>
