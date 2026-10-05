@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowRight, Terminal } from "lucide-react";
+import { ArrowRight, BadgeCheck, Terminal } from "lucide-react";
 
 import { Nav, Footer } from "./index";
 import { AiAuditForm } from "@/components/ai-audit-form";
@@ -41,6 +41,7 @@ const STEPS = [
 const CREDIBILITY = [
   {
     icon: Terminal,
+    badge: "CPD Certified AI Agents Builder",
     title: "Senior Systems Engineer",
     body: "15+ years spent building and running production infrastructure, not just advising on it.",
   },
@@ -54,11 +55,11 @@ function AiAuditPage() {
       <main>
         {/* Hero */}
         <section className="pt-28 sm:pt-36 pb-12 sm:pb-16 border-b border-border">
-          <div className="mx-auto max-w-3xl px-6 text-center">
+          <div className="mx-auto max-w-5xl px-6 text-center">
             <p className="text-sm font-medium text-primary uppercase tracking-widest">
               Free AI audit
             </p>
-            <h1 className="mt-4 text-4xl sm:text-5xl md:text-6xl font-bold max-w-3xl mx-auto">
+            <h1 className="mt-4 text-4xl sm:text-5xl xl:text-[3.25rem] leading-[1.1] font-bold max-w-5xl mx-auto text-balance">
               Find out where AI could save your business time, reduce repetitive
               work, and recover missed opportunities.
             </h1>
@@ -159,7 +160,11 @@ function AiAuditPage() {
                     <item.icon className="h-5 w-5 text-primary-foreground" />
                   </div>
                   <div>
-                    <h3 className="font-semibold">{item.title}</h3>
+                    <span className="inline-flex items-center gap-1.5 rounded-full border border-primary/40 bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
+                      <BadgeCheck className="h-3.5 w-3.5" />
+                      {item.badge}
+                    </span>
+                    <h3 className="mt-4 font-semibold">{item.title}</h3>
                     <p className="mt-2 text-sm text-muted-foreground">
                       {item.body}
                     </p>

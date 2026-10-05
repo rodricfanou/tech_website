@@ -403,12 +403,18 @@ export function Nav() {
         </nav>
         <div className="flex items-center gap-3">
           <Link
-            to="/contact"
+            to="/ai-audit"
             className="hidden sm:inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium text-primary-foreground transition hover:opacity-90"
             style={{
               background: "var(--gradient-hero)",
               boxShadow: "var(--shadow-glow)",
             }}
+          >
+            Free AI audit <Sparkles className="h-4 w-4" />
+          </Link>
+          <Link
+            to="/contact"
+            className="hidden xl:inline-flex items-center gap-2 rounded-full border border-border bg-background/60 px-4 py-2 text-sm font-medium text-foreground transition hover:border-primary hover:text-primary"
           >
             Start a project <ArrowRight className="h-4 w-4" />
           </Link>
@@ -504,13 +510,20 @@ export function Nav() {
               Contact
             </Link>
             <Link
-              to="/contact"
+              to="/ai-audit"
               onClick={() => setOpen(false)}
               className="mt-2 inline-flex items-center justify-center gap-2 rounded-full px-4 py-2 text-sm font-medium text-primary-foreground transition hover:opacity-90"
               style={{
                 background: "var(--gradient-hero)",
                 boxShadow: "var(--shadow-glow)",
               }}
+            >
+              Free AI audit <Sparkles className="h-4 w-4" />
+            </Link>
+            <Link
+              to="/contact"
+              onClick={() => setOpen(false)}
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-border bg-background/60 px-4 py-2 text-sm font-medium text-foreground transition hover:border-primary hover:text-primary"
             >
               Start a project <ArrowRight className="h-4 w-4" />
             </Link>
