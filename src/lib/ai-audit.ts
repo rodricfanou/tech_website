@@ -50,6 +50,14 @@ export const AUDIT_AVERAGE_VALUE = [
   "$5,000+",
 ] as const;
 
+export const AUDIT_WEEKLY_INQUIRY_VOLUME = [
+  "Under 10",
+  "10 to 30",
+  "30 to 100",
+  "100+",
+  "Not sure",
+] as const;
+
 export const AUDIT_START_TIMING = [
   "Right away",
   "Within 3 months",
@@ -91,6 +99,27 @@ const optionalOneOf = (values: readonly string[], message: string) =>
     .refine((value) => value === "" || values.includes(value), { message })
     .optional();
 
+/**
+ * A phone number is optional, so this only has to reject the obvious mistakes:
+ * anything with 7 to 15 digits in it is accepted, including spaces, brackets,
+ * dashes and a leading plus.
+ */
+const optionalPhone = z
+  .string()
+  .trim()
+  .max(40, "Please keep this under 40 characters")
+  .refine(
+    (value) =>
+      value === "" ||
+      (value.replace(/\D/g, "").length >= 7 &&
+        value.replace(/\D/g, "").length <= 15),
+    {
+      message: "Please enter a phone number with digits, spaces, or + only",
+    },
+  )
+  .optional()
+  .or(z.literal(""));
+
 export const auditSchema = z
   .object({
     name: z
@@ -119,11 +148,16 @@ export const auditSchema = z
       AUDIT_UNANSWERED_REQUEST,
       "Please choose an option",
     ),
+    weeklyInquiryVolume: oneOf(
+      AUDIT_WEEKLY_INQUIRY_VOLUME,
+      "Please choose a range",
+    ),
     repetitiveWork: oneOf(AUDIT_REPETITIVE_WORK, "Please choose an option"),
     problemFrequency: oneOf(AUDIT_PROBLEM_FREQUENCY, "Please choose an option"),
     averageValue: oneOf(AUDIT_AVERAGE_VALUE, "Please choose a range"),
     startTiming: oneOf(AUDIT_START_TIMING, "Please choose an option"),
     website: optionalText(200),
+    phone: optionalPhone,
     automationTask: optionalText(2000),
     software: optionalText(200),
     walkthrough: optionalOneOf(AUDIT_WALKTHROUGH, "Please choose Yes or No"),
@@ -152,15 +186,81 @@ export const AUDIT_EMPTY_VALUES: AuditValues = {
   businessType: "",
   businessTypeOther: "",
   unansweredRequest: "",
+  weeklyInquiryVolume: "",
   repetitiveWork: "",
   problemFrequency: "",
   averageValue: "",
   startTiming: "",
   website: "",
+  phone: "",
   automationTask: "",
   software: "",
   walkthrough: "",
   followUpOptIn: false,
+};
+
+/**
+ * The three wizard steps, and which fields each one is responsible for. The
+ * form uses this to validate a step before letting the visitor continue, so
+ * someone is never told a field is wrong on a step they cannot see.
+ */
+export const AUDIT_STEPS = [
+  { id: "about", title: "About you" },
+  { id: "inbound", title: "Your inbound requests" },
+  { id: "next", title: "Next step" },
+] as const;
+
+export const AUDIT_STEP_FIELDS: Record<AuditStepId, (keyof AuditValues)[]> = {
+  about: [
+    "name",
+    "email",
+    "businessName",
+    "role",
+    "businessType",
+    "businessTypeOther",
+  ],
+  inbound: [
+    "unansweredRequest",
+    "problemFrequency",
+    "weeklyInquiryVolume",
+    "averageValue",
+    "repetitiveWork",
+  ],
+  next: [
+    "startTiming",
+    "website",
+    "phone",
+    "automationTask",
+    "software",
+    "walkthrough",
+    "followUpOptIn",
+  ],
+};
+
+export type AuditStepId = (typeof AUDIT_STEPS)[number]["id"];
+
+const auditShape = auditSchema.innerType().shape;
+
+const stepSchema = (fields: readonly (keyof typeof auditShape)[]) =>
+  z.object(
+    Object.fromEntries(
+      fields.map((field) => [field, auditShape[field]]),
+    ) as Pick<typeof auditShape, keyof typeof auditShape>,
+  );
+
+/**
+ * One validator per step, built from the field definitions of the full schema
+ * so a rule is only ever written once. The wizard checks the visible step
+ * before moving on, which keeps a required answer from being reported as
+ * missing while the visitor is still on step one.
+ */
+export const AUDIT_STEP_SCHEMAS: Record<
+  AuditStepId,
+  z.ZodType<Record<string, unknown>>
+> = {
+  about: stepSchema(AUDIT_STEP_FIELDS.about),
+  inbound: stepSchema(AUDIT_STEP_FIELDS.inbound),
+  next: stepSchema(AUDIT_STEP_FIELDS.next),
 };
 
 export type AuditErrors = Partial<Record<keyof AuditValues, string>>;

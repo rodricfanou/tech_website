@@ -1,124 +1,121 @@
 import type { AuditValues } from "./ai-audit";
 
 /**
- * Deterministic lead scoring for the AI audit.
+ * Lead scoring for the AI audit.
  *
- * The dimensions mirror how a lead actually gets qualified: is this our kind
- * of buyer, how much does the problem hurt, how often does it bite, what is it
- * worth, how much of it can be automated, how soon do they want relief, and
- * will they actually take a call.
+ * Seven binary or near-binary questions, worth 12 points in total. Each one is
+ * something the visitor answered, so the score exists only to sort the inbox —
+ * it is never shown to the visitor and never presented as a statistic.
  *
- * Every point comes from an answer the visitor gave, so nothing has to be
- * invented later: the score exists to sort the inbox, never to be shown to the
- * visitor as a statistic.
+ * Note what is deliberately absent: where the repetitive work sits. It is still
+ * captured and still reaches the notification email, because it shapes the
+ * summary, but it does not move the score. Priority here is about who is
+ * losing money right now, not who has the most interesting automation story.
  */
 
-type PointsTable = Record<string, Record<string, number>>;
-
-const POINTS: PointsTable = {
-  /** Fit: can this person decide. */
-  role: {
-    Owner: 8,
-    Manager: 5,
-    Other: 2,
-  },
-  /** Business pain: what happens to an inbound request nobody can answer. */
-  unansweredRequest: {
-    "Nothing happens until someone gets to it": 8,
-    "Someone follows up later": 12,
-    "An assistant or service picks it up": 10,
-    "The request is usually lost": 20,
-    "Not sure": 10,
-  },
-  /** Automation potential: where the repeatable work sits. */
-  repetitiveWork: {
-    "Scheduling and booking": 14,
-    "Responding to inquiries": 16,
-    "Data entry and paperwork": 14,
-    "Reporting and follow-ups": 10,
-    "Quoting and proposals": 14,
-    "Not sure": 8,
-  },
-  /** Frequency: how often the problem lands. */
-  problemFrequency: {
-    Rarely: 0,
-    "A few times a month": 6,
-    "A few times a week": 12,
-    Daily: 16,
-    "Several times a day": 18,
-  },
-  /** Economic value: what one recovered customer or project is worth. */
-  averageValue: {
-    "Under $200": 2,
-    "$200 to $1,000": 6,
-    "$1,000 to $5,000": 12,
-    "$5,000+": 18,
-  },
-  /** Urgency. */
-  startTiming: {
-    "Right away": 15,
-    "Within 3 months": 10,
-    "Just exploring": 4,
-    "Not interested": 0,
-  },
-  /** Willingness to engage. */
-  walkthrough: {
-    Yes: 5,
-    No: 0,
-  },
-};
-
-/** 8 + 20 + 16 + 18 + 18 + 15 + 5, so the score reads directly as a percent. */
-export const AUDIT_MAX_SCORE = 100;
-
-const HOT_AT = 70;
-const WARM_AT = 45;
+export type AuditTier = "HOT" | "WARM" | "NURTURE";
 
 export type AuditScore = {
   score: number;
-  band: "Hot" | "Warm" | "Nurture";
+  tier: AuditTier;
+  /** Set when the volume answer is unusable but the job value is high. */
+  needsCloserLook: boolean;
   priority: string;
   breakdown: { label: string; points: number }[];
 };
 
-const PRIORITY: Record<AuditScore["band"], string> = {
-  Hot: "Reply within one business day and offer the 20-minute session.",
-  Warm: "Reply within two business days with the written summary.",
-  Nurture: "Send the summary only. Revisit if they follow up.",
+/** 1 + 2 + 2 + 1 + 2 + 3 + 1. */
+export const AUDIT_MAX_SCORE = 12;
+
+const HOT_AT = 8;
+const WARM_AT = 4;
+
+/** Owner or Manager can actually sign off on the work. */
+const ROLE_QUALIFIES = new Set<AuditValues["role"]>(["Owner", "Manager"]);
+
+/**
+ * "Lost or wait": the request dies, or it sits until someone gets to it. An
+ * assistant or service already picking it up is the good outcome, so it scores
+ * nothing.
+ */
+const UNANSWERED_LOST_OR_WAIT = new Set<AuditValues["unansweredRequest"]>([
+  "Nothing happens until someone gets to it",
+  "Someone follows up later",
+  "The request is usually lost",
+]);
+
+const FREQUENT_ENOUGH = new Set<AuditValues["problemFrequency"]>([
+  "A few times a week",
+  "Daily",
+  "Several times a day",
+]);
+
+const HIGH_VOLUME = new Set<AuditValues["weeklyInquiryVolume"]>([
+  "30 to 100",
+  "100+",
+]);
+
+const HIGH_VALUE = new Set<AuditValues["averageValue"]>([
+  "$1,000 to $5,000",
+  "$5,000+",
+]);
+
+const START_POINTS: Partial<Record<AuditValues["startTiming"], number>> = {
+  "Right away": 3,
+  "Within 3 months": 2,
+};
+
+const PRIORITY: Record<AuditTier, string> = {
+  HOT: "Reply within one business day and offer the 15-minute walkthrough.",
+  WARM: "Reply within two business days with the written summary.",
+  NURTURE: "Send the summary only. Revisit if they follow up.",
 };
 
 export function scoreLead(values: AuditValues): AuditScore {
   const breakdown: AuditScore["breakdown"] = [
-    { label: "Role", points: POINTS.role[values.role] ?? 0 },
     {
-      label: "What happens to an unanswered request",
-      points: POINTS.unansweredRequest[values.unansweredRequest] ?? 0,
+      label: "Role is Owner or Manager",
+      points: ROLE_QUALIFIES.has(values.role) ? 1 : 0,
     },
     {
-      label: "Biggest area of repetitive work",
-      points: POINTS.repetitiveWork[values.repetitiveWork] ?? 0,
+      label: "Unanswered requests are lost or wait",
+      points: UNANSWERED_LOST_OR_WAIT.has(values.unansweredRequest) ? 2 : 0,
     },
     {
-      label: "How often it happens",
-      points: POINTS.problemFrequency[values.problemFrequency] ?? 0,
+      label: "Happens a few times a week or more",
+      points: FREQUENT_ENOUGH.has(values.problemFrequency) ? 2 : 0,
     },
     {
-      label: "Average value of a customer or project",
-      points: POINTS.averageValue[values.averageValue] ?? 0,
+      label: "30 or more inbound requests a week",
+      points: HIGH_VOLUME.has(values.weeklyInquiryVolume) ? 1 : 0,
     },
     {
-      label: "How soon they want to start",
-      points: POINTS.startTiming[values.startTiming] ?? 0,
+      label: "Average job value is $1,000 or more",
+      points: HIGH_VALUE.has(values.averageValue) ? 2 : 0,
+    },
+    {
+      label: "Wants to start right away",
+      points: START_POINTS[values.startTiming] ?? 0,
     },
     {
       label: "Open to a walkthrough",
-      points: POINTS.walkthrough[values.walkthrough ?? ""] ?? 0,
+      points: values.walkthrough === "Yes" ? 1 : 0,
     },
   ];
 
   const score = breakdown.reduce((total, part) => total + part.points, 0);
-  const band: AuditScore["band"] =
-    score >= HOT_AT ? "Hot" : score >= WARM_AT ? "Warm" : "Nurture";
+  const tier: AuditTier =
+    score >= HOT_AT ? "HOT" : score >= WARM_AT ? "WARM" : "NURTURE";
 
-  return { score, band, priority: PRIORITY[band], breakdown };
+  /*
+   * "Not sure" on volume means the one number that decides the size of the
+   * problem is missing, which is exactly the case a rubric cannot resolve on
+   * its own. Paired with a high job value it is worth a human look rather than
+   * a quiet NURTURE, because the upside could be large.
+   */
+  const needsCloserLook =
+    values.weeklyInquiryVolume === "Not sure" &&
+    HIGH_VALUE.has(values.averageValue);
+
+  return { score, tier, needsCloserLook, priority: PRIORITY[tier], breakdown };
 }

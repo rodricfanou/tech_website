@@ -8,4 +8,5 @@ template/
 *.local
 .env
 .env.*
+!.env.example
 .wrangler/

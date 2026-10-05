@@ -3,25 +3,32 @@ import { ArrowRight, Terminal } from "lucide-react";
 
 import { Nav, Footer } from "./index";
 import { AiAuditForm } from "@/components/ai-audit-form";
-import { socialMeta } from "@/lib/seo";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import { canonicalMeta, socialMeta } from "@/lib/seo";
 
 export const Route = createFileRoute("/ai-audit")({
   component: AiAuditPage,
   head: () => ({
     meta: [
       {
-        title: "Free 5-Minute AI Audit — AI Opportunity Summary | Novaris",
+        title:
+          "Free 5-Minute AI Audit: What Are Missed Calls Costing You? | Novaris Nexus Tech",
       },
       {
         name: "description",
         content:
-          "Answer a few quick questions and get a personalized AI Opportunity Summary: where AI could save time, automate work, or reduce missed opportunities, and which are worth exploring first. Free, no call needed.",
+          "Answer a few quick questions and get a personalized AI Opportunity Summary within 3 business days. Free. No call needed.",
       },
+      ...canonicalMeta("/ai-audit"),
       ...socialMeta({
-        title:
-          "Find out how many jobs missed calls are costing your business, and where AI can cut repetitive work.",
+        title: "Free 5-Minute AI Audit: What Are Missed Calls Costing You?",
         description:
-          "A free 5-minute AI audit scores where missed calls, repetitive work and lost opportunities are costing you — and where AI can recover them. No call needed.",
+          "Answer a few quick questions and get a personalized AI Opportunity Summary within 3 business days. Free. No call needed.",
         path: "/ai-audit",
         image: {
           path: "/og/ai-audit.png",
@@ -31,6 +38,33 @@ export const Route = createFileRoute("/ai-audit")({
     ],
   }),
 });
+
+const FAQ = [
+  {
+    q: "Is it really free?",
+    a: "Yes. The audit and the AI Opportunity Summary cost nothing, and there is nothing to buy afterwards. If we find something worth building, we will tell you what we would do and what it would roughly involve — the decision stays entirely yours.",
+  },
+  {
+    q: "Who sees my answers?",
+    a: "One person: the engineer who built the form. Your answers go straight to our inbox and are used to write your summary and to decide whether a follow-up is worth both our time. They are never sold, shared, or handed to an ad platform. Optional follow-up is a separate opt-in box, not a pre-ticked default.",
+  },
+  {
+    q: "Will you pitch me afterward?",
+    a: "You get the summary either way. If it turns out there is a clear opportunity and you want help with it, we will suggest a short walkthrough. If the honest answer is that nothing here is worth automating yet, that is what we will tell you.",
+  },
+  {
+    q: "What happens after I submit?",
+    a: "We read your answers, work through your numbers by hand, and email your AI Opportunity Summary within 3 business days. You can optionally book a 15-minute walkthrough from the confirmation screen if you would rather talk it through than wait.",
+  },
+];
+
+const CTA =
+  "inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-full px-6 py-3 text-base font-semibold text-primary-foreground transition hover:opacity-90";
+
+const CTA_STYLE = {
+  background: "var(--gradient-hero)",
+  boxShadow: "var(--shadow-glow)",
+};
 
 const STEPS = [
   {
@@ -75,27 +109,20 @@ function AiAuditPage() {
                 className="bg-clip-text text-transparent"
                 style={{ backgroundImage: "var(--gradient-hero)" }}
               >
-                Find out where AI could save your business time, reduce
-                repetitive work, and recover missed opportunities.
+                Find out how many jobs missed calls are costing your business,
+                and where AI can cut repetitive work.
               </span>
             </h1>
             <p className="mt-6 mx-auto max-w-2xl text-sm sm:text-base text-muted-foreground">
               Answer a few quick questions and get a personalized{" "}
               <strong className="font-semibold text-foreground">
                 AI Opportunity Summary
-              </strong>
-              : where AI could realistically save time, automate work, or reduce
-              missed opportunities. Free. No call needed.
+              </strong>{" "}
+              within 3 business days, reviewed by a person. Free. No call
+              needed.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
-              <a
-                href="#audit-form"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-base font-semibold text-primary-foreground transition hover:opacity-90"
-                style={{
-                  background: "var(--gradient-hero)",
-                  boxShadow: "var(--shadow-glow)",
-                }}
-              >
+              <a href="#audit-form" className={CTA} style={CTA_STYLE}>
                 Start my free audit <ArrowRight className="h-4 w-4" />
               </a>
             </div>
@@ -126,6 +153,63 @@ function AiAuditPage() {
                   </p>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* What you'll get */}
+        <section className="py-12 sm:py-20 border-b border-border">
+          <div className="mx-auto max-w-6xl px-6">
+            <div className="max-w-2xl">
+              <p className="text-sm font-medium text-primary uppercase tracking-widest">
+                What you&apos;ll get
+              </p>
+              <h2 className="mt-3 text-3xl sm:text-4xl font-bold">
+                Numbers first, then a recommendation.
+              </h2>
+              <p className="mt-4 text-sm sm:text-base text-muted-foreground">
+                Your summary starts with what the answers suggest is going
+                unanswered, what that costs, and what we would look at first.
+                Here is the shape of it, using a fictional business:
+              </p>
+            </div>
+
+            <div className="mt-8 sm:mt-10 rounded-2xl border border-border bg-card/60 p-6 sm:p-8">
+              <p className="text-xs font-medium text-muted-foreground uppercase tracking-widest">
+                Example only — a fictional plumbing company
+              </p>
+
+              <div className="mt-5 space-y-5 text-sm sm:text-base">
+                <div>
+                  <p className="font-semibold">Based on</p>
+                  <p className="mt-1 text-muted-foreground">
+                    35 inbound requests a week, average job value $1,200, two
+                    vans out, and a callback habit that usually runs a day or
+                    two behind.
+                  </p>
+                </div>
+                <div>
+                  <p className="font-semibold">What that suggests</p>
+                  <p className="mt-1 text-muted-foreground">
+                    Roughly 12 to 18 calls a month go unanswered — the estimate
+                    widens with their real call log. At $1,200 a job, that is
+                    somewhere between{" "}
+                    <span className="font-semibold text-foreground">
+                      $14,000 and $21,000 a month
+                    </span>{" "}
+                    in work that never got booked.
+                  </p>
+                </div>
+                <div>
+                  <p className="font-semibold">What we&apos;d check first</p>
+                  <p className="mt-1 text-muted-foreground">
+                    Whether after-hours and overflow calls can be answered by an
+                    assistant that books the job, before anything else is
+                    automated. Ranges, assumptions and the reasoning all come
+                    written out, so you can disagree with any of it.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -194,6 +278,44 @@ function AiAuditPage() {
                   className="w-full rounded-2xl border border-border object-cover"
                 />
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ */}
+        <section className="py-16 sm:py-20 border-t border-border">
+          <div className="mx-auto max-w-3xl px-6">
+            <p className="text-sm font-medium text-primary uppercase tracking-widest">
+              Questions
+            </p>
+            <h2 className="mt-3 text-3xl sm:text-4xl font-bold">
+              Before you hand over the answers.
+            </h2>
+            <Accordion type="single" collapsible className="mt-8">
+              {FAQ.map((item) => (
+                <AccordionItem key={item.q} value={item.q}>
+                  <AccordionTrigger>{item.q}</AccordionTrigger>
+                  <AccordionContent>{item.a}</AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </div>
+        </section>
+
+        {/* Closing CTA */}
+        <section className="py-16 sm:py-20 border-t border-border">
+          <div className="mx-auto max-w-3xl px-6 text-center">
+            <h2 className="text-3xl sm:text-4xl font-bold text-balance">
+              Find out what&apos;s walking out of the door.
+            </h2>
+            <p className="mt-4 mx-auto max-w-xl text-sm sm:text-base text-muted-foreground">
+              About five minutes of questions. A written summary within 3
+              business days, reviewed by a person.
+            </p>
+            <div className="mt-8 flex justify-center">
+              <a href="#audit-form" className={CTA} style={CTA_STYLE}>
+                Start my free audit <ArrowRight className="h-4 w-4" />
+              </a>
             </div>
           </div>
         </section>

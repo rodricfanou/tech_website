@@ -25,6 +25,15 @@ export function ogImageMeta(image: OgImage) {
   ];
 }
 
+/**
+ * A self-referencing absolute URL, so search engines treat this as the one
+ * address for the page instead of guessing between trailing slashes and
+ * tracking parameters.
+ */
+export function canonicalMeta(path: string) {
+  return [{ rel: "canonical", href: SITE_URL + path }];
+}
+
 export function socialMeta({
   title,
   description,

@@ -25,9 +25,12 @@ export const Route = createFileRoute("/api/ai-audit")({
   server: {
     handlers: {
       POST: async ({ request }) => {
-        const ip = getRequestIP({ xForwardedFor: true }) ?? "unknown";
+        // Used only to bucket this request for rate limiting, and immediately
+        // hashed by the limiter. The address itself is never stored, logged or
+        // sent anywhere.
+        const address = getRequestIP({ xForwardedFor: true }) ?? "unknown";
 
-        if (isRateLimited(ip)) {
+        if (isRateLimited(address)) {
           return json(
             {
               ok: false,
@@ -69,6 +72,8 @@ export const Route = createFileRoute("/api/ai-audit")({
         }
 
         try {
+          // Only the answers are forwarded. No request metadata is attached to
+          // a lead.
           await persistLead(result.data, scoreLead(result.data));
         } catch (error) {
           console.error("ai-audit: delivery failed", error);
