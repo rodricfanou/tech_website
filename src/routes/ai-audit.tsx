@@ -62,24 +62,6 @@ const CTA_STYLE = {
   boxShadow: "var(--shadow-glow)",
 };
 
-const STEPS = [
-  {
-    n: "01",
-    title: "Answer a few quick questions",
-    body: "About 3 minutes. No account, no card.",
-  },
-  {
-    n: "02",
-    title: "We read every answer personally",
-    body: "Reviewed by us — not an automated report.",
-  },
-  {
-    n: "03",
-    title: "Your AI Opportunity Summary",
-    body: "Within 3 business days: where AI saves the most, and what to start with.",
-  },
-];
-
 const CREDIBILITY = [
   {
     icon: Terminal,
@@ -110,12 +92,11 @@ function AiAuditPage() {
               </span>
             </h1>
             <p className="mt-6 mx-auto max-w-2xl text-sm sm:text-base text-muted-foreground">
-              Answer a few quick questions and get a personalized{" "}
+              Answer a few quick questions and get a Free{" "}
               <strong className="font-semibold text-foreground">
-                AI Opportunity Summary
+                personalized AI Opportunity Summary
               </strong>{" "}
-              within 3 business days, reviewed by a person. Free. No call
-              needed.
+              within 3 business days, manually reviewed. No call needed.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
               <a href="#audit-form" className={CTA} style={CTA_STYLE}>
@@ -126,34 +107,6 @@ function AiAuditPage() {
         </section>
 
         {/* How it works */}
-        <section className="py-12 sm:py-20 border-b border-border">
-          <div className="mx-auto max-w-6xl px-6">
-            <div className="max-w-2xl">
-              <p className="text-sm font-medium text-primary uppercase tracking-widest">
-                How it works
-              </p>
-              <h2 className="mt-3 text-3xl sm:text-4xl font-bold">
-                Three steps, about five minutes.
-              </h2>
-            </div>
-            <div className="mt-8 sm:mt-10 grid gap-4 sm:gap-6 md:grid-cols-3">
-              {STEPS.map((step) => (
-                <div
-                  key={step.n}
-                  className="rounded-2xl border border-border bg-card/60 p-5 sm:p-6"
-                >
-                  <div className="text-sm font-mono text-primary">{step.n}</div>
-                  <h3 className="mt-3 text-lg font-semibold">{step.title}</h3>
-                  <p className="mt-2 text-sm text-muted-foreground">
-                    {step.body}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* What you'll get */}
         <section className="py-12 sm:py-20 border-b border-border">
           <div className="mx-auto max-w-6xl px-6">
             <div className="max-w-2xl">
@@ -200,9 +153,10 @@ function AiAuditPage() {
                   <p className="font-semibold">What we&apos;d check first</p>
                   <p className="mt-1 text-muted-foreground">
                     Whether after-hours and overflow calls can be answered by an
-                    assistant that books the job, before anything else is
-                    automated. Ranges, assumptions and the reasoning all come
-                    written out, so you can disagree with any of it.
+                    assistant that books the job on your calendar, before
+                    anything else is automated. Ranges, assumptions and the
+                    reasoning all come written out, so you can disagree with any
+                    of it.
                   </p>
                 </div>
               </div>
@@ -306,7 +260,7 @@ function AiAuditPage() {
             </h2>
             <p className="mt-4 mx-auto max-w-xl text-sm sm:text-base text-muted-foreground">
               About five minutes of questions. A written summary within 3
-              business days, reviewed by a person.
+              business days, manually reviewed.
             </p>
             <div className="mt-8 flex justify-center">
               <a href="#audit-form" className={CTA} style={CTA_STYLE}>
