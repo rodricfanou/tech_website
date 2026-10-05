@@ -29,7 +29,7 @@ const STEPS = [
   {
     n: "02",
     title: "We review your answers personally",
-    body: "Not an automated report. I read them myself and think about your specific trade and call flow.",
+    body: "Not an automated report. We read them ourselves and think about your specific trade and call flow.",
   },
   {
     n: "03",
@@ -165,7 +165,7 @@ function AiAuditPage() {
             </div>
             <p className="mt-8 max-w-2xl text-sm text-muted-foreground">
               Novaris Nexus Tech is a published AI researcher and senior systems
-              engineer based in Austin, Texas.
+              engineer.
             </p>
           </div>
         </section>

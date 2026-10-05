@@ -91,7 +91,7 @@ export function AiAuditForm() {
         </div>
         <p className="mt-4 font-semibold">Thanks — your answers are in.</p>
         <p className="mt-2 text-sm text-muted-foreground">
-          I read every one of these myself. You&apos;ll get a short summary
+          We read every one of these ourselves. You&apos;ll get a short summary
           within 3 business days, and there&apos;s no obligation on either side.
         </p>
       </div>
