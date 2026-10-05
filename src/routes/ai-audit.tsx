@@ -42,7 +42,7 @@ const CREDIBILITY = [
   {
     icon: Terminal,
     title: "Senior Systems Engineer",
-    body: "Years spent building and running production infrastructure, not just advising on it.",
+    body: "15+ years spent building and running production infrastructure, not just advising on it.",
   },
 ];
 
