@@ -3,6 +3,7 @@ import { ArrowRight, Terminal } from "lucide-react";
 
 import { Nav, Footer } from "./index";
 import { AiAuditForm } from "@/components/ai-audit-form";
+import { socialMeta } from "@/lib/seo";
 
 export const Route = createFileRoute("/ai-audit")({
   component: AiAuditPage,
@@ -16,6 +17,16 @@ export const Route = createFileRoute("/ai-audit")({
         content:
           "Answer a few quick questions and get a personalized AI Opportunity Summary: where AI could save time, automate work, or reduce missed opportunities, and which are worth exploring first. Free, no call needed.",
       },
+      ...socialMeta({
+        title: "Find out how many jobs missed calls are costing your business",
+        description:
+          "A free 5-minute AI audit scores where missed calls, repetitive work and lost opportunities are costing you — and where AI can recover them. No call needed.",
+        path: "/ai-audit",
+        image: {
+          path: "/og/ai-audit.png",
+          alt: "How many jobs are missed calls costing you? Free 5-minute AI audit from Novaris Nexus Tech",
+        },
+      }),
     ],
   }),
 });

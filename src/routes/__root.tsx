@@ -10,6 +10,7 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import { socialMeta } from "../lib/seo";
 
 function NotFoundComponent() {
   return (
@@ -87,27 +88,16 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
             "Novaris Nexus Tech helps organizations navigate AI, internet infrastructure, and data systems at scale — consulting, technical advisory, speaking, and training.",
         },
         { name: "author", content: "Novaris Nexus Tech" },
-        {
-          property: "og:title",
-          content: "Novaris Nexus Tech — AI Consulting, Advisory & Training",
-        },
-        {
-          property: "og:description",
-          content:
+        ...socialMeta({
+          title: "Novaris Nexus Tech — AI Consulting, Advisory & Training",
+          description:
             "Consulting, advisory, speaking and training for teams building with AI and modern infrastructure.",
-        },
-        { property: "og:type", content: "website" },
-        { property: "og:image", content: "/favicon.png" },
-        { name: "twitter:card", content: "summary_large_image" },
-        {
-          name: "twitter:title",
-          content: "Novaris Nexus Tech — AI Consulting, Advisory & Training",
-        },
-        {
-          name: "twitter:description",
-          content:
-            "Consulting, advisory, speaking and training for teams building with AI and modern infrastructure.",
-        },
+          path: "/",
+          image: {
+            path: "/og/default.png",
+            alt: "Novaris Nexus Tech — AI consulting, advisory, speaking and training",
+          },
+        }),
       ],
       links: [
         {
