@@ -194,12 +194,16 @@
  * src/routes/index.tsx, because the keywords are different widths and a
  * keyframe set written as fixed percentages comes to rest between them
  * instead of on them. The steps are re-measured on resize and on font load.
+ *
+ * This one deliberately ignores prefers-reduced-motion. A reduced-motion user
+ * opening the page saw a banner that looked broken rather than a quiet one,
+ * because stillness was indistinguishable from a failure to render. The list
+ * is ordinary text in the DOM and reads normally either way; only the travel
+ * is unconditional.
  */
 
-@media (prefers-reduced-motion: no-preference) {
-  .marquee-track {
-    animation: marquee-scroll 24s linear infinite;
-  }
+.marquee-track {
+  animation: marquee-scroll 24s linear infinite;
 }
 
 @theme inline {
