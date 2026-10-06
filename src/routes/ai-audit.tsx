@@ -17,7 +17,7 @@ export const Route = createFileRoute("/ai-audit")({
     meta: [
       {
         title:
-          "Free 5-Minute AI Audit: What Are Missed Calls Costing You? | Novaris Nexus Tech",
+          "Free 5-Minute AI Audit: What Are Missed Inquiries Costing You? | Novaris Nexus Tech",
       },
       {
         name: "description",
@@ -26,7 +26,7 @@ export const Route = createFileRoute("/ai-audit")({
       },
       ...canonicalMeta("/ai-audit"),
       ...socialMeta({
-        title: "Free 5-Minute AI Audit: What Are Missed Calls Costing You?",
+        title: "Free 5-Minute AI Audit: What Are Missed Inquiries Costing You?",
         description:
           "Answer a few quick questions and get a personalized AI Opportunity Summary within 3 business days. Free. No call needed.",
         path: "/ai-audit",
@@ -87,8 +87,8 @@ function AiAuditPage() {
                 className="bg-clip-text text-transparent"
                 style={{ backgroundImage: "var(--gradient-hero)" }}
               >
-                Find out how many jobs missed calls are costing your business,
-                and where AI can cut repetitive work.
+                Find out where AI could save your business time, automate
+                repetitive work, and recover missed opportunities.
               </span>
             </h1>
             <p className="mt-6 mx-auto max-w-2xl text-sm sm:text-base text-muted-foreground">
@@ -125,38 +125,38 @@ function AiAuditPage() {
 
             <div className="mt-8 sm:mt-10 rounded-2xl border border-border bg-card/60 p-6 sm:p-8">
               <p className="text-xs font-medium text-muted-foreground uppercase tracking-widest">
-                Example only — a fictional plumbing company
+                Example only — a fictional business
               </p>
 
               <div className="mt-5 space-y-5 text-sm sm:text-base">
                 <div>
                   <p className="font-semibold">Based on</p>
                   <p className="mt-1 text-muted-foreground">
-                    35 inbound requests a week, average job value $1,200, two
-                    vans out, and a callback habit that usually runs a day or
-                    two behind.
+                    35 inbound requests a week, average customer value $1,200, a
+                    small team, and replies that usually run a day or two
+                    behind.
                   </p>
                 </div>
                 <div>
                   <p className="font-semibold">What that suggests</p>
                   <p className="mt-1 text-muted-foreground">
-                    Roughly 12 to 18 calls a month go unanswered — the estimate
-                    widens with their real call log. At $1,200 a job, that is
-                    somewhere between{" "}
+                    Roughly 12 to 18 requests a month go unanswered — the
+                    estimate widens once we see the real backlog. At $1,200 a
+                    customer, that is somewhere between{" "}
                     <span className="font-semibold text-foreground">
                       $14,000 and $21,000 a month
                     </span>{" "}
-                    in work that never got booked.
+                    in value that never gets captured.
                   </p>
                 </div>
                 <div>
                   <p className="font-semibold">What we&apos;d check first</p>
                   <p className="mt-1 text-muted-foreground">
-                    Whether after-hours and overflow calls can be answered by an
-                    assistant that books the job on your calendar, before
-                    anything else is automated. Ranges, assumptions and the
-                    reasoning all come written out, so you can disagree with any
-                    of it.
+                    Whether overflow and after-hours requests can be answered by
+                    an assistant that responds immediately and books on your
+                    calendar, before anything else is automated. Ranges,
+                    assumptions and the reasoning all come written out, so you
+                    can disagree with any of it.
                   </p>
                 </div>
               </div>

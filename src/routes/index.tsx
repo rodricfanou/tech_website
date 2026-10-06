@@ -38,6 +38,7 @@ const MARQUEE_ITEMS = [
   "Building AI Systems & Networks",
   "AI Consulting",
   "Training",
+  "AI Agents / Agentic AI",
   "Digital & Infrastructure Advisory",
   "Talks",
 ];
@@ -308,6 +309,7 @@ export function Index() {
       <Hero />
       {/* <Logos /> */}
       <Services onSelect={openContact} />
+      <Products />
       <AIConsultingExplainer />
       <WhyAIConsultants />
       <Process />
@@ -616,9 +618,9 @@ function Hero() {
           </a>
         </div>
         <p className="mt-5 text-center text-xs text-muted-foreground">
-          The audit is the first step. Answer three minutes of questions and we
-          review them ourselves, then reply with a summary and an invitation to
-          a 20-minute session.
+          The audit is the first step. Answer about five minutes of questions
+          and we review them ourselves, then reply with a summary and an
+          invitation to a 20-minute session.
         </p>
       </div>
     </section>
@@ -744,6 +746,89 @@ function CategoryBlock({
         </div>
       </div>
     </div>
+  );
+}
+
+function Products() {
+  const items = [
+    {
+      name: "Mission Control — Your Personal Executive AI Command Center",
+      video: "/videos/Novaris_Mission_Control.mp4",
+      desc: "An executive command center that connects email, calendar, documents and tasks, and briefs you daily on what actually needs attention.",
+    },
+    {
+      name: "Novaris AI Maintenance Coordinator",
+      video: "/videos/Novaris-Maintenance-app.mp4",
+      desc: "An AI teammate that triages every resident request — classifying the issue, flagging safety risks, recommending a vendor, and drafting the paperwork.",
+    },
+  ];
+
+  return (
+    <section className="py-16 sm:py-24 md:py-32 border-t border-border">
+      <div className="mx-auto max-w-7xl px-6">
+        <div className="max-w-2xl">
+          <p className="text-sm font-medium text-primary uppercase tracking-widest">
+            Built by us
+          </p>
+          <h2 className="mt-3 text-3xl sm:text-4xl md:text-5xl font-bold">
+            Practical AI systems designed around real business workflows.
+          </h2>
+          <p className="mt-4 text-base sm:text-lg text-muted-foreground">
+            Two working examples we designed, built and shipped. Tap through the
+            demos, then ask us what yours would look like.
+          </p>
+        </div>
+
+        <div className="mt-16 grid md:grid-cols-2 gap-8">
+          {items.map((item) => (
+            <div
+              key={item.name}
+              className="flex flex-col rounded-2xl border border-border bg-card/60 p-8"
+              style={{ background: "var(--gradient-surface)" }}
+            >
+              <h3 className="font-semibold text-lg">{item.name}</h3>
+              <p className="mt-3 text-sm text-muted-foreground mb-5 max-w-xl">
+                {item.desc}
+              </p>
+              <div
+                className="relative mt-auto w-full overflow-hidden rounded-xl border border-border"
+                style={{ aspectRatio: "16 / 8.28" }}
+              >
+                <video
+                  className="absolute inset-0 h-full w-full object-cover object-bottom"
+                  src={item.video}
+                  controls
+                  muted
+                  preload="metadata"
+                  playsInline
+                >
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-12 flex flex-col sm:flex-row flex-wrap items-center justify-center gap-3 sm:gap-4">
+          <Link
+            to="/products"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm sm:text-base font-semibold text-primary-foreground transition hover:opacity-90"
+            style={{
+              background: "var(--gradient-hero)",
+              boxShadow: "var(--shadow-glow)",
+            }}
+          >
+            Explore Products <ArrowRight className="h-4 w-4" />
+          </Link>
+          <Link
+            to="/contact"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full border border-border px-6 py-3 text-sm sm:text-base font-medium text-foreground transition hover:border-primary hover:bg-card"
+          >
+            Request a Demo
+          </Link>
+        </div>
+      </div>
+    </section>
   );
 }
 
@@ -991,8 +1076,8 @@ function AIConsultingExplainer() {
               happen.
             </p>
             <p className="text-lg text-muted-foreground">
-              We help you grow exponentially and increase profits by making AI
-              work for your specific challenges, not the other way around.
+              The work is to make AI fit your specific challenges, not the other
+              way around.
             </p>
           </div>
 
@@ -1034,10 +1119,11 @@ function AIConsultingExplainer() {
               >
                 <TrendingUp className="h-6 w-6 text-primary-foreground" />
               </div>
-              <h3 className="mt-4 font-semibold text-lg">Grow Exponentially</h3>
+              <h3 className="mt-4 font-semibold text-lg">Put AI to Work</h3>
               <p className="mt-2 text-sm text-muted-foreground">
-                We help you grow exponentially and increase profits by making AI
-                work for your specific challenges.
+                We make AI fit your specific challenges and workflows, not the
+                other way around — less manual work, faster responses, and more
+                opportunities captured.
               </p>
             </div>
 

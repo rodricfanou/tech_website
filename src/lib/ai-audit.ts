@@ -9,12 +9,16 @@ import { z } from "zod";
 export const AUDIT_ROLES = ["Owner", "Manager", "Other"] as const;
 
 export const AUDIT_BUSINESS_TYPES = [
-  "HVAC",
-  "Plumbing",
-  "Electrical",
-  "Property management",
-  "Cleaning",
-  "Landscaping",
+  "Trades & home services",
+  "Retail & e-commerce",
+  "Food & beverage",
+  "Healthcare & wellness",
+  "Professional services",
+  "Real estate & property",
+  "Manufacturing & wholesale",
+  "Software & technology",
+  "Education & training",
+  "Nonprofit & community",
   "Other",
 ] as const;
 

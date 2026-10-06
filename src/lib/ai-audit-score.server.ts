@@ -90,7 +90,7 @@ export function scoreLead(values: AuditValues): AuditScore {
       points: HIGH_VOLUME.has(values.weeklyInquiryVolume) ? 1 : 0,
     },
     {
-      label: "Average job value is $1,000 or more",
+      label: "Average value is $1,000 or more",
       points: HIGH_VALUE.has(values.averageValue) ? 2 : 0,
     },
     {
