@@ -87,8 +87,8 @@ function AiAuditPage() {
                 className="bg-clip-text text-transparent"
                 style={{ backgroundImage: "var(--gradient-hero)" }}
               >
-                Find out where AI could save your business time, automate
-                repetitive work, and recover missed opportunities.
+                Find out where Novaris AI Products could save your business time,
+                automate repetitive work, and recover missed opportunities.
               </span>
             </h1>
             <p className="mt-6 mx-auto max-w-2xl text-sm sm:text-base text-muted-foreground">
