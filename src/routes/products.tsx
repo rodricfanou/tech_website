@@ -77,10 +77,40 @@ function ProductsPage() {
               <h3 className="w-full font-semibold text-lg mb-2">
                 AI Call Assistant
               </h3>
-              <p className="w-full text-sm text-muted-foreground mb-5 max-w-xl">
-                Answers your calls, qualifies the request, and books
-                appointments on your calendar.
-              </p>
+              <div className="w-full text-sm text-muted-foreground mb-5 max-w-xl space-y-3">
+                <p>
+                  <strong className="font-semibold text-foreground">
+                    A customer calls
+                  </strong>{" "}
+                  during or{" "}
+                  <strong className="font-semibold text-foreground">
+                    after hours
+                  </strong>
+                  .{" "}
+                  <strong className="font-semibold text-foreground">
+                    Nobody answers.
+                  </strong>{" "}
+                  Here, an AI voice agent answers, checks a live calendar, and
+                  books the visit in under 3 minutes.
+                </p>
+                <p>
+                  <strong className="font-semibold text-foreground">
+                    Simulated demo:
+                  </strong>{" "}
+                  the company, caller, phone number, and address are made up.
+                  The agent and the calendar are real, and I tested them live.
+                </p>
+                <p>
+                  I can build this AI agent for{" "}
+                  <strong className="font-semibold text-foreground">
+                    any business
+                  </strong>{" "}
+                  that takes calls or bookings: clinics, law firms, restaurants,
+                  retailers, trades, agencies, and more. The agent answers your
+                  calls, qualifies the request, and books appointments on your
+                  calendar.
+                </p>
+              </div>
               <div
                 className="relative mt-auto w-full overflow-hidden rounded-xl border border-border"
                 style={{ aspectRatio: "1280 / 649" }}
