@@ -77,6 +77,14 @@ function ProductsPage() {
               <h3 className="w-full font-semibold text-lg mb-2">
                 AI Call Assistant
               </h3>
+              <p className="w-full font-medium text-base mb-2">
+                <span
+                  className="bg-clip-text text-transparent"
+                  style={{ backgroundImage: "var(--gradient-hero)" }}
+                >
+                  Custom voice agent to handle inbound/outbound calls 24/7
+                </span>
+              </p>
               <div className="w-full text-sm text-muted-foreground mb-5 max-w-xl space-y-3">
                 <p>
                   <strong className="font-semibold text-foreground">
