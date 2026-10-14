@@ -87,8 +87,9 @@ function AiAuditPage() {
                 className="bg-clip-text text-transparent"
                 style={{ backgroundImage: "var(--gradient-hero)" }}
               >
-                Find out where Novaris AI Products could save your business time,
-                automate repetitive work, and recover missed opportunities.
+                Find out where Novaris AI Products could save your business
+                time, automate repetitive work, and recover missed
+                opportunities.
               </span>
             </h1>
             <p className="mt-6 mx-auto max-w-2xl text-sm sm:text-base text-muted-foreground">
@@ -124,40 +125,62 @@ function AiAuditPage() {
             </div>
 
             <div className="mt-8 sm:mt-10 rounded-2xl border border-border bg-card/60 p-6 sm:p-8">
-              <p className="text-xs font-medium text-muted-foreground uppercase tracking-widest">
-                Example only — a fictional business
-              </p>
+              <div className="grid gap-6 lg:grid-cols-2 lg:items-center">
+                <div
+                  className="relative overflow-hidden rounded-xl border border-border"
+                  style={{ aspectRatio: "16 / 8.28" }}
+                >
+                  <video
+                    className="absolute inset-0 h-full w-full object-cover object-bottom"
+                    src="/videos/demo_linkedin_safe.mp4"
+                    controls
+                    muted
+                    preload="metadata"
+                    playsInline
+                  >
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
 
-              <div className="mt-5 space-y-5 text-sm sm:text-base">
                 <div>
-                  <p className="font-semibold">Based on</p>
-                  <p className="mt-1 text-muted-foreground">
-                    35 inbound requests a week, average customer value $1,200, a
-                    small team, and replies that usually run a day or two
-                    behind.
+                  <p className="text-xs font-medium text-muted-foreground uppercase tracking-widest">
+                    Example only — a fictional business
                   </p>
-                </div>
-                <div>
-                  <p className="font-semibold">What that suggests</p>
-                  <p className="mt-1 text-muted-foreground">
-                    Roughly 12 to 18 requests a month go unanswered — the
-                    estimate widens once we see the real backlog. At $1,200 a
-                    customer, that is somewhere between{" "}
-                    <span className="font-semibold text-foreground">
-                      $14,000 and $21,000 a month
-                    </span>{" "}
-                    in value that never gets captured.
-                  </p>
-                </div>
-                <div>
-                  <p className="font-semibold">What we&apos;d check first</p>
-                  <p className="mt-1 text-muted-foreground">
-                    Whether overflow and after-hours requests can be answered by
-                    an assistant that responds immediately and books on your
-                    calendar, before anything else is automated. Ranges,
-                    assumptions and the reasoning all come written out, so you
-                    can disagree with any of it.
-                  </p>
+
+                  <div className="mt-5 space-y-5 text-sm sm:text-base">
+                    <div>
+                      <p className="font-semibold">Based on</p>
+                      <p className="mt-1 text-muted-foreground">
+                        35 inbound requests a week, average customer value
+                        $1,200, a small team, and replies that usually run a day
+                        or two behind.
+                      </p>
+                    </div>
+                    <div>
+                      <p className="font-semibold">What that suggests</p>
+                      <p className="mt-1 text-muted-foreground">
+                        Roughly 12 to 18 requests a month go unanswered — the
+                        estimate widens once we see the real backlog. At $1,200
+                        a customer, that is somewhere between{" "}
+                        <span className="font-semibold text-foreground">
+                          $14,000 and $21,000 a month
+                        </span>{" "}
+                        in value that never gets captured.
+                      </p>
+                    </div>
+                    <div>
+                      <p className="font-semibold">
+                        What we&apos;d check first
+                      </p>
+                      <p className="mt-1 text-muted-foreground">
+                        Whether overflow and after-hours requests can be
+                        answered by an assistant that responds immediately and
+                        books on your calendar, before anything else is
+                        automated. Ranges, assumptions and the reasoning all
+                        come written out, so you can disagree with any of it.
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
