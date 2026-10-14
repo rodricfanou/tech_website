@@ -65,7 +65,7 @@ const CTA_STYLE = {
 const CREDIBILITY = [
   {
     icon: Terminal,
-    title: "Senior Systems Engineer",
+    title: "Principal AI Strategist & Technology Consultant",
     body: "15+ years spent building and running production infrastructure, not just advising on it. CPD (Continuing Professional Development) certified AI Agents builder.",
   },
 ];
