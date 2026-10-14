@@ -754,11 +754,13 @@ function Products() {
     {
       name: "Mission Control — Your Personal Executive AI Command Center",
       video: "/videos/Novaris_Mission_Control.mp4",
+      poster: "/videos/Novaris_Mission_Control.jpg",
       desc: "An executive command center that connects email, calendar, documents and tasks, and briefs you daily on what actually needs attention.",
     },
     {
       name: "Novaris AI Maintenance Coordinator",
       video: "/videos/Novaris-Maintenance-app.mp4",
+      poster: "/videos/Novaris-Maintenance-app.jpg",
       desc: "An AI teammate that triages every resident request — classifying the issue, flagging safety risks, recommending a vendor, and drafting the paperwork.",
     },
   ];
@@ -797,6 +799,7 @@ function Products() {
                 <video
                   className="absolute inset-0 h-full w-full object-cover object-bottom"
                   src={item.video}
+                  poster={item.poster}
                   controls
                   muted
                   preload="metadata"

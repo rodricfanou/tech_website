@@ -88,6 +88,7 @@ function ProductsPage() {
                 <video
                   className="absolute inset-0 h-full w-full object-cover object-bottom"
                   src="/videos/demo_linkedin_safe.mp4"
+                  poster="/videos/demo_linkedin_safe.jpg"
                   controls
                   muted
                   preload="metadata"
@@ -129,6 +130,7 @@ function ProductsPage() {
                 <video
                   className="absolute inset-0 h-full w-full object-cover object-bottom"
                   src="/videos/Novaris_Mission_Control.mp4"
+                  poster="/videos/Novaris_Mission_Control.jpg"
                   controls
                   muted
                   preload="metadata"
@@ -159,6 +161,7 @@ function ProductsPage() {
                 <video
                   className="absolute inset-0 h-full w-full object-cover object-bottom"
                   src="/videos/Novaris-Maintenance-app.mp4"
+                  poster="/videos/Novaris-Maintenance-app.jpg"
                   controls
                   muted
                   preload="metadata"

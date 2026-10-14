@@ -133,6 +133,7 @@ function AiAuditPage() {
                   <video
                     className="absolute inset-0 h-full w-full object-cover object-bottom"
                     src="/videos/demo_linkedin_safe.mp4"
+                    poster="/videos/demo_linkedin_safe.jpg"
                     controls
                     muted
                     preload="metadata"
