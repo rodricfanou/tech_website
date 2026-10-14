@@ -63,22 +63,7 @@ function ProductsPage() {
                 Answers your calls, qualifies the request, and books
                 appointments on your calendar.
               </p>
-              <div
-                className="relative mt-auto w-full overflow-hidden rounded-xl border border-border"
-                style={{ aspectRatio: "16 / 8.28" }}
-              >
-                <video
-                  className="absolute inset-0 h-full w-full object-cover object-bottom"
-                  src="/videos/demo_linkedin_safe.mp4"
-                  controls
-                  muted
-                  preload="metadata"
-                  playsInline
-                >
-                  Your browser does not support the video tag.
-                </video>
-              </div>
-              <div className="mt-6 flex flex-col sm:flex-row items-center gap-3 w-full">
+              <div className="mb-6 flex flex-col sm:flex-row items-center gap-3 w-full">
                 <Link
                   to="/contact"
                   className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm sm:text-base font-semibold text-primary-foreground transition hover:opacity-90"
@@ -95,6 +80,21 @@ function ProductsPage() {
                 >
                   Free 5-minute AI audit <ArrowRight className="h-4 w-4" />
                 </Link>
+              </div>
+              <div
+                className="relative mt-auto w-full overflow-hidden rounded-xl border border-border"
+                style={{ aspectRatio: "16 / 8.28" }}
+              >
+                <video
+                  className="absolute inset-0 h-full w-full object-cover object-bottom"
+                  src="/videos/demo_linkedin_safe.mp4"
+                  controls
+                  muted
+                  preload="metadata"
+                  playsInline
+                >
+                  Your browser does not support the video tag.
+                </video>
               </div>
             </div>
             <div
@@ -166,51 +166,6 @@ function ProductsPage() {
                 >
                   Your browser does not support the video tag.
                 </video>
-              </div>
-            </div>
-            <div
-              className="rounded-2xl border border-border bg-card/60 p-8 flex flex-col items-start justify-center min-h-[420px] text-left"
-              style={{ background: "var(--gradient-surface)" }}
-            >
-              <h3 className="w-full font-semibold text-lg mb-2">
-                AI Call Assistant
-              </h3>
-              <p className="w-full text-sm text-muted-foreground mb-5 max-w-xl">
-                Answers your calls, qualifies the request, and books
-                appointments on your calendar.
-              </p>
-              <div
-                className="relative mt-auto w-full overflow-hidden rounded-xl border border-border"
-                style={{ aspectRatio: "16 / 8.28" }}
-              >
-                <video
-                  className="absolute inset-0 h-full w-full object-cover object-bottom"
-                  src="/videos/demo_linkedin_safe.mp4"
-                  controls
-                  muted
-                  preload="metadata"
-                  playsInline
-                >
-                  Your browser does not support the video tag.
-                </video>
-              </div>
-              <div className="mt-6 flex flex-col sm:flex-row items-center gap-3 w-full">
-                <Link
-                  to="/contact"
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm sm:text-base font-semibold text-primary-foreground transition hover:opacity-90"
-                  style={{
-                    background: "var(--gradient-hero)",
-                    boxShadow: "var(--shadow-glow)",
-                  }}
-                >
-                  Get a custom quote <ArrowRight className="h-4 w-4" />
-                </Link>
-                <Link
-                  to="/ai-audit"
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full border border-border px-6 py-3 text-sm sm:text-base font-medium hover:bg-card transition"
-                >
-                  Free 5-minute AI audit <ArrowRight className="h-4 w-4" />
-                </Link>
               </div>
             </div>
           </div>
