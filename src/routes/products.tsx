@@ -51,6 +51,24 @@ function ProductsPage() {
       {/* Products */}
       <section className="py-16 sm:py-24 border-t border-border">
         <div className="mx-auto max-w-7xl px-6">
+          <div className="mb-12 sm:mb-16 flex flex-col sm:flex-row items-center justify-center gap-3">
+            <Link
+              to="/contact"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm sm:text-base font-semibold text-primary-foreground transition hover:opacity-90"
+              style={{
+                background: "var(--gradient-hero)",
+                boxShadow: "var(--shadow-glow)",
+              }}
+            >
+              Get a custom quote <ArrowRight className="h-4 w-4" />
+            </Link>
+            <Link
+              to="/ai-audit"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full border border-border px-6 py-3 text-sm sm:text-base font-medium hover:bg-card transition"
+            >
+              Free 5-minute AI audit <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
           <div className="grid md:grid-cols-2 gap-8">
             <div
               className="rounded-2xl border border-border bg-card/60 p-8 flex flex-col items-start justify-center min-h-[420px] text-left"
@@ -63,24 +81,6 @@ function ProductsPage() {
                 Answers your calls, qualifies the request, and books
                 appointments on your calendar.
               </p>
-              <div className="mb-6 flex flex-col sm:flex-row items-center gap-3 w-full">
-                <Link
-                  to="/contact"
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm sm:text-base font-semibold text-primary-foreground transition hover:opacity-90"
-                  style={{
-                    background: "var(--gradient-hero)",
-                    boxShadow: "var(--shadow-glow)",
-                  }}
-                >
-                  Get a custom quote <ArrowRight className="h-4 w-4" />
-                </Link>
-                <Link
-                  to="/ai-audit"
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full border border-border px-6 py-3 text-sm sm:text-base font-medium hover:bg-card transition"
-                >
-                  Free 5-minute AI audit <ArrowRight className="h-4 w-4" />
-                </Link>
-              </div>
               <div
                 className="relative mt-auto w-full overflow-hidden rounded-xl border border-border"
                 style={{ aspectRatio: "1280 / 649" }}
