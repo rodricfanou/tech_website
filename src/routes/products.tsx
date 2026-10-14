@@ -101,11 +101,11 @@ function ProductsPage() {
                   The agent and the calendar are real, and I tested them live.
                 </p>
                 <p>
-                  I can build this AI agent for{" "}
+                  We can build this AI agent for{" "}
                   <strong className="font-semibold text-foreground">
                     any business
                   </strong>{" "}
-                  that takes calls or bookings: clinics, law firms, restaurants,
+                  that takes calls or bookings. Clinics, law firms, restaurants,
                   retailers, trades, agencies, and more. The agent answers your
                   calls, qualifies the request, and books appointments on your
                   calendar.
