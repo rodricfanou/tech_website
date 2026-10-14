@@ -80,15 +80,7 @@ function ProductsPage() {
               <div className="w-full text-sm text-muted-foreground mb-5 max-w-xl space-y-3">
                 <p>
                   <strong className="font-semibold text-foreground">
-                    A customer calls
-                  </strong>{" "}
-                  during or{" "}
-                  <strong className="font-semibold text-foreground">
-                    after hours
-                  </strong>
-                  .{" "}
-                  <strong className="font-semibold text-foreground">
-                    Nobody answers.
+                    A customer calls during or after hours. Nobody answers.
                   </strong>{" "}
                   Here, an AI voice agent answers, checks a live calendar, and
                   books the visit in under 3 minutes.
