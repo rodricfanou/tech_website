@@ -142,11 +142,6 @@ function AiAuditPage() {
                     Your browser does not support the video tag.
                   </video>
                 </div>
-                <p className="mt-3 text-xs text-muted-foreground lg:col-span-2">
-                  Simulated demo: the company, caller, phone number, and address
-                  are made up. The agent and the calendar are real, and I tested
-                  them live.
-                </p>
 
                 <div>
                   <p className="text-xs font-medium text-muted-foreground uppercase tracking-widest">
