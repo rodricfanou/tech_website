@@ -124,64 +124,55 @@ function AiAuditPage() {
               </p>
             </div>
 
-            <div className="mt-8 sm:mt-10 rounded-2xl border border-border bg-card/60 p-6 sm:p-8">
-              <div className="grid gap-6 lg:grid-cols-2 lg:items-center">
-                <div
-                  className="relative overflow-hidden rounded-xl border border-border"
-                  style={{ aspectRatio: "1280 / 649" }}
+            <div className="mt-8 sm:mt-10 grid gap-6 lg:grid-cols-2 lg:items-start">
+              <div
+                className="relative overflow-hidden rounded-2xl border border-border"
+                style={{ aspectRatio: "1280 / 649" }}
+              >
+                <video
+                  className="absolute inset-0 h-full w-full object-cover object-top"
+                  src="/videos/demo_linkedin_safe.mp4"
+                  poster="/videos/demo_linkedin_safe.jpg"
+                  controls
+                  muted
+                  preload="metadata"
+                  playsInline
                 >
-                  <video
-                    className="absolute inset-0 h-full w-full object-cover object-top"
-                    src="/videos/demo_linkedin_safe.mp4"
-                    poster="/videos/demo_linkedin_safe.jpg"
-                    controls
-                    muted
-                    preload="metadata"
-                    playsInline
-                  >
-                    Your browser does not support the video tag.
-                  </video>
-                </div>
+                  Your browser does not support the video tag.
+                </video>
+              </div>
 
-                <div>
-                  <p className="text-xs font-medium text-muted-foreground uppercase tracking-widest">
-                    Example only — a fictional business
+              <div className="rounded-2xl border border-border bg-card/60 p-6 sm:p-8">
+                <p className="text-xs font-medium text-muted-foreground uppercase tracking-widest">
+                  Example only — a fictional business
+                </p>
+
+                <div className="mt-5 space-y-4 text-sm sm:text-base">
+                  <ul className="space-y-3 text-muted-foreground">
+                    <li>
+                      <span className="font-semibold text-foreground">
+                        Unanswered:
+                      </span>{" "}
+                      12–18 requests/month
+                    </li>
+                    <li>
+                      <span className="font-semibold text-foreground">
+                        Lost value:
+                      </span>{" "}
+                      $14,000–$21,000/month
+                    </li>
+                    <li>
+                      <span className="font-semibold text-foreground">
+                        Check first:
+                      </span>{" "}
+                      can an after-hours AI assistant answer and book on the
+                      calendar?
+                    </li>
+                  </ul>
+                  <p className="text-xs text-muted-foreground">
+                    Full summary includes ranges and reasoning, so you can
+                    disagree with any of it.
                   </p>
-
-                  <div className="mt-5 space-y-5 text-sm sm:text-base">
-                    <div>
-                      <p className="font-semibold">Based on</p>
-                      <p className="mt-1 text-muted-foreground">
-                        35 inbound requests a week, average customer value
-                        $1,200, a small team, and replies that usually run a day
-                        or two behind.
-                      </p>
-                    </div>
-                    <div>
-                      <p className="font-semibold">What that suggests</p>
-                      <p className="mt-1 text-muted-foreground">
-                        Roughly 12 to 18 requests a month go unanswered — the
-                        estimate widens once we see the real backlog. At $1,200
-                        a customer, that is somewhere between{" "}
-                        <span className="font-semibold text-foreground">
-                          $14,000 and $21,000 a month
-                        </span>{" "}
-                        in value that never gets captured.
-                      </p>
-                    </div>
-                    <div>
-                      <p className="font-semibold">
-                        What we&apos;d check first
-                      </p>
-                      <p className="mt-1 text-muted-foreground">
-                        Whether overflow and after-hours requests can be
-                        answered by an assistant that responds immediately and
-                        books on your calendar, before anything else is
-                        automated. Ranges, assumptions and the reasoning all
-                        come written out, so you can disagree with any of it.
-                      </p>
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>
