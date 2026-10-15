@@ -127,29 +127,6 @@ function ProductsPage() {
                   Your browser does not support the video tag.
                 </video>
               </div>
-              <p className="mt-3 w-full text-xs text-muted-foreground">
-                Simulated demo: the company, caller, phone number, and address
-                are made up. The agent and the calendar are real, and I tested
-                them live.
-              </p>
-              <div className="mt-6 flex flex-col sm:flex-row items-center gap-3 w-full">
-                <Link
-                  to="/contact"
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm sm:text-base font-semibold text-primary-foreground transition hover:opacity-90"
-                  style={{
-                    background: "var(--gradient-hero)",
-                    boxShadow: "var(--shadow-glow)",
-                  }}
-                >
-                  Get a custom quote <ArrowRight className="h-4 w-4" />
-                </Link>
-                <Link
-                  to="/ai-audit"
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full border border-border px-6 py-3 text-sm sm:text-base font-medium hover:bg-card transition"
-                >
-                  Free 5-minute AI audit <ArrowRight className="h-4 w-4" />
-                </Link>
-              </div>
             </div>
             <div
               className="rounded-2xl border border-border bg-card/60 p-8 flex flex-col items-start justify-center min-h-[420px] text-left"
