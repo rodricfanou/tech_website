@@ -87,6 +87,14 @@ function ProductsPage() {
               <h3 className="w-full font-semibold text-lg mb-2">
                 AI Call Assistant
               </h3>
+              <a
+                href="/videos/demo_linkedin_safe.mp4"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mb-2 inline-flex items-center gap-1 text-sm font-medium text-primary underline-offset-4 hover:underline"
+              >
+                Watch the video <ArrowRight className="h-4 w-4" />
+              </a>
               <p className="w-full font-medium text-base mb-2">
                 <span
                   className="bg-clip-text text-transparent"
@@ -146,6 +154,14 @@ function ProductsPage() {
               <h3 className="w-full font-semibold text-lg mb-2">
                 Mission Control — Your Personal Executive AI Command Center
               </h3>
+              <a
+                href="/videos/Novaris_Mission_Control.mp4"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mb-2 inline-flex items-center gap-1 text-sm font-medium text-primary underline-offset-4 hover:underline"
+              >
+                Watch the video <ArrowRight className="h-4 w-4" />
+              </a>
               <p className="w-full font-medium text-base mb-2">
                 <span
                   className="bg-clip-text text-transparent"
@@ -189,6 +205,14 @@ function ProductsPage() {
               <h3 className="w-full font-semibold text-lg mb-2">
                 Novaris AI Maintenance Coordinator
               </h3>
+              <a
+                href="/videos/Novaris-Maintenance-app.mp4"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mb-2 inline-flex items-center gap-1 text-sm font-medium text-primary underline-offset-4 hover:underline"
+              >
+                Watch the video <ArrowRight className="h-4 w-4" />
+              </a>
               <p className="w-full text-sm text-muted-foreground mb-5 max-w-xl">
                 An AI teammate that triages every resident request the moment
                 it's submitted — classifying the issue, flagging safety risks,
