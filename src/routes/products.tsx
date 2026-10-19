@@ -71,7 +71,8 @@ function ProductsPage() {
           </div>
           <div className="grid md:grid-cols-2 gap-8">
             <div
-              className="rounded-2xl border border-border bg-card/60 p-8 flex flex-col items-start justify-center min-h-[420px] text-left"
+              id="ai-call-assistant"
+              className="scroll-mt-28 rounded-2xl border border-border bg-card/60 p-8 flex flex-col items-start justify-center min-h-[420px] text-left"
               style={{ background: "var(--gradient-surface)" }}
             >
               <h3 className="w-full font-semibold text-lg mb-2">
@@ -129,7 +130,8 @@ function ProductsPage() {
               </div>
             </div>
             <div
-              className="rounded-2xl border border-border bg-card/60 p-8 flex flex-col items-start justify-center min-h-[420px] text-left"
+              id="mission-control"
+              className="scroll-mt-28 rounded-2xl border border-border bg-card/60 p-8 flex flex-col items-start justify-center min-h-[420px] text-left"
               style={{ background: "var(--gradient-surface)" }}
             >
               <h3 className="w-full font-semibold text-lg mb-2">
@@ -171,7 +173,8 @@ function ProductsPage() {
               </div>
             </div>
             <div
-              className="rounded-2xl border border-border bg-card/60 p-8 flex flex-col items-start justify-center min-h-[420px] text-left"
+              id="ai-maintenance-coordinator"
+              className="scroll-mt-28 rounded-2xl border border-border bg-card/60 p-8 flex flex-col items-start justify-center min-h-[420px] text-left"
               style={{ background: "var(--gradient-surface)" }}
             >
               <h3 className="w-full font-semibold text-lg mb-2">
