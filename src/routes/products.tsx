@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Mail } from "lucide-react";
 import { Nav, Footer } from "./index";
@@ -21,6 +22,14 @@ export const Route = createFileRoute("/products")({
 });
 
 function ProductsPage() {
+  useEffect(() => {
+    const id = window.location.hash.slice(1);
+    if (!id) return;
+    requestAnimationFrame(() => {
+      document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    });
+  }, []);
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Nav />
