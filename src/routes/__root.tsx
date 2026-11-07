@@ -146,7 +146,7 @@ function RootShell({ children }: { children: ReactNode }) {
     sameAs: [],
     contactPoint: {
       "@type": "ContactPoint",
-      email: "roderick@roderickfanou.com",
+      email: "roderick@novarisnexustech.com",
       contactType: "customer service",
     },
   };

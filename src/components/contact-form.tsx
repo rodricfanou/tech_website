@@ -1,7 +1,7 @@
 import { useState, type FormEvent } from "react";
 import { ArrowRight, Check } from "lucide-react";
 
-export const CONTACT_EMAIL = "roderick@roderickfanou.com";
+export const CONTACT_EMAIL = "roderick@novarisnexustech.com";
 
 const FORMSPREE_ENDPOINT = "https://formspree.io/f/mkoyqdla";
 
