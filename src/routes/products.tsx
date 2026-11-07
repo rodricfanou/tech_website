@@ -88,7 +88,7 @@ function ProductsPage() {
                 AI Call Assistant
               </h3>
               <a
-                href="/videos/demo_linkedin_safe.mp4"
+                href="/videos/demo_voice_assistant.mp4"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mb-2 inline-flex items-center gap-1 text-sm font-medium text-primary underline-offset-4 hover:underline"
@@ -131,12 +131,12 @@ function ProductsPage() {
               </div>
               <div
                 className="relative mt-auto w-full overflow-hidden rounded-xl border border-border"
-                style={{ aspectRatio: "1280 / 649" }}
+                style={{ aspectRatio: "16 / 9" }}
               >
                 <video
-                  className="absolute inset-0 h-full w-full object-cover object-top"
-                  src="/videos/demo_linkedin_safe.mp4"
-                  poster="/videos/demo_linkedin_safe.jpg"
+                  className="absolute inset-0 h-full w-full object-cover"
+                  src="/videos/demo_voice_assistant.mp4"
+                  poster="/videos/demo_voice_assistant.jpg"
                   controls
                   muted
                   preload="metadata"

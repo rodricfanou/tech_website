@@ -127,12 +127,12 @@ function AiAuditPage() {
             <div className="mt-8 sm:mt-10 grid gap-6 lg:grid-cols-2 lg:items-start">
               <div
                 className="relative overflow-hidden rounded-2xl border border-border"
-                style={{ aspectRatio: "1280 / 649" }}
+                style={{ aspectRatio: "16 / 9" }}
               >
                 <video
-                  className="absolute inset-0 h-full w-full object-cover object-top"
-                  src="/videos/demo_linkedin_safe.mp4"
-                  poster="/videos/demo_linkedin_safe.jpg"
+                  className="absolute inset-0 h-full w-full object-cover"
+                  src="/videos/demo_voice_assistant.mp4"
+                  poster="/videos/demo_voice_assistant.jpg"
                   controls
                   muted
                   preload="metadata"
