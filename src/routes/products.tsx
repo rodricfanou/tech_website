@@ -136,7 +136,7 @@ function ProductsPage() {
                 <video
                   className="absolute inset-0 h-full w-full object-cover"
                   src="/videos/demo_voice_assistant.mp4"
-                  poster="/videos/demo_voice_assistant.jpg"
+                  poster="/videos/demo_voice_assistant.png"
                   controls
                   muted
                   preload="metadata"

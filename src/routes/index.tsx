@@ -752,6 +752,12 @@ function CategoryBlock({
 function Products() {
   const items = [
     {
+      name: "AI Call Assistant",
+      video: "/videos/demo_voice_assistant.mp4",
+      poster: "/videos/demo_voice_assistant.png",
+      desc: "A custom voice agent that answers inbound and outbound calls 24/7, qualifies the request, and books appointments on your calendar.",
+    },
+    {
       name: "Mission Control — Your Personal Executive AI Command Center",
       video: "/videos/Novaris_Mission_Control.mp4",
       poster: "/videos/Novaris_Mission_Control.jpg",
@@ -776,12 +782,12 @@ function Products() {
             Practical AI systems designed around real business workflows.
           </h2>
           <p className="mt-4 text-base sm:text-lg text-muted-foreground">
-            Two working examples we designed, built and shipped. Tap through the
-            demos, then ask us what yours would look like.
+            Three working examples we designed, built and shipped. Tap through
+            the demos, then ask us what yours would look like.
           </p>
         </div>
 
-        <div className="mt-16 grid md:grid-cols-2 gap-8">
+        <div className="mt-16 grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {items.map((item) => (
             <div
               key={item.name}
