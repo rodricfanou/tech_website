@@ -115,33 +115,33 @@ function ProductsPage() {
                   className="bg-clip-text text-transparent"
                   style={{ backgroundImage: "var(--gradient-hero)" }}
                 >
-                  Custom voice agent to handle inbound/outbound calls 24/7
+                  Never lose another client to voicemail.
                 </span>
               </p>
               <div className="w-full text-sm text-muted-foreground mb-5 max-w-xl space-y-3">
                 <p>
-                  <strong className="font-semibold text-foreground">
-                    A customer calls during or after hours. Nobody answers.
-                  </strong>{" "}
-                  Here, an AI voice agent answers, checks a live calendar, and
-                  books the visit in under 3 minutes.
+                  Our 24/7 AI Voice Assistant answers inbound calls instantly,
+                  qualifies prospects, and books appointments directly onto your
+                  live calendar in under 2 minutes.
                 </p>
-                <p>
-                  <strong className="font-semibold text-foreground">
-                    Simulated demo:
-                  </strong>{" "}
-                  the company, caller, phone number, and address are made up.
-                  The agent and the calendar are real, and I tested them live.
-                </p>
-                <p>
-                  We can build this AI agent for{" "}
-                  <strong className="font-semibold text-foreground">
-                    any business
-                  </strong>{" "}
-                  that takes calls or bookings. Clinics, law firms, restaurants,
-                  retailers, trades, agencies, and more. The agent answers your
-                  calls, qualifies the request, and books appointments on your
-                  calendar.
+                <ul className="space-y-1.5">
+                  {[
+                    "Zero phone tag",
+                    "Zero back-and-forth messaging",
+                    "100% automated bookings around the clock",
+                  ].map((item) => (
+                    <li key={item} className="flex items-start gap-2">
+                      <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-primary" />
+                      <strong className="font-semibold text-foreground">
+                        {item}
+                      </strong>
+                    </li>
+                  ))}
+                </ul>
+                <p className="rounded-lg border border-border bg-background/40 px-3 py-2">
+                  Built for clinics, law firms, real estate companies, leasing
+                  offices, home services, and appointment-based businesses.
+                  Fully configured and live in 48 hours.
                 </p>
               </div>
               <div
