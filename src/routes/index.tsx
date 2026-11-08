@@ -756,7 +756,6 @@ function Products() {
       video: "/videos/demo_voice_assistant.mp4",
       poster: "/videos/demo_voice_assistant.png",
       aspect: "16 / 9",
-      bg: "transparent",
       desc: "A custom voice agent that answers inbound and outbound calls 24/7, qualifies the request, and books appointments on your calendar.",
     },
     {
@@ -764,15 +763,13 @@ function Products() {
       video: "/videos/mission_control.mp4",
       poster: "/videos/demo_mission_control_3.png",
       aspect: "16 / 9",
-      bg: "transparent",
       desc: "An executive command center that connects email, calendar, documents and tasks, and briefs you daily on what actually needs attention.",
     },
     {
       name: "Novaris AI Maintenance Coordinator",
       video: "/videos/Novaris-Maintenance-app.mp4",
-      poster: "/videos/Novaris-Maintenance-app.jpg",
+      poster: "/videos/thumbnail_maintenance.jpg",
       aspect: "16 / 9",
-      bg: "#ffffff",
       desc: "An AI teammate that triages every resident request — classifying the issue, flagging safety risks, recommending a vendor, and drafting the paperwork.",
     },
   ];
@@ -806,7 +803,7 @@ function Products() {
               </p>
               <div
                 className="relative mt-auto w-full overflow-hidden rounded-xl border border-border"
-                style={{ aspectRatio: item.aspect, background: item.bg }}
+                style={{ aspectRatio: item.aspect }}
               >
                 <video
                   className="absolute inset-0 h-full w-full object-contain"

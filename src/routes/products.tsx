@@ -237,12 +237,12 @@ function ProductsPage() {
               </p>
               <div
                 className="relative mt-auto w-full overflow-hidden rounded-xl border border-border"
-                style={{ aspectRatio: "16 / 9", background: "#ffffff" }}
+                style={{ aspectRatio: "16 / 9" }}
               >
                 <video
                   className="absolute inset-0 h-full w-full object-contain"
                   src="/videos/Novaris-Maintenance-app.mp4"
-                  poster="/videos/Novaris-Maintenance-app.jpg"
+                  poster="/videos/thumbnail_maintenance.jpg"
                   controls
                   muted
                   preload="metadata"
