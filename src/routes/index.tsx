@@ -137,7 +137,7 @@ function MarqueeBanner() {
             className="flex shrink-0 items-center gap-10 pr-10 sm:gap-16 sm:pr-16"
           >
             <li className="flex shrink-0 items-center gap-10 whitespace-nowrap text-[11px] font-semibold uppercase tracking-[0.18em] text-red-500 sm:gap-16 sm:text-xs sm:tracking-[0.22em]">
-              Reach out to us for
+              Let&rsquo;s talk
               <span
                 aria-hidden
                 className="h-1 w-1 shrink-0 rounded-full bg-red-500"
