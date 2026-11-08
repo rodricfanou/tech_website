@@ -155,7 +155,7 @@ function ProductsPage() {
                 Mission Control — Your Personal Executive AI Command Center
               </h3>
               <a
-                href="/videos/Novaris_Mission_Control.mp4"
+                href="/videos/demo_mission_control.mp4"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mb-2 inline-flex items-center gap-1 text-sm font-medium text-primary underline-offset-4 hover:underline"
@@ -186,8 +186,8 @@ function ProductsPage() {
               >
                 <video
                   className="absolute inset-0 h-full w-full object-cover object-bottom"
-                  src="/videos/Novaris_Mission_Control.mp4"
-                  poster="/videos/Novaris_Mission_Control.jpg"
+                  src="/videos/demo_mission_control.mp4"
+                  poster="/videos/thumbnail_mission_control.jpg"
                   controls
                   muted
                   preload="metadata"

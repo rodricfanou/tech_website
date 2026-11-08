@@ -759,8 +759,8 @@ function Products() {
     },
     {
       name: "Mission Control — Your Personal Executive AI Command Center",
-      video: "/videos/Novaris_Mission_Control.mp4",
-      poster: "/videos/Novaris_Mission_Control.jpg",
+      video: "/videos/demo_mission_control.mp4",
+      poster: "/videos/thumbnail_mission_control.jpg",
       desc: "An executive command center that connects email, calendar, documents and tasks, and briefs you daily on what actually needs attention.",
     },
     {
