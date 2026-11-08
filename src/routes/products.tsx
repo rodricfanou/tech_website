@@ -167,7 +167,7 @@ function ProductsPage() {
               style={{ background: "var(--gradient-surface)" }}
             >
               <h3 className="w-full font-semibold text-lg mb-2">
-                Mission Control — Your Personal Executive AI Command Center
+                Mission Control: The Executive AI Chief of Staff
               </h3>
               <a
                 href="/videos/mission_control.mp4"
@@ -175,26 +175,53 @@ function ProductsPage() {
                 rel="noopener noreferrer"
                 className="mb-2 inline-flex items-center gap-1 text-sm font-medium text-primary underline-offset-4 hover:underline"
               >
-                Watch the video <ArrowRight className="h-4 w-4" />
+                Watch the 2-minute executive briefing{" "}
+                <ArrowRight className="h-4 w-4" />
               </a>
               <p className="w-full font-medium text-base mb-2">
                 <span
                   className="bg-clip-text text-transparent"
                   style={{ backgroundImage: "var(--gradient-hero)" }}
                 >
-                  One dashboard to rule them all.
+                  Reclaim 10+ hours a week from operational noise.
                 </span>
               </p>
-              <p className="w-full text-sm text-muted-foreground mb-5 max-w-xl">
-                Mission Control is an executive command center that connects
-                your email, calendar, documents, and tasks in one intelligent
-                workspace. It analyzes real business data to surface what needs
-                your attention, prepare daily briefings, prioritize actions, and
-                eliminate the need to jump between apps. It demonstrates how we
-                build practical AI systems around real business
-                workflows—turning scattered information into clarity,
-                automation, and action. One platform to rule them all.
-              </p>
+              <div className="w-full text-sm text-muted-foreground mb-5 max-w-xl space-y-3">
+                <p>
+                  Stop context-switching across 10 different tabs. Mission
+                  Control integrates with your email, calendar, documents, and
+                  company data to act as your autonomous operational cockpit.
+                </p>
+                <ul className="space-y-1.5">
+                  {[
+                    {
+                      title: "Zero Morning Scramble:",
+                      desc: "Delivers an intelligent 8:00 AM daily briefing prioritizing only the decisions that move the needle.",
+                    },
+                    {
+                      title: "Zero Dropped Balls:",
+                      desc: "Instantly flags high-risk emails, overdue client deliverables, and blocked team initiatives.",
+                    },
+                    {
+                      title: "Autonomous Triage:",
+                      desc: "Drafts responses, schedules high-priority meetings, and tracks action items on autopilot.",
+                    },
+                  ].map((item) => (
+                    <li key={item.title} className="flex items-start gap-2">
+                      <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-primary" />
+                      <span>
+                        <strong className="font-semibold text-foreground">
+                          {item.title}
+                        </strong>{" "}
+                        {item.desc}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+                <p className="italic">
+                  Turn scattered information into decisive execution.
+                </p>
+              </div>
               <div
                 className="relative mt-auto w-full overflow-hidden rounded-xl border border-border"
                 style={{ aspectRatio: "16 / 9" }}
