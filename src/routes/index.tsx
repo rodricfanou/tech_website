@@ -598,21 +598,11 @@ function Hero() {
           </span>
           <span className="block">Unfair business advantage.</span>
         </h1>
-        <p className="mt-3 sm:mt-4 max-w-2xl text-base sm:text-lg md:text-xl text-muted-foreground">
+        <p className="mt-3 sm:mt-4 text-base sm:text-lg md:text-xl lg:whitespace-nowrap text-muted-foreground">
           Custom AI, automation, and network infrastructure built for business
           growth.
         </p>
         <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row flex-wrap items-center justify-center gap-3 sm:gap-4 w-full px-2">
-          <Link
-            to="/ai-audit"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 sm:px-6 text-sm sm:text-base font-semibold text-primary-foreground transition hover:opacity-90"
-            style={{
-              background: "var(--gradient-hero)",
-              boxShadow: "var(--shadow-elegant)",
-            }}
-          >
-            Take the free 5-minute AI audit <ArrowRight className="h-4 w-4" />
-          </Link>
           <a
             href="/services"
             onClick={(e) => {
@@ -623,6 +613,16 @@ function Hero() {
           >
             Explore services
           </a>
+          <Link
+            to="/ai-audit"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 sm:px-6 text-sm sm:text-base font-semibold text-primary-foreground transition hover:opacity-90"
+            style={{
+              background: "var(--gradient-hero)",
+              boxShadow: "var(--shadow-elegant)",
+            }}
+          >
+            Take the free 5-minute AI audit <ArrowRight className="h-4 w-4" />
+          </Link>
         </div>
         <p className="mt-5 text-center text-xs text-muted-foreground">
           The audit is the first step. Answer about five minutes of questions
