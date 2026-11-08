@@ -603,16 +603,6 @@ function Hero() {
           growth.
         </p>
         <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row flex-wrap items-center justify-center gap-3 sm:gap-4 w-full px-2">
-          <a
-            href="/services"
-            onClick={(e) => {
-              e.preventDefault();
-              scrollTo("/services", "services");
-            }}
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full border border-border px-5 py-3 sm:px-6 text-sm sm:text-base font-medium text-foreground hover:bg-card transition"
-          >
-            Explore services
-          </a>
           <Link
             to="/ai-audit"
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 sm:px-6 text-sm sm:text-base font-semibold text-primary-foreground transition hover:opacity-90"
@@ -621,13 +611,22 @@ function Hero() {
               boxShadow: "var(--shadow-elegant)",
             }}
           >
-            Take the free 5-minute AI audit <ArrowRight className="h-4 w-4" />
+            Start 5-Minute AI Audit
           </Link>
+          <a
+            href="/services"
+            onClick={(e) => {
+              e.preventDefault();
+              scrollTo("/services", "services");
+            }}
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full border border-border px-5 py-3 sm:px-6 text-sm sm:text-base font-medium text-foreground hover:bg-card transition"
+          >
+            Explore Solutions <ArrowRight className="h-4 w-4" />
+          </a>
         </div>
         <p className="mt-5 text-center text-xs text-muted-foreground">
-          The audit is the first step. Answer about five minutes of questions
-          and we review them ourselves, then reply with a summary and an
-          invitation to a 20-minute session.
+          Identify high-ROI automation targets in under 5 minutes • No credit
+          card required
         </p>
       </div>
     </section>
