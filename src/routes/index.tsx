@@ -587,16 +587,15 @@ function Hero() {
           </div>
         </div>
         <h1 className="mt-6 max-w-4xl text-3xl sm:text-5xl md:text-7xl font-bold leading-[1.05]">
-          We build{" "}
+          Intelligent{" "}
           <span
             className="bg-clip-text text-transparent"
             style={{ backgroundImage: "var(--gradient-hero)" }}
           >
-            AI systems
-            <br />
-            and networks
-          </span>{" "}
-          that matter and operate efficiently.
+            infrastructure.
+          </span>
+          <br />
+          Unfair business advantage.
         </h1>
         <p className="mt-6 max-w-2xl text-base sm:text-lg md:text-xl text-muted-foreground">
           Strategy, delivery, and enablement — from AI curiosity to measurable
