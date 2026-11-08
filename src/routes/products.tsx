@@ -170,7 +170,7 @@ function ProductsPage() {
                 Mission Control — Your Personal Executive AI Command Center
               </h3>
               <a
-                href="/videos/demo_mission_control.mp4"
+                href="/videos/mission_control.mp4"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mb-2 inline-flex items-center gap-1 text-sm font-medium text-primary underline-offset-4 hover:underline"
@@ -201,8 +201,8 @@ function ProductsPage() {
               >
                 <video
                   className="absolute inset-0 h-full w-full object-cover"
-                  src="/videos/demo_mission_control.mp4"
-                  poster="/videos/thumbnail_mission_control.jpg"
+                  src="/videos/mission_control.mp4"
+                  poster="/videos/demo_mission_control_3.png"
                   controls
                   muted
                   preload="metadata"

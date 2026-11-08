@@ -759,8 +759,8 @@ function Products() {
     },
     {
       name: "Mission Control — Your Personal Executive AI Command Center",
-      video: "/videos/demo_mission_control.mp4",
-      poster: "/videos/thumbnail_mission_control.jpg",
+      video: "/videos/mission_control.mp4",
+      poster: "/videos/demo_mission_control_3.png",
       desc: "An executive command center that connects email, calendar, documents and tasks, and briefs you daily on what actually needs attention.",
     },
     {
