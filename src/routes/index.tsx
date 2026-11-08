@@ -598,8 +598,8 @@ function Hero() {
           Unfair business advantage.
         </h1>
         <p className="mt-6 max-w-2xl text-base sm:text-lg md:text-xl text-muted-foreground">
-          Strategy, delivery, and enablement — from AI curiosity to measurable
-          outcomes.
+          Custom AI, automation, and network infrastructure built for business
+          growth.
         </p>
         <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row flex-wrap items-center justify-center gap-3 sm:gap-4 w-full px-2">
           <Link
