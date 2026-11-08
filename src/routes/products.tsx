@@ -138,7 +138,7 @@ function ProductsPage() {
                     </li>
                   ))}
                 </ul>
-                <p className="rounded-lg border border-border bg-background/40 px-3 py-2">
+                <p>
                   Built for clinics, law firms, real estate companies, leasing
                   offices, home services, and appointment-based businesses.
                   Fully configured and live in 48 hours.
