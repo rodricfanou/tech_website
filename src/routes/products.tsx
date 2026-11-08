@@ -182,10 +182,10 @@ function ProductsPage() {
               </p>
               <div
                 className="relative mt-auto w-full overflow-hidden rounded-xl border border-border"
-                style={{ aspectRatio: "16 / 8.28" }}
+                style={{ aspectRatio: "16 / 9" }}
               >
                 <video
-                  className="absolute inset-0 h-full w-full object-cover object-bottom"
+                  className="absolute inset-0 h-full w-full object-cover"
                   src="/videos/demo_mission_control.mp4"
                   poster="/videos/thumbnail_mission_control.jpg"
                   controls
