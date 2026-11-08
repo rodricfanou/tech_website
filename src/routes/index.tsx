@@ -755,18 +755,21 @@ function Products() {
       name: "AI Call Assistant",
       video: "/videos/demo_voice_assistant.mp4",
       poster: "/videos/demo_voice_assistant.png",
+      aspect: "16 / 9",
       desc: "A custom voice agent that answers inbound and outbound calls 24/7, qualifies the request, and books appointments on your calendar.",
     },
     {
       name: "Mission Control — Your Personal Executive AI Command Center",
       video: "/videos/mission_control.mp4",
       poster: "/videos/demo_mission_control_3.png",
+      aspect: "16 / 9",
       desc: "An executive command center that connects email, calendar, documents and tasks, and briefs you daily on what actually needs attention.",
     },
     {
       name: "Novaris AI Maintenance Coordinator",
       video: "/videos/Novaris-Maintenance-app.mp4",
       poster: "/videos/Novaris-Maintenance-app.jpg",
+      aspect: "1920 / 1032",
       desc: "An AI teammate that triages every resident request — classifying the issue, flagging safety risks, recommending a vendor, and drafting the paperwork.",
     },
   ];
@@ -800,10 +803,10 @@ function Products() {
               </p>
               <div
                 className="relative mt-auto w-full overflow-hidden rounded-xl border border-border"
-                style={{ aspectRatio: "16 / 8.28" }}
+                style={{ aspectRatio: item.aspect }}
               >
                 <video
-                  className="absolute inset-0 h-full w-full object-cover object-bottom"
+                  className="absolute inset-0 h-full w-full object-contain"
                   src={item.video}
                   poster={item.poster}
                   controls

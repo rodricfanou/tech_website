@@ -149,7 +149,7 @@ function ProductsPage() {
                 style={{ aspectRatio: "16 / 9" }}
               >
                 <video
-                  className="absolute inset-0 h-full w-full object-cover"
+                  className="absolute inset-0 h-full w-full object-contain"
                   src="/videos/demo_voice_assistant.mp4"
                   poster="/videos/demo_voice_assistant.png"
                   controls
@@ -200,7 +200,7 @@ function ProductsPage() {
                 style={{ aspectRatio: "16 / 9" }}
               >
                 <video
-                  className="absolute inset-0 h-full w-full object-cover"
+                  className="absolute inset-0 h-full w-full object-contain"
                   src="/videos/mission_control.mp4"
                   poster="/videos/demo_mission_control_3.png"
                   controls
@@ -237,10 +237,10 @@ function ProductsPage() {
               </p>
               <div
                 className="relative mt-auto w-full overflow-hidden rounded-xl border border-border"
-                style={{ aspectRatio: "16 / 8.28" }}
+                style={{ aspectRatio: "1920 / 1032" }}
               >
                 <video
-                  className="absolute inset-0 h-full w-full object-cover object-bottom"
+                  className="absolute inset-0 h-full w-full object-contain"
                   src="/videos/Novaris-Maintenance-app.mp4"
                   poster="/videos/Novaris-Maintenance-app.jpg"
                   controls
