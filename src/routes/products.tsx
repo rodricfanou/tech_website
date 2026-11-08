@@ -253,15 +253,55 @@ function ProductsPage() {
                 rel="noopener noreferrer"
                 className="mb-2 inline-flex items-center gap-1 text-sm font-medium text-primary underline-offset-4 hover:underline"
               >
-                Watch the video <ArrowRight className="h-4 w-4" />
+                Watch the 2-minute demo <ArrowRight className="h-4 w-4" />
               </a>
-              <p className="w-full text-sm text-muted-foreground mb-5 max-w-xl">
-                An AI teammate that triages every resident request the moment
-                it's submitted — classifying the issue, flagging safety risks,
-                recommending the right vendor, and drafting the paperwork — so
-                your team steps in only for the decisions that actually need a
-                human.
+              <p className="w-full font-medium text-base mb-2">
+                <span
+                  className="bg-clip-text text-transparent"
+                  style={{ backgroundImage: "var(--gradient-hero)" }}
+                >
+                  Built for property management: cut maintenance response times
+                  by 80% without adding headcount.
+                </span>
               </p>
+              <div className="w-full text-sm text-muted-foreground mb-5 max-w-xl space-y-3">
+                <p>
+                  Triage every resident request the second it arrives. Novaris
+                  automatically classifies the issue, flags urgent safety risks,
+                  matches the right vendor, and preps work orders—so your
+                  property team only steps in for final approvals.
+                </p>
+                <ul className="space-y-1.5">
+                  {[
+                    {
+                      title: "Zero Delayed Emergencies:",
+                      desc: "Instant 24/7 triage catches water leaks and safety hazards immediately.",
+                    },
+                    {
+                      title: "Zero Manual Dispatch:",
+                      desc: "Matches preferred vendors and drafts work orders on autopilot.",
+                    },
+                    {
+                      title: "Zero Back-and-Forth:",
+                      desc: "Keeps residents automatically updated at every step.",
+                    },
+                  ].map((item) => (
+                    <li key={item.title} className="flex items-start gap-2">
+                      <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-primary" />
+                      <span>
+                        <strong className="font-semibold text-foreground">
+                          {item.title}
+                        </strong>{" "}
+                        {item.desc}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+                <p className="italic">
+                  Seamlessly connects with your existing property management
+                  software.
+                </p>
+              </div>
               <div
                 className="relative mt-auto w-full overflow-hidden rounded-xl border border-border"
                 style={{ aspectRatio: "16 / 9" }}
