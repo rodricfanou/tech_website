@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, Mail } from "lucide-react";
+import { ArrowRight, Mail, Sparkles } from "lucide-react";
 import { Nav, Footer } from "./index";
 import { CONTACT_EMAIL } from "@/components/contact-form";
 
@@ -60,7 +60,7 @@ function ProductsPage() {
       {/* Products */}
       <section className="py-16 sm:py-24 border-t border-border">
         <div className="mx-auto max-w-7xl px-6">
-          <div className="mb-12 sm:mb-16 flex flex-col sm:flex-row items-center justify-center gap-3">
+          <div className="mb-6 sm:mb-8 flex flex-col sm:flex-row items-center justify-center gap-3">
             <Link
               to="/contact"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm sm:text-base font-semibold text-primary-foreground transition hover:opacity-90"
@@ -77,6 +77,21 @@ function ProductsPage() {
             >
               Free 5-minute AI audit <ArrowRight className="h-4 w-4" />
             </Link>
+          </div>
+          <div
+            className="mb-12 sm:mb-16 flex flex-col sm:flex-row items-center justify-center gap-3 rounded-2xl border border-border px-6 py-5 text-center"
+            style={{ background: "var(--gradient-surface)" }}
+          >
+            <Sparkles className="h-5 w-5 shrink-0 text-primary" />
+            <p className="text-sm sm:text-base">
+              <span className="font-semibold text-foreground">
+                Fully customizable:
+              </span>{" "}
+              <span className="text-muted-foreground">
+                every tool below is tailored to your business, your data, and
+                your workflows.
+              </span>
+            </p>
           </div>
           <div className="grid md:grid-cols-2 gap-8">
             <div
