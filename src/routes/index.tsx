@@ -586,18 +586,19 @@ function Hero() {
             CPD Certified AI Agents Builder
           </div>
         </div>
-        <h1 className="mt-6 max-w-4xl text-3xl sm:text-5xl md:text-7xl font-bold leading-[1.05]">
-          Intelligent{" "}
-          <span
-            className="bg-clip-text text-transparent"
-            style={{ backgroundImage: "var(--gradient-hero)" }}
-          >
-            infrastructure.
+        <h1 className="mt-6 max-w-5xl text-2xl sm:text-4xl md:text-5xl lg:text-7xl font-bold leading-[1.05]">
+          <span className="block">
+            Intelligent{" "}
+            <span
+              className="bg-clip-text text-transparent"
+              style={{ backgroundImage: "var(--gradient-hero)" }}
+            >
+              infrastructure.
+            </span>
           </span>
-          <br />
-          Unfair business advantage.
+          <span className="block">Unfair business advantage.</span>
         </h1>
-        <p className="mt-6 max-w-2xl text-base sm:text-lg md:text-xl text-muted-foreground">
+        <p className="mt-3 sm:mt-4 max-w-2xl text-base sm:text-lg md:text-xl text-muted-foreground">
           Custom AI, automation, and network infrastructure built for business
           growth.
         </p>
