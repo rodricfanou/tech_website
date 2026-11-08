@@ -87,17 +87,13 @@ function AiAuditPage() {
                 className="bg-clip-text text-transparent"
                 style={{ backgroundImage: "var(--gradient-hero)" }}
               >
-                Find out where Novaris AI Products could save your business
-                time, automate repetitive work, and recover missed
-                opportunities.
+                5-Minute AI &amp; Infrastructure Diagnostic
               </span>
             </h1>
             <p className="mt-6 mx-auto max-w-2xl text-sm sm:text-base text-muted-foreground">
-              Answer a few quick questions and get a Free{" "}
-              <strong className="font-semibold text-foreground">
-                personalized AI Opportunity Summary
-              </strong>{" "}
-              within 3 business days, manually reviewed. No call needed.
+              Take a 5-minute diagnostic intake. Our engineering team personally
+              reviews your workflows and delivers a custom bottleneck summary,
+              followed by an optional 20-minute strategy briefing.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
               <a href="#audit-form" className={CTA} style={CTA_STYLE}>
