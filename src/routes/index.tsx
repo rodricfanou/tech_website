@@ -1165,6 +1165,80 @@ function AIConsultingExplainer() {
   );
 }
 
+const CERTIFICATION_BADGES = [
+  {
+    src: "/logos/certifications/certified_agent_builder.png",
+    alt: "Certified Agent Builder",
+    width: 1536,
+    height: 1536,
+    href: undefined as string | undefined,
+  },
+  {
+    src: "/logos/certifications/google-ai-essentials.png",
+    alt: "Google AI Essentials V1 — Coursera",
+    width: 660,
+    height: 660,
+    href: "https://www.credly.com/badges/0cb1df7c-1ae9-4316-b9ed-2a3816d652ac/embedded",
+  },
+];
+
+function RotatingBadge() {
+  const [active, setActive] = useState(0);
+
+  useEffect(() => {
+    if (CERTIFICATION_BADGES.length < 2) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const id = window.setInterval(() => {
+      setActive((i) => (i + 1) % CERTIFICATION_BADGES.length);
+    }, 4000);
+    return () => window.clearInterval(id);
+  }, []);
+
+  return (
+    <div className="relative w-full shrink-0 lg:w-96">
+      <div className="relative aspect-square w-full">
+        {CERTIFICATION_BADGES.map((badge, i) => {
+          const isActive = i === active;
+          const img = (
+            <img
+              src={badge.src}
+              alt={badge.alt}
+              width={badge.width}
+              height={badge.height}
+              className="h-full w-full rounded-3xl border border-border object-contain"
+            />
+          );
+          return (
+            <div
+              key={badge.src}
+              aria-hidden={!isActive}
+              className={`absolute inset-0 transition-all duration-700 ease-out ${
+                isActive
+                  ? "opacity-100 translate-y-0 scale-100"
+                  : "pointer-events-none opacity-0 translate-y-3 scale-95"
+              }`}
+            >
+              {badge.href ? (
+                <a
+                  href={badge.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  tabIndex={isActive ? 0 : -1}
+                  className="block h-full w-full"
+                >
+                  {img}
+                </a>
+              ) : (
+                img
+              )}
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
 function WhyAIConsultants() {
   const reasons = [
     { icon: Lightbulb, title: "We speak business and tech" },
@@ -1209,15 +1283,7 @@ function WhyAIConsultants() {
               ))}
             </div>
           </div>
-          <div className="w-full shrink-0 lg:w-96">
-            <img
-              src="/logos/certifications/certified_agent_builder.png"
-              alt="Certified Agent Builder"
-              width={1536}
-              height={1536}
-              className="w-full rounded-3xl border border-border object-cover"
-            />
-          </div>
+          <RotatingBadge />
         </div>
       </div>
     </section>
