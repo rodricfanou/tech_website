@@ -25,12 +25,38 @@ import {
 } from "@/components/contact-form";
 import heroImg from "@/assets/hero.jpg";
 import heroImgWebp from "@/assets/hero.webp";
+import { SITE_URL, socialMeta } from "@/lib/seo";
 
 const LOGO_FULL = "/logos/novaris-full-optimized.png";
 const LOGO_FULL_WEBP = "/logos/novaris-full.webp";
 
 export const Route = createFileRoute("/")({
   component: Index,
+  head: () => ({
+    meta: [
+      {
+        title: "Novaris Nexus Tech | AI & Network Infrastructure Consulting",
+      },
+      {
+        name: "description",
+        content:
+          "Custom AI systems, automation, and resilient networks built for business growth.",
+      },
+      ...socialMeta({
+        title: "Novaris Nexus Tech | AI & Network Infrastructure Consulting",
+        description:
+          "Custom AI systems, automation, and resilient networks built for business growth.",
+        path: "/",
+        image: {
+          path: "/og/home.png",
+          alt: "Novaris Nexus Tech — Intelligent Infrastructure. Unfair Business Advantage.",
+          width: 1200,
+          height: 630,
+        },
+      }),
+    ],
+    links: [{ rel: "canonical", href: SITE_URL + "/" }],
+  }),
 });
 
 const MARQUEE_ITEMS = [
