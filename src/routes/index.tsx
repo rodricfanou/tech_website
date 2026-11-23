@@ -1183,7 +1183,7 @@ const CERTIFICATION_BADGES = [
     alt: "Certified Agent Builder",
     width: 1536,
     height: 1536,
-    href: undefined as string | undefined,
+    href: "https://credsverse.com/credentials/f799ac6a-6b6c-424c-b92c-d3675064137b?preview=1",
   },
   {
     src: "/logos/certifications/google-ai-essentials.png",
