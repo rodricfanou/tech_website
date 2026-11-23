@@ -605,7 +605,7 @@ function Hero() {
         <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3">
           <div className="inline-flex items-center gap-2 rounded-full border border-border bg-card/60 px-3 py-1 text-xs text-muted-foreground backdrop-blur">
             <Sparkles className="h-3.5 w-3.5 text-primary" />
-            AI · Infrastructure · Data at scale
+            AI · Network Infrastructure · Data at scale
           </div>
           <div className="inline-flex items-center gap-1.5 rounded-full border border-primary/40 bg-primary/10 px-3 py-1 text-xs font-semibold text-primary backdrop-blur">
             <BadgeCheck className="h-3.5 w-3.5" />
