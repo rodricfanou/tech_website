@@ -1103,25 +1103,11 @@ function AIConsultingExplainer() {
         <div className="mt-16 grid lg:grid-cols-2 gap-12 items-start">
           <div className="space-y-6">
             <p className="text-lg text-muted-foreground">
-              Ask most people outside the tech bubble about AI, and you'll get
-              blank stares. The reality is that many businesses are unaware of
-              how AI can transform their operations — not because the technology
-              isn't ready, but because the knowledge gap is real.
-            </p>
-            <p className="text-lg text-muted-foreground">
-              The gap between what AI can do and what businesses know it can do
-              is enormous.
-            </p>
-            <p className="text-lg text-muted-foreground">
-              That's where an AI consultant comes in. Think of us as translators
-              who speak both business and technology. We help organizations
-              understand what AI is capable of, identify where it can save time
-              and streamline processes, and then build the systems that make it
-              happen.
-            </p>
-            <p className="text-lg text-muted-foreground">
-              The work is to make AI fit your specific challenges, not the other
-              way around.
+              An AI consultant bridges the gap between what AI can do and what
+              your business knows it can do. We translate between business and
+              technology — finding where AI saves time and streamlines work,
+              then building the systems to make it happen. The goal is to make
+              AI fit your challenges, not the other way around.
             </p>
           </div>
 
